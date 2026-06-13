@@ -1,0 +1,90 @@
+.vnf-modal .vnf-row {
+  margin: 14px 0;
+}
+
+.vnf-modal label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.vnf-modal .vnf-control {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.vnf-modal .vnf-input {
+  width: 100%;
+}
+
+.vnf-modal .vnf-suggestions {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  margin-top: -6px;
+  max-height: 240px;
+  overflow-y: auto;
+  background: var(--background-secondary);
+}
+
+.vnf-modal .vnf-hidden {
+  display: none;
+}
+
+.vnf-modal .vnf-suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.vnf-modal .vnf-suggestion.is-selected,
+.vnf-modal .vnf-suggestion:hover {
+  background: var(--background-modifier-hover);
+}
+
+.vnf-modal .vnf-suggestion-path {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-small);
+}
+
+.vnf-modal .vnf-suggestion-path.is-folder {
+  color: var(--text-accent);
+}
+
+.vnf-modal .vnf-suggestion-source {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.vnf-modal .vnf-hint {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  margin-top: 8px;
+}
+
+.vnf-modal .vnf-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.vnf-modal .vnf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.vnf-modal .vnf-chip {
+  font-size: var(--font-ui-smaller);
+  padding: 3px 8px;
+}

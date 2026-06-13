@@ -1,0 +1,21 @@
+# Project-scoped Codex config for διάνοια.
+# Copy this file to <vault-root>/.codex/config.toml.
+
+model = "gpt-5.5"
+
+# Use interactive approvals for commands that may need extra permissions.
+approval_policy = "on-request"
+
+# Let Codex edit files inside the vault, but avoid unrestricted system access.
+sandbox_mode = "workspace-write"
+
+# Codex normally reads AGENTS.md. These fallback names are optional.
+# Useful if you also want AGENT.md or .agents.md to work as instruction files.
+project_doc_fallback_filenames = ["AGENT.md", ".agents.md", "CLAUDE.md"]
+
+# Default is smaller; this allows a larger but still bounded instruction chain.
+project_doc_max_bytes = 65536
+
+[sandbox_workspace_write]
+network_access = false
+writable_roots = ["."]

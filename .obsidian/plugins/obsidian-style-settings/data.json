@@ -1,0 +1,12 @@
+{
+  "cupertino@@adaptive-mode-off": true,
+  "cupertino@@tab-floating": true,
+  "cupertino@@colorful-frame": true,
+  "cupertino@@hover-ribbon": false,
+  "cupertino@@hover-sidedock": false,
+  "cupertino@@nav-action-center": false,
+  "cupertino@@tab-icon": false,
+  "cupertino@@status-bar-baseline": false,
+  "cupertino@@dynamic-type-off": true,
+  "cupertino@@clean-link-off": false
+}
