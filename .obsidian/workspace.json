@@ -148,12 +148,11 @@
               "title": "Recent notes"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 309.5
+    "width": 239.5
   },
   "right": {
     "id": "5dd590b33c0a7ada",
@@ -169,7 +168,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - Home & Maps/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -179,7 +177,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks"
             }
           },
           {
@@ -188,12 +186,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - Home & Maps/README.md",
+                "file": "00 - Inbox/Separation of concerns.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from Separation of concerns"
             }
           },
           {
@@ -231,16 +229,16 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "00 - Inbox/Separation of concerns.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Separation of concerns"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       },
       {
         "id": "94f37cc7b294f0c4",
@@ -262,7 +260,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 671.5
+    "width": 566.5
   },
   "left-ribbon": {
     "hiddenItems": {
