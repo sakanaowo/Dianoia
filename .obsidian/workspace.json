@@ -66,10 +66,52 @@
                 "id": "81fffd542b59cee8",
                 "type": "leaf",
                 "state": {
-                  "type": "empty",
-                  "state": {},
+                  "type": "markdown",
+                  "state": {
+                    "file": "00 - Inbox/Zettelkasten.md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": false
+                  },
                   "icon": "lucide-file",
-                  "title": "New tab"
+                  "title": "Zettelkasten"
+                }
+              },
+              {
+                "id": "577513e5711e24ce",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "04 - Notes/People/Niklas Luhmann.md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Niklas Luhmann"
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "d6e62e3a9931860a",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "24841fc7838ed007",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "05 - Sources/Videos/transcript_YjPxfsqEmRM.md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "transcript_YjPxfsqEmRM"
                 }
               }
             ]
@@ -144,15 +186,16 @@
             "state": {
               "type": "recent-notes-view",
               "state": {},
-              "icon": "clock-10",
-              "title": "Recent notes"
+              "icon": "lucide-ghost",
+              "title": "recent-notes-view"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 239.5
+    "width": 309.5
   },
   "right": {
     "id": "5dd590b33c0a7ada",
@@ -168,6 +211,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "01 - Home & Maps/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,7 +221,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -186,12 +230,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00 - Inbox/Separation of concerns.md",
+                "file": "01 - Home & Maps/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Separation of concerns"
+              "title": "Outgoing links from README"
             }
           },
           {
@@ -229,16 +273,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00 - Inbox/Separation of concerns.md",
+                "file": "05 - Sources/Videos/Quyền lực thực sự vận hành thế nào?.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Separation of concerns"
+              "title": "Outline of Quyền lực thực sự vận hành thế nào?"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       },
       {
         "id": "94f37cc7b294f0c4",
@@ -260,7 +305,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 566.5
+    "width": 671.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -271,11 +316,18 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "recent-notes:Recent notes": false
+      "recent-notes:Recent notes": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d91fffd61c177ad9",
+  "active": "057dae4079b190ce",
   "lastOpenFiles": [
+    "05 - Sources/Videos/transcript_YjPxfsqEmRM.md",
+    "05 - Sources/Videos/Quyền lực thực sự vận hành thế nào?.md",
+    "04 - Notes/People/Niklas Luhmann.md",
+    "05 - Sources/Videos/transcript_YjPxfsqEmRM.txt",
+    "00 - Inbox/Zettelkasten.md",
+    "scripts/transcript.py",
     "00 - Inbox/Separation of concerns.md",
     "00 - Inbox/SOLID - Single Responsibility Principle.md",
     "00 - Inbox/OOD - Object Oriented Design.md",
@@ -301,16 +353,10 @@
     "Rules.md",
     "99 - Templates/README.md",
     "98 - Attachments/README.md",
-    "08 - Review/README.md",
-    "07 - Outputs/README.md",
-    "05 - Sources/README.md",
-    "04 - Notes/README.md",
     "07 - Outputs/Personal Manifestos",
     "07 - Outputs/Study Guides",
     "07 - Outputs/Presentations",
     "07 - Outputs/Reports",
-    "07 - Outputs/Blog Posts",
-    "07 - Outputs/Essays",
-    "06 - Projects/Exam Prep"
+    "07 - Outputs/Blog Posts"
   ]
 }
