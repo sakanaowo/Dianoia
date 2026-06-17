@@ -5,7 +5,7 @@ aliases:
 tags:
   - design-pattern
   - IT
-Date Created: 2026-06-13
+created: 2026-06-13
 status: processing
 source: https://viblo.asia/p/so-luoc-object-oriented-design-principles-MdZGAQODGox
 ---

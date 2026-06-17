@@ -5,7 +5,7 @@ aliases:
 tags:
   - design-pattern
   - IT
-Date Created: 2026-06-13
+created: 2026-06-13
 source: https://viblo.asia/p/solid-single-responsibility-principle-nguyen-ly-don-nhiem-PaLkDmKMvlX
 ---
 ## Mở đầu

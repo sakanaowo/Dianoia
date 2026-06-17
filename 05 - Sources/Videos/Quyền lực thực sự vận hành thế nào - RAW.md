@@ -1,13 +1,13 @@
 ---
-source: "https://www.youtube.com/watch?v=YjPxfsqEmRM"
-language: "Vietnamese (auto-generated)"
-status: "processing"
-fetched: "2026-06-14"
+source: https://www.youtube.com/watch?v=YjPxfsqEmRM
+language: Vietnamese (auto-generated)
+status: processing
+created: 2026-06-14
 tags:
   - video/youtube
   - transcript
+  - raw-source
 ---
-
 ## Transcript
 
 [00:00:00](https://www.youtube.com/watch?v=YjPxfsqEmRM&t=0s) Hội đi học thì tôi được học về quyền lực

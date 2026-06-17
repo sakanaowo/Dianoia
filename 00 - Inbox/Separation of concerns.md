@@ -4,7 +4,7 @@ tags:
   - IT
   - design-pattern
 status: processing
-Date Created: 2026-06-13
+created: 2026-06-13
 source: https://viblo.asia/q/dinh-nghia-ve-separation-of-concerns-3m5W0vy7KO7
 ---
 ---

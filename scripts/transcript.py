@@ -106,10 +106,11 @@ def to_md(snippets, fetched=None) -> str:
         f'source: "{url}"\n'
         f'language: "{lang}"\n'
         f'status: "processing"\n'
-        f"fetched: \"{datetime.now().strftime('%Y-%m-%d')}\"\n"
+        f"Date Created: \"{datetime.now().strftime('%Y-%m-%d')}\"\n"
         "tags:\n"
         "  - video/youtube\n"
         "  - transcript\n"
+        "  - raw-source\n"
         "---\n\n"
         "## Transcript\n\n"
     )
