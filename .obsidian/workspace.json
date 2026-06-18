@@ -15,15 +15,14 @@
                 "id": "aaf5b4f3e90105f6",
                 "type": "leaf",
                 "state": {
-                  "type": "markdown",
+                  "type": "split-diff-view",
                   "state": {
-                    "file": "00 - Inbox/Quyền lực thực sự vận hành như thế nào.md",
-                    "mode": "source",
-                    "source": false,
-                    "backlinks": false
+                    "aFile": ".obsidian/workspace.json",
+                    "bFile": ".obsidian/workspace.json",
+                    "aRef": ""
                   },
-                  "icon": "lucide-file",
-                  "title": "Quyền lực thực sự vận hành như thế nào"
+                  "icon": "diff",
+                  "title": "Diff: workspace.json  (Working Tree)"
                 }
               }
             ]
@@ -279,7 +278,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 394.5
+    "width": 523.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -293,10 +292,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c3e6e90335ba6fae",
+  "active": "aaf5b4f3e90105f6",
   "lastOpenFiles": [
-    "05 - Sources/Videos/Quyền lực thực sự vận hành thế nào - RAW.md",
     "00 - Inbox/Quyền lực thực sự vận hành như thế nào.md",
+    "05 - Sources/Videos/Quyền lực thực sự vận hành thế nào - RAW.md",
     "05 - Sources/Articles/Immanuel Kant - Wikipedia tiếng Việt.md",
     "99 - Templates/TODOist.md",
     "05 - Sources/Articles/Ancient Greek Concepts of Thinking.md",
