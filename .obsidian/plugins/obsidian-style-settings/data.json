@@ -28,5 +28,19 @@
   "baseline-style@@nav-item-active-style": "nav-item-baseline",
   "baseline-style@@focus-view": false,
   "baseline-style@@font-text-override": "SF Pro Display",
-  "baseline-style@@font-interface-override": "SF Pro Display"
+  "baseline-style@@font-interface-override": "SF Pro Display",
+  "hover-editor@@he-title-bar-active-bg@@light": "#B7C56D",
+  "hover-editor@@he-title-bar-active-bg@@dark": "#8D1919",
+  "hover-editor@@he-title-bar-inactive-bg@@dark": "#267F81",
+  "hover-editor@@he-title-bar-inactive-bg@@light": "#C83BC1",
+  "hover-editor@@he-title-bar-active-fg@@light": "#AC4C4C",
+  "hover-editor@@he-title-bar-inactive-fg@@light": "#2EA958",
+  "hover-editor@@he-title-bar-active-pinned-bg@@dark": "#337DA9",
+  "hover-editor@@he-title-bar-active-pinned-bg@@light": "#7BC131",
+  "hover-editor@@he-title-bar-inactive-pinned-bg@@light": "#7A0A0A",
+  "hover-editor@@he-title-bar-inactive-pinned-bg@@dark": "#15304D",
+  "baseline-style@@callouts-style": "callouts-default",
+  "baseline-style@@blockquote-background-color@@light": "#4A765B",
+  "baseline-style@@blockquote-border-color@@light": "#CAC81F",
+  "baseline-style@@background-primary-alt@@light": "#71804E"
 }

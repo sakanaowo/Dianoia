@@ -25,6 +25,8 @@ Behavior:
 - A path ending with `/` creates a folder instead of a file.
 - `./` and `../` are resolved relative to the current note.
 - A path starting with `/` is resolved from the vault root.
+- Folder-specific templates are applied automatically when the target folder
+  matches a configured rule.
 
 ## Commands
 
@@ -41,6 +43,16 @@ The existing `Mod + Alt + N` hotkey in this vault is attached to the main comman
 - Default folder
 - Default extension
 - Optional template path with `{{title}}`, `{{folder}}`, `{{date}}`, and `{{time}}`
+- Folder templates, one rule per line:
+
+```text
+04 - Notes/Atomic => 99 - Templates/Atomic Note.md
+05 - Sources/Articles => 99 - Templates/Source - Article.md
+```
+
+The most specific matching folder wins. If no folder rule matches, the optional
+global template path is used.
+
 - Open after create
 - Remember last folder
 - Recent path limit

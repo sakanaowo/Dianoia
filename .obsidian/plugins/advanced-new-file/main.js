@@ -10,6 +10,19 @@ const {
   normalizePath,
 } = require("obsidian");
 
+const DEFAULT_FOLDER_TEMPLATES = [
+  { folder: "04 - Notes/Atomic", template: "99 - Templates/Atomic Note.md" },
+  { folder: "04 - Notes/Concepts", template: "99 - Templates/Concept Note.md" },
+  { folder: "04 - Notes/Arguments", template: "99 - Templates/Argument Note.md" },
+  { folder: "04 - Notes/Comparisons", template: "99 - Templates/Comparison Note.md" },
+  { folder: "04 - Notes/Questions", template: "99 - Templates/Question Note.md" },
+  { folder: "04 - Notes/People", template: "99 - Templates/Person Note.md" },
+  { folder: "05 - Sources/Articles", template: "99 - Templates/Source - Article.md" },
+  { folder: "05 - Sources/Books", template: "99 - Templates/Book Note.md" },
+  { folder: "05 - Sources/Videos", template: "99 - Templates/Source - Video.md" },
+  { folder: "06 - Projects", template: "99 - Templates/Project Note.md" },
+];
+
 const DEFAULT_SETTINGS = {
   defaultFolder: "",
   defaultExtension: "md",
@@ -17,6 +30,7 @@ const DEFAULT_SETTINGS = {
   rememberLastFolder: true,
   autoIncrementDuplicates: true,
   templatePath: "",
+  folderTemplates: DEFAULT_FOLDER_TEMPLATES,
   quickFolders: [
     "00 - Inbox",
     "04 - Notes/Atomic",
@@ -32,7 +46,13 @@ const DEFAULT_SETTINGS = {
 
 module.exports = class VaultNewFilePlugin extends Plugin {
   async onload() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    const loadedData = await this.loadData();
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, loadedData);
+
+    if (!loadedData || !Array.isArray(loadedData.folderTemplates)) {
+      this.settings.folderTemplates = DEFAULT_FOLDER_TEMPLATES;
+      await this.saveSettings();
+    }
 
     this.addCommand({
       id: "create-new-file-choose-folder",
@@ -131,6 +151,7 @@ module.exports = class VaultNewFilePlugin extends Plugin {
     const parts = [];
 
     raw.split("/").forEach((part) => {
+      part = part.trim();
       if (!part || part === ".") return;
       if (part === "..") {
         parts.pop();
@@ -224,12 +245,31 @@ module.exports = class VaultNewFilePlugin extends Plugin {
     throw new Error("Could not find a unique file name.");
   }
 
-  async renderTemplate(targetPath) {
-    if (!this.settings.templatePath) return "";
+  getFolderTemplates() {
+    if (!Array.isArray(this.settings.folderTemplates)) return [];
 
-    const templateFile = this.app.vault.getAbstractFileByPath(this.normalizeVaultPath(this.settings.templatePath));
+    return this.settings.folderTemplates
+      .map((rule) => ({
+        folder: this.normalizeVaultPath(rule && rule.folder),
+        template: this.normalizeVaultPath(rule && rule.template),
+      }))
+      .filter((rule) => rule.folder && rule.template);
+  }
+
+  getTemplatePathForTarget(targetPath) {
+    const { folder } = this.splitPath(targetPath);
+    const rules = this.getFolderTemplates().sort((a, b) => b.folder.length - a.folder.length);
+    const match = rules.find((rule) => folder === rule.folder || folder.startsWith(`${rule.folder}/`));
+    return match ? match.template : this.normalizeVaultPath(this.settings.templatePath);
+  }
+
+  async renderTemplate(targetPath) {
+    const templatePath = this.getTemplatePathForTarget(targetPath);
+    if (!templatePath) return "";
+
+    const templateFile = this.app.vault.getAbstractFileByPath(templatePath);
     if (!(templateFile instanceof TFile)) {
-      new Notice(`Template not found: ${this.settings.templatePath}`);
+      new Notice(`Template not found: ${templatePath}`);
       return "";
     }
 
@@ -701,6 +741,29 @@ class VaultNewFileSettingTab extends PluginSettingTab {
     this.plugin = plugin;
   }
 
+  formatFolderTemplates() {
+    return this.plugin
+      .getFolderTemplates()
+      .map((rule) => `${rule.folder} => ${rule.template}`)
+      .join("\n");
+  }
+
+  parseFolderTemplates(value) {
+    return String(value || "")
+      .split("\n")
+      .map((line) => line.trim())
+      .filter((line) => line && !line.startsWith("#"))
+      .map((line) => {
+        const match = line.match(/^(.+?)(?:\s*=>\s*|\s*\|\s*)(.+)$/);
+        if (!match) return null;
+        return {
+          folder: this.plugin.normalizeVaultPath(match[1]),
+          template: this.plugin.normalizeVaultPath(match[2]),
+        };
+      })
+      .filter((rule) => rule && rule.folder && rule.template);
+  }
+
   display() {
     const { containerEl } = this;
     containerEl.empty();
@@ -744,6 +807,21 @@ class VaultNewFileSettingTab extends PluginSettingTab {
             this.plugin.settings.templatePath = this.plugin.normalizeVaultPath(value);
             await this.plugin.saveSettings();
           });
+      });
+
+    new Setting(containerEl)
+      .setName("Folder templates")
+      .setDesc("One rule per line: folder => template. The most specific matching folder wins.")
+      .addTextArea((text) => {
+        text
+          .setPlaceholder("04 - Notes/Atomic => 99 - Templates/Atomic Note.md")
+          .setValue(this.formatFolderTemplates())
+          .onChange(async (value) => {
+            this.plugin.settings.folderTemplates = this.parseFolderTemplates(value);
+            await this.plugin.saveSettings();
+          });
+        text.inputEl.rows = 10;
+        text.inputEl.cols = 60;
       });
 
     new Setting(containerEl)
