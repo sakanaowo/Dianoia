@@ -43,5 +43,5 @@
   "baseline-style@@blockquote-background-color@@light": "#4A765B",
   "baseline-style@@blockquote-border-color@@light": "#CAC81F",
   "baseline-style@@background-primary-alt@@light": "#71804E",
-  "baseline-style@@table-width": "table-width-fit"
+  "baseline-style@@dynamic-type-off": true
 }

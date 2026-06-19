@@ -24,7 +24,6 @@ themes:
   - "[[Human Nature]]"
   - "[[Knowledge and Truth]]"
 ---
-
 # Thuyết Siêu Việt - Wikipedia
 
 ## Source info
