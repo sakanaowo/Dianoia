@@ -5,6 +5,7 @@
     "tags": "tags",
     "Date Created": "date",
     "fetched": "datetime",
-    "source": "multitext"
+    "source": "multitext",
+    "updated": "datetime"
   }
 }

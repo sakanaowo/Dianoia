@@ -1,12 +1,69 @@
 {
   "collapse-filter": true,
   "search": "",
-  "showTags": true,
+  "showTags": false,
   "showAttachments": false,
-  "hideUnresolved": false,
+  "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": true,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "path:\"01 - Home & Maps\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16171383
+      }
+    },
+    {
+      "query": "path:\"02 - Domains\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 10276824
+      }
+    },
+    {
+      "query": "path:\"03 - Themes\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 12888039
+      }
+    },
+    {
+      "query": "path:\"04 - Notes\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 10937249
+      }
+    },
+    {
+      "query": "path:\"05 - Sources\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 12107980
+      }
+    },
+    {
+      "query": "path:\"06 - Projects\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 15901346
+      }
+    },
+    {
+      "query": "path:\"08 - Review\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 14530706
+      }
+    },
+    {
+      "query": "path:\"98 - Attachments\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 9081765
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
@@ -17,6 +74,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.23696943855146407,
+  "scale": 0.4657767125806954,
   "close": true
 }

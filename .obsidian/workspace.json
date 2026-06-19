@@ -4,67 +4,71 @@
     "type": "split",
     "children": [
       {
-        "id": "74e5c909fd82c6af",
-        "type": "split",
+        "id": "254b12c779c2ef0b",
+        "type": "tabs",
         "children": [
           {
-            "id": "714e5f790f72a170",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "aaf5b4f3e90105f6",
-                "type": "leaf",
-                "state": {
-                  "type": "split-diff-view",
-                  "state": {
-                    "aFile": ".obsidian/workspace.json",
-                    "bFile": ".obsidian/workspace.json",
-                    "aRef": ""
-                  },
-                  "icon": "diff",
-                  "title": "Diff: workspace.json  (Working Tree)"
-                }
-              }
-            ]
+            "id": "5108615e55d44173",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Sources/Articles/Immanuel Kant - Wikipedia tiếng Việt.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Immanuel Kant - Wikipedia tiếng Việt"
+            }
           },
           {
-            "id": "9efd884168554600",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "81fffd542b59cee8",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "00 - Inbox/Zettelkasten.md",
-                    "mode": "source",
-                    "source": false,
-                    "backlinks": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "Zettelkasten"
-                }
+            "id": "ed9000e29fa37f2e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 - Inbox/Quyền lực thực sự vận hành như thế nào.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              {
-                "id": "577513e5711e24ce",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "04 - Notes/People/Niklas Luhmann.md",
-                    "mode": "source",
-                    "source": false,
-                    "backlinks": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "Niklas Luhmann"
-                }
-              }
-            ]
+              "icon": "lucide-file",
+              "title": "Quyền lực thực sự vận hành như thế nào"
+            }
+          },
+          {
+            "id": "365fb5df77a7ee45",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Sources/Articles/Thuyết Siêu Việt - Wikipedia.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Thuyết Siêu Việt - Wikipedia"
+            }
+          },
+          {
+            "id": "80b85cd53052c2fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Sources/Articles/Chủ nghĩa siêu việt Mỹ.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Chủ nghĩa siêu việt Mỹ"
+            }
           }
         ],
-        "direction": "horizontal"
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -221,13 +225,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00 - Inbox/Daily/2026-06-14.md",
+                "file": "05 - Sources/Articles/Thuyết Siêu Việt - Wikipedia.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-06-14"
+              "title": "Outline of Thuyết Siêu Việt - Wikipedia"
             }
           },
           {
@@ -241,7 +245,7 @@
             }
           },
           {
-            "id": "d91fffd61c177ad9",
+            "id": "4e267ac155069360",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -278,7 +282,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 523.5
+    "width": 424.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -292,18 +296,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "aaf5b4f3e90105f6",
+  "active": "c3e6e90335ba6fae",
   "lastOpenFiles": [
+    "05 - Sources/Articles/Chủ nghĩa siêu việt Mỹ.md",
+    "05 - Sources/Articles/Thuyết Siêu Việt - Wikipedia.md",
     "00 - Inbox/Quyền lực thực sự vận hành như thế nào.md",
-    "05 - Sources/Videos/Quyền lực thực sự vận hành thế nào - RAW.md",
-    "05 - Sources/Articles/Immanuel Kant - Wikipedia tiếng Việt.md",
     "99 - Templates/TODOist.md",
+    "05 - Sources/Articles/Immanuel Kant - Wikipedia tiếng Việt.md",
+    "00 - Inbox/Thuyết Siêu Việt - Wikipedia.md",
+    "00 - Inbox/README.md",
+    "04 - Notes/People/Immanuel Kant.md",
+    "04 - Notes/People/Niklas Luhmann.md",
+    "00 - Inbox/Zettelkasten.md",
+    "05 - Sources/Videos/Quyền lực thực sự vận hành thế nào - RAW.md",
     "05 - Sources/Articles/Ancient Greek Concepts of Thinking.md",
     "98 - Attachments/Pasted image 20260617221106.png",
-    "04 - Notes/People/Immanuel Kant.md",
     "inb.md",
-    "00 - Inbox/Zettelkasten.md",
-    "04 - Notes/People/Niklas Luhmann.md",
     "00 - Inbox/Daily/2026-06-14.md",
     "00 - Inbox/Separation of concerns.md",
     "99 - Templates/Daily Note.md",
@@ -317,10 +325,6 @@
     "99 - Templates/Argument Note.md",
     "99 - Templates/Question Note.md",
     "99 - Templates/Project Note.md",
-    "99 - Templates/Comparison Note.md",
-    "99 - Templates/Dianoia Templates/99 - Templates/Theme MOC.md",
-    "99 - Templates/Dianoia Templates/99 - Templates/Source - Video.md",
-    "99 - Templates/Dianoia Templates/99 - Templates/Source - Article.md",
     "99 - Templates/Dianoia Templates/99 - Templates",
     "99 - Templates/Dianoia Templates",
     "99 - Templates/Dianoia Templates.zip",
