@@ -28,7 +28,7 @@ aliases:
 related:
   - "[[05 - Sources/Articles/Thuyết Siêu Việt - Wikipedia|Thuyết Siêu Việt - Wikipedia]]"
 ---
-
+---
 # Chủ nghĩa siêu việt Mỹ
 
 ## Source info
@@ -43,7 +43,6 @@ related:
 
 ## Main takeaway
 Chủ nghĩa siêu việt Mỹ là một phong trào đặt thực hành sống lên trước lý thuyết: nó tìm cách tạm rời khỏi thế giới sự kiện, giới hạn và thường thức để đi vào thế giới của ý niệm, tưởng tượng, đạo đức và cái đẹp nhằm làm đời sống tinh thần trở nên tự do hơn.
-
 ## Key claims
 
 - Chủ nghĩa siêu việt Mỹ không bắt đầu như một hệ thống triết học chặt chẽ, mà bắt đầu từ các thực hành sống rồi mới cố gắng tìm nền tảng lý thuyết cho chúng.
@@ -98,27 +97,16 @@ Chủ nghĩa siêu việt Mỹ là một phong trào đặt thực hành sống 
 ## Atomic notes to create
 
 - [[Chủ nghĩa siêu việt Mỹ bắt đầu từ thực hành sống hơn là từ hệ thống lý thuyết]]
-    
 - [[Tưởng tượng giúp con người tạm thoát khỏi giới hạn của thường thức]]
-    
 - [[Chủ nghĩa siêu việt Mỹ vay mượn Kant nhưng không giữ nguyên hệ thống Kant]]
-    
 - [[Transcendental của Kant không đồng nghĩa với transcendent]]
-    
 - [[Cái đẹp là thực hành trung tâm của chủ nghĩa siêu việt Mỹ]]
-    
 - [[Một thực hành sống có thể có giá trị ngay cả khi nền tảng lý thuyết của nó yếu]]
-    
 - [[Nỗ lực biến cái đẹp thành lý thuyết phổ quát dễ làm ta mù trước cái xấu]]
-    
 - [[Cái ác là điểm thử giới hạn của chủ nghĩa duy tâm]]
-    
 - [[Emerson xem cá nhân là tác nhân trung tâm của tiến bộ đạo đức]]
-    
 - [[Thoreau biến đạo đức cá nhân thành hành động chính trị cụ thể]]
-    
 - [[Chủ nghĩa siêu việt Mỹ là cầu nối giữa triết học, văn học, tôn giáo và cải cách xã hội]]
-    
 - [[Một phong trào triết học có thể quan trọng vì cách nó thay đổi đời sống hơn là vì nó đúng về mặt hệ thống]]
 
 ## What I disagree with / doubt

@@ -6,6 +6,7 @@
     "Date Created": "date",
     "fetched": "datetime",
     "source": "multitext",
-    "updated": "datetime"
+    "updated": "datetime",
+    "published": "text"
   }
 }

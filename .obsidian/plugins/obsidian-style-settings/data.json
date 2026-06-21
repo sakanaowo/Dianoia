@@ -37,7 +37,7 @@
   "hover-editor@@he-title-bar-inactive-fg@@light": "#2EA958",
   "hover-editor@@he-title-bar-active-pinned-bg@@dark": "#337DA9",
   "hover-editor@@he-title-bar-active-pinned-bg@@light": "#7BC131",
-  "hover-editor@@he-title-bar-inactive-pinned-bg@@light": "#7A0A0A",
+  "hover-editor@@he-title-bar-inactive-pinned-bg@@light": "#E09999",
   "hover-editor@@he-title-bar-inactive-pinned-bg@@dark": "#15304D",
   "baseline-style@@callouts-style": "callouts-default",
   "baseline-style@@blockquote-background-color@@light": "#4A765B",

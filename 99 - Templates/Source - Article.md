@@ -2,14 +2,19 @@
 type: source
 subtype: article
 status: raw
-source: 
-author: 
-published: 
-fetched: {{date}}
-language: 
+source:
+author:
+published:
+fetched:
+  "{ date }":
+language:
 tags:
   - article
   - raw-source
+domains:
+source_notes:
+aliases:
+themes:
 ---
 
 # {{title}}

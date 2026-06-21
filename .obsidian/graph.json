@@ -1,6 +1,6 @@
 {
   "collapse-filter": true,
-  "search": "",
+  "search": "-file:TODOist",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
@@ -74,6 +74,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.4657767125806954,
+  "scale": 0.21546096897602,
   "close": true
 }
