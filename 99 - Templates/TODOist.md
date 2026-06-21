@@ -19,7 +19,7 @@
 - [ ] [[Chính phủ lập hiến]]
 - [ ] [[Phân lập nhà nước và tôn giáo]]
 - [ ] [[Chủ nghĩa lãng mạn]]
-- [ ] Quyền lực:
+- [x] Quyền lực:
 	- [ ] Kiểm soát hành vi
 	- [ ] Kiểm soát niềm tin
 	- [ ] Kiểm soát diễn giải
