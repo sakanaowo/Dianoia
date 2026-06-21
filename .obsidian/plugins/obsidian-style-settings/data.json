@@ -14,7 +14,7 @@
   "baseline-style@@status-bar-style": "status-bar-cupertino",
   "baseline-style@@tab-style": "tab-floating",
   "baseline-style@@tab-top-left-style": "tab-top-left-icon",
-  "baseline-style@@tab-left-style": "tab-left-compact",
+  "baseline-style@@tab-left-style": "tab-left-icon",
   "cupertino@@focus-view": false,
   "cupertino@@zoom-off": false,
   "cupertino@@active-line-off": false,
@@ -37,11 +37,14 @@
   "hover-editor@@he-title-bar-inactive-fg@@light": "#2EA958",
   "hover-editor@@he-title-bar-active-pinned-bg@@dark": "#337DA9",
   "hover-editor@@he-title-bar-active-pinned-bg@@light": "#7BC131",
-  "hover-editor@@he-title-bar-inactive-pinned-bg@@light": "#E09999",
+  "hover-editor@@he-title-bar-inactive-pinned-bg@@light": "#7A0A0A",
   "hover-editor@@he-title-bar-inactive-pinned-bg@@dark": "#15304D",
   "baseline-style@@callouts-style": "callouts-default",
   "baseline-style@@blockquote-background-color@@light": "#4A765B",
   "baseline-style@@blockquote-border-color@@light": "#CAC81F",
   "baseline-style@@background-primary-alt@@light": "#71804E",
-  "baseline-style@@dynamic-type-off": true
+  "baseline-style@@dynamic-type-off": true,
+  "baseline-style@@tab-top-right-style": "tab-top-right-icon",
+  "baseline-style@@nav-action": "nav-action-indicator",
+  "baseline-style@@hide-vault-switcher-off": false
 }

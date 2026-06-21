@@ -27,3 +27,4 @@
 - [ ] 
 
 # TODO
+- [ ] Tìm hiểu locate anything 
