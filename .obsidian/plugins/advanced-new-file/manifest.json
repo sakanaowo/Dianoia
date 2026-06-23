@@ -1,7 +1,7 @@
 {
   "id": "advanced-new-file",
   "name": "Advanced New File",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "minAppVersion": "1.5.0",
   "description": "Create files and folders anywhere in your Obsidian vault from a VS Code-style path prompt.",
   "author": "sakana",

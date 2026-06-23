@@ -14,6 +14,10 @@ created: {{date}}
 
 - 
 
+## Main thread of today
+
+Hôm nay các ý tưởng / công việc đang xoay quanh điều gì?
+
 ## Questions
 
 - 
@@ -24,6 +28,14 @@ created: {{date}}
 - [ ] 
 
 ## Links made today
+
+- 
+
+## Decisions / changes
+
+- 
+
+## Frictions / blockers
 
 - 
 

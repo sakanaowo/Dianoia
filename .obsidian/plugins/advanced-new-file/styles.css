@@ -70,6 +70,31 @@
   margin-top: 8px;
 }
 
+.vnf-modal .vnf-template-status {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 6px 8px;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-small);
+}
+
+.vnf-modal .vnf-template-status.is-applied {
+  border-color: var(--text-success);
+  color: var(--text-success);
+  background: var(--background-modifier-success);
+}
+
+.vnf-modal .vnf-template-status.is-missing {
+  border-color: var(--text-error);
+  color: var(--text-error);
+  background: var(--background-modifier-error);
+}
+
+.vnf-modal .vnf-template-status.is-none {
+  color: var(--text-muted);
+}
+
 .vnf-modal .vnf-buttons {
   display: flex;
   justify-content: flex-end;

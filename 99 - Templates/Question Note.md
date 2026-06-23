@@ -15,8 +15,21 @@ updated: {{date}}
 ## Câu hỏi
 
 
+## Loại câu hỏi
+
+- [ ] Định nghĩa
+- [ ] Cơ chế
+- [ ] Nguyên nhân
+- [ ] So sánh
+- [ ] Đánh giá / lập luận
+- [ ] Ứng dụng
+
 ## Vì sao câu hỏi này quan trọng?
 
+
+## Bối cảnh
+
+Câu hỏi này xuất hiện từ source, project, domain hoặc mâu thuẫn nào?
 
 ## Những hướng trả lời có thể có
 
@@ -25,6 +38,10 @@ updated: {{date}}
 3. 
 
 ## Điều mình đang giả định
+
+- 
+
+## Cần bằng chứng gì để trả lời tốt hơn?
 
 - 
 
@@ -41,3 +58,6 @@ updated: {{date}}
 ## Tạm kết hiện tại
 
 
+## Next action
+
+- [ ] 
