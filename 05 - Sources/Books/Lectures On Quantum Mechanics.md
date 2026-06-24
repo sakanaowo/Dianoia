@@ -7,21 +7,19 @@ publisher:
 isbn:
 domains:
 themes:
-created:
-  "{ date }":
-updated:
-  "{ date }":
+created: 2026-06-24
+updated: 2026-06-24T12:52:00
 ---
 
-# {{title}}
+# Lectures On Quantum Mechanics
 
 ## Bibliographic info
 
-- Author:
-- Year:
-- Publisher:
-- Translator:
-- Edition:
+- Author: Steven Weinberg
+- Year: 2015
+- Publisher: Cambridge
+- Translator: ME
+- Edition: Second Edition
 
 ## Why am I reading this?
 
