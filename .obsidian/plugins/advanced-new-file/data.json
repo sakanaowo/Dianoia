@@ -11,6 +11,10 @@
       "template": "99 - Templates/Comparison Note.md"
     },
     {
+      "folder": "05 - Sources/Articles",
+      "template": "99 - Templates/Source - Article.md"
+    },
+    {
       "folder": "04 - Notes/Arguments",
       "template": "99 - Templates/Argument Note.md"
     },
@@ -21,10 +25,6 @@
     {
       "folder": "04 - Notes/Concepts",
       "template": "99 - Templates/Concept Note.md"
-    },
-    {
-      "folder": "05 - Sources/Articles",
-      "template": "99 - Templates/Source - Article.md"
     },
     {
       "folder": "05 - Sources/Videos",
@@ -61,6 +61,10 @@
     {
       "folder": "03 - Themes",
       "template": "99 - Templates/Theme MOC.md"
+    },
+    {
+      "folder": "06 - Projects/Study Plans",
+      "template": "99 - Templates/Study Project Note"
     }
   ],
   "quickFolders": [

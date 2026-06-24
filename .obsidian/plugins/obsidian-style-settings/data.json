@@ -45,6 +45,6 @@
   "baseline-style@@background-primary-alt@@light": "#71804E",
   "baseline-style@@dynamic-type-off": true,
   "baseline-style@@tab-top-right-style": "tab-top-right-icon",
-  "baseline-style@@nav-action": "nav-action-indicator",
+  "baseline-style@@nav-action": "nav-action-dot",
   "baseline-style@@hide-vault-switcher-off": false
 }
