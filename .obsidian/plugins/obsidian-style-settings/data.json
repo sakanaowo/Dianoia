@@ -39,7 +39,7 @@
   "hover-editor@@he-title-bar-active-pinned-bg@@light": "#7BC131",
   "hover-editor@@he-title-bar-inactive-pinned-bg@@light": "#7A0A0A",
   "hover-editor@@he-title-bar-inactive-pinned-bg@@dark": "#15304D",
-  "baseline-style@@callouts-style": "callouts-default",
+  "baseline-style@@callouts-style": "callouts-tactile",
   "baseline-style@@blockquote-background-color@@light": "#4A765B",
   "baseline-style@@blockquote-border-color@@light": "#CAC81F",
   "baseline-style@@background-primary-alt@@light": "#71804E",
