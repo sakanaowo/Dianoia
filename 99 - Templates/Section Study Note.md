@@ -2,8 +2,8 @@
 type: source
 subtype: book-section
 status: raw
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 book: "[[{{Book Note}}]]"
 chapter: "{{Chapter}}"
 section: "{{Section}}"

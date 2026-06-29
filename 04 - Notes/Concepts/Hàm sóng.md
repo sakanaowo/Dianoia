@@ -21,7 +21,7 @@ aliases:
 
 ## Nói đơn giản
 
-Sóng là quá trình lan truyền xung. Một sóng phẳng không biến dạng theo thời gian có dạng $\psi(x,t)=\psi(x-vt)$, trong đó $v$ là tốc độ lan truyền. Tại $t=0$ sóng có hình dạng $\psi(x,0)$; sau thời gian $t$, hình dạng giữ nguyên nhưng dịch sang phải một đoạn $vt$.
+Sóng là quá trình lan truyền xung. Một sóng phẳng không biến dạng theo thời gian có dạng $$\psi(x,t)=\psi(x-vt)$$, trong đó $v$ là tốc độ lan truyền. Tại $t=0$ sóng có hình dạng $\psi(x,0)$; sau thời gian $t$, hình dạng giữ nguyên nhưng dịch sang phải một đoạn $vt$.
 
 ## Câu hỏi mà concept này trả lời
 

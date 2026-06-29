@@ -5,8 +5,7 @@ status: raw
 source:
 author:
 published:
-fetched:
-  "{ date }":
+fetched: "{{date}}"
 language:
 tags:
   - article
@@ -78,4 +77,3 @@ Article
 - 
 
 ## Raw highlights
-

@@ -7,6 +7,10 @@
   "templatePath": "",
   "templateRules": [
     {
+      "folder": "06 - Projects/Study Plans",
+      "template": "99 - Templates/Study Project Note.md"
+    },
+    {
       "folder": "04 - Notes/Comparisons",
       "template": "99 - Templates/Comparison Note.md"
     },
@@ -61,10 +65,6 @@
     {
       "folder": "03 - Themes",
       "template": "99 - Templates/Theme MOC.md"
-    },
-    {
-      "folder": "06 - Projects/Study Plans",
-      "template": "99 - Templates/Study Project Note"
     }
   ],
   "quickFolders": [
@@ -77,8 +77,10 @@
   ],
   "lastFolder": "04 - Notes/Concepts",
   "recentPaths": [
-    "04 - Notes/Concepts/Trạng thái lượng tử.md",
+    "04 - Notes/Concepts/Formalism.md",
     "04 - Notes/Concepts",
+    "04 - Notes/Concepts/Formalism trong cơ học lượng tử.md",
+    "04 - Notes/Concepts/Trạng thái lượng tử.md",
     "04 - Notes/Concepts/Trạng thái lượng tử 1.md",
     "00 - Inbox/Hàm sóng.md",
     "00 - Inbox",
@@ -86,9 +88,7 @@
     "04 - Notes/Concepts/Born Rule.md",
     "00 - Inbox/Born Rule.md",
     "05 - Sources/Books/Lectures On Quantum Mechanics.md",
-    "05 - Sources/Books",
-    "05 - Sources/Articles/Hubble constant and tension.md",
-    "05 - Sources/Articles"
+    "05 - Sources/Books"
   ],
   "maxRecentPaths": 12
 }

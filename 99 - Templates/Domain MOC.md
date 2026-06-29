@@ -2,8 +2,8 @@
 type: moc
 status: growing
 scope: domain
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # {{title}}

@@ -7,10 +7,8 @@ publisher:
 isbn:
 domains:
 themes:
-created:
-  "{ date }":
-updated:
-  "{ date }":
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # {{title}}

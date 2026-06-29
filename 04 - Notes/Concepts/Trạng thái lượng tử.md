@@ -2,17 +2,23 @@
 type: concept
 status: growing
 domains:
+  - "[[Cơ học lượng tử]]"
+  - "[[Physics]]"
 themes:
+  - "[[Knowledge and Truth]]"
 source: []
 created: 2026-06-29
 updated: 2026-06-29T19:49:00
 aliases:
+  - Quantum state
+  - State vector
 ---
 # Trạng thái lượng tử
 
 ## Định nghĩa ngắn
 
-Một câu trả lời trực tiếp: concept này là gì?
+Đối tượng toán học mô tả đầy đủ những gì ta có thể dự đoán về một hệ lượng tử 
+
 
 ## Nói đơn giản
 

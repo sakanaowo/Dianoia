@@ -1,8 +1,8 @@
 ---
 type: project
 status: active
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 domains:
   - "[[{{Domain}}]]"
 source_notes: []

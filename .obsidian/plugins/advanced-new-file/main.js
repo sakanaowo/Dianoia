@@ -29,6 +29,7 @@ const DEFAULT_SETTINGS = {
     { folder: "05 - Sources/Books", template: "99 - Templates/Book Note.md" },
     { folder: "05 - Sources/Papers", template: "99 - Templates/Paper Note.md" },
     { folder: "05 - Sources", template: "99 - Templates/Source Note.md" },
+    { folder: "06 - Projects/Study Plans", template: "99 - Templates/Study Project Note.md" },
     { folder: "06 - Projects", template: "99 - Templates/Project Note.md" },
     { folder: "02 - Domains", template: "99 - Templates/Domain MOC.md" },
     { folder: "03 - Themes", template: "99 - Templates/Theme MOC.md" },
@@ -209,12 +210,40 @@ module.exports = class VaultNewFilePlugin extends Plugin {
     return rules.map((rule) => `${rule.folder} => ${rule.template}`).join("\n");
   }
 
+  repairTemplatePath(templatePath) {
+    const template = this.normalizeVaultPath(templatePath);
+    if (!template || this.hasFileExtension(template)) return template;
+
+    const markdownTemplate = `${template}.md`;
+    if (this.app.vault.getAbstractFileByPath(markdownTemplate) instanceof TFile) {
+      return markdownTemplate;
+    }
+
+    return template;
+  }
+
   normalizeTemplateRule(rule) {
     if (!rule) return null;
     const folder = this.normalizeVaultPath(rule.folder);
-    const template = this.normalizeVaultPath(rule.template);
+    const template = this.repairTemplatePath(rule.template);
     if (!folder || !template) return null;
     return { folder, template };
+  }
+
+  async saveTemplateRules(rules) {
+    const nextRules = [];
+    const seenFolders = new Set();
+
+    (Array.isArray(rules) ? rules : []).forEach((rule) => {
+      const normalized = this.normalizeTemplateRule(rule);
+      if (!normalized || seenFolders.has(normalized.folder)) return;
+      seenFolders.add(normalized.folder);
+      nextRules.push(normalized);
+    });
+
+    this.settings.templateRules = nextRules;
+    await this.saveSettings();
+    return nextRules.length;
   }
 
   parseTemplateRuleLine(line) {
@@ -465,7 +494,7 @@ module.exports = class VaultNewFilePlugin extends Plugin {
     if (!raw) return "";
 
     if (raw.startsWith("./") || raw.startsWith("../")) {
-      return this.joinPath(this.getCurrentFolder(), raw);
+      return this.normalizeVaultPath(`${this.getCurrentFolder()}/${raw}`);
     }
 
     if (raw.startsWith("/")) {
@@ -962,20 +991,78 @@ class VaultNewFileSettingTab extends PluginSettingTab {
           });
       });
 
-    new Setting(containerEl)
-      .setName("Template rules")
-      .setDesc("One rule per line: folder => template. The longest matching folder wins.")
-      .addTextArea((text) => {
-        text
-          .setPlaceholder("04 - Notes/Atomic => 99 - Templates/Atomic Note.md")
-          .setValue(this.plugin.formatTemplateRules())
-          .onChange(async (value) => {
-            this.plugin.settings.templateRules = this.plugin.parseTemplateRules(value);
-            await this.plugin.saveSettings();
-          });
-        text.inputEl.rows = 10;
-        text.inputEl.cols = 54;
+    const templateSection = containerEl.createDiv({ cls: "vnf-settings-section" });
+    templateSection.createEl("h3", { text: "Template rules" });
+    templateSection.createEl("p", {
+      cls: "setting-item-description",
+      text: "The longest matching folder wins. Edit rows, then press Save template rules.",
+    });
+
+    const templateRowsEl = templateSection.createDiv({ cls: "vnf-template-rule-list" });
+    let templateDraft = this.plugin.getTemplateRules().map((rule) => Object.assign({}, rule));
+
+    const renderTemplateRows = () => {
+      templateRowsEl.empty();
+
+      templateDraft.forEach((rule, index) => {
+        const row = templateRowsEl.createDiv({ cls: "vnf-template-rule-row" });
+        const folderInput = row.createEl("input", {
+          type: "text",
+          value: rule.folder,
+          placeholder: "Folder, e.g. 04 - Notes/Atomic",
+        });
+        folderInput.addClass("vnf-template-rule-folder");
+        const templateInput = row.createEl("input", {
+          type: "text",
+          value: rule.template,
+          placeholder: "Template, e.g. 99 - Templates/Atomic Note.md",
+        });
+        templateInput.addClass("vnf-template-rule-template");
+        const removeButton = row.createEl("button", { text: "Remove" });
+
+        folderInput.addEventListener("input", () => {
+          templateDraft[index].folder = folderInput.value;
+        });
+        templateInput.addEventListener("input", () => {
+          templateDraft[index].template = templateInput.value;
+        });
+        removeButton.addEventListener("click", () => {
+          templateDraft.splice(index, 1);
+          renderTemplateRows();
+        });
       });
+
+      if (!templateDraft.length) {
+        templateRowsEl.createDiv({
+          cls: "vnf-template-rule-empty",
+          text: "No template rules. Add a row or restore defaults.",
+        });
+      }
+    };
+
+    const templateActions = templateSection.createDiv({ cls: "vnf-template-rule-actions" });
+    const addRuleButton = templateActions.createEl("button", { text: "Add template rule" });
+    const saveRulesButton = templateActions.createEl("button", { text: "Save template rules" });
+    saveRulesButton.addClass("mod-cta");
+    const restoreRulesButton = templateActions.createEl("button", { text: "Restore defaults" });
+
+    addRuleButton.addEventListener("click", () => {
+      templateDraft.push({ folder: "", template: "" });
+      renderTemplateRows();
+    });
+    saveRulesButton.addEventListener("click", async () => {
+      const count = await this.plugin.saveTemplateRules(templateDraft);
+      new Notice(`Saved ${count} template rules`);
+      this.display();
+    });
+    restoreRulesButton.addEventListener("click", async () => {
+      templateDraft = DEFAULT_SETTINGS.templateRules.map((rule) => Object.assign({}, rule));
+      const count = await this.plugin.saveTemplateRules(templateDraft);
+      new Notice(`Restored ${count} default template rules`);
+      this.display();
+    });
+
+    renderTemplateRows();
 
     new Setting(containerEl)
       .setName("Open after create")

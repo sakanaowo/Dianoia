@@ -4,11 +4,11 @@ status: growing
 domains:
 themes:
 source: []
-created: "{{date}}"
-updated: "{{date}}"
+created: "2026-06-29"
+updated: "2026-06-29"
 aliases:
 ---
-# {{title}}
+# Formalism trong cơ học lượng tử
 
 ## Định nghĩa ngắn
 

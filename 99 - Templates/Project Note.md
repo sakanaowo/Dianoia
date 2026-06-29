@@ -3,8 +3,8 @@ type: project
 status: processing
 domains:
   - "[[Domain]]"
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # {{title}}

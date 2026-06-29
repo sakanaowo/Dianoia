@@ -1,2 +1,5 @@
 /.vscode
 .obsidian/workspace.json
+/.agents
+.ai-devkit.json
+/docs

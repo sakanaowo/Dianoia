@@ -4,7 +4,7 @@ status: raw
 source:
 author:
 published:
-fetched: {{date}}
+fetched: "{{date}}"
 language:
 domains:
   - "[[Domain]]"
@@ -12,8 +12,8 @@ themes:
   - "[[Theme]]"
 tags:
   - raw-source
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # {{title}}
@@ -70,4 +70,3 @@ Vì sao nguồn này đáng giữ trong vault?
 
 
 ## Raw highlights
-

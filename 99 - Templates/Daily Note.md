@@ -1,7 +1,7 @@
 ---
 type: daily
 status: processing
-created: {{date}}
+created: "{{date}}"
 ---
 
 # {{date}}

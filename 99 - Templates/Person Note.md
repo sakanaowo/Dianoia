@@ -5,8 +5,8 @@ domains:
   - "[[Domain]]"
 themes:
   - "[[Theme]]"
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # {{title}}
