@@ -39,3 +39,7 @@ Dùng template khi:
 - Không cần điền hết mọi mục trong template.
 - Nếu một template làm bạn ngại viết note, template đó đang quá phức tạp.
 - Template nên được sửa theo thói quen thực tế, không cần hoàn hảo từ đầu.
+
+## Study workflow
+
+Xem [[Study Templates]] cho bảng template học tập và [[Cách học một domain từ sách]] cho quy trình học domain từ sách.
