@@ -5,11 +5,11 @@ status: growing
 created: 2026-06-24
 updated: 2026-06-24
 domains:
-  - "[[Cơ học lượng tử]]"
+  - "[[Quantum Mechanics]]"
 tags:
   - review
   - error-log
-  - co-hoc-luong-tu
+  - quantum-mechanics
 ---
 
 # Cơ học lượng tử - Nhật ký lỗi

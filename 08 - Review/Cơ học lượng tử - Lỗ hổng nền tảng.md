@@ -5,7 +5,7 @@ status: growing
 created: 2026-06-24
 updated: 2026-06-24
 domains:
-  - "[[Cơ học lượng tử]]"
+  - "[[Quantum Mechanics]]"
 tags:
   - review
   - prerequisites
@@ -20,17 +20,17 @@ Note này ngăn mình giả vờ hiểu Weinberg khi còn thiếu nền bắt bu
 
 ## Lỗ hổng
 
-| Lỗ hổng | Cần cho phần nào? | Mức độ | Nguồn sửa | Trạng thái |
-|---|---|---|---|---|
-| [[Eigenvalue và eigenvector]] | phép đo, observable, energy eigenstate | cao | nguồn đại số tuyến tính | raw |
-| [[Hermitian operator]] | observable, eigenvalue thực | cao | đại số tuyến tính / nhập môn QM | raw |
-| [[Unitary operator]] | đối xứng, tiến hóa thời gian | cao | đại số tuyến tính / nhập môn QM | raw |
-| [[Fourier transform]] | wave packet, biểu diễn momentum | vừa | nguồn phương pháp toán | raw |
-| [[Phương trình vi phân thường]] | bài Schrödinger equation | cao | nguồn phương pháp toán | raw |
-| [[Điều kiện biên]] | hạt trong hộp, bound states | cao | nguồn phương trình vi phân | raw |
-| [[Hamiltonian]] | động lực học và energy operator | cao | nguồn cơ học cổ điển | raw |
-| [[Moment động lượng]] | central potential và spin | cao | cơ học cổ điển + QM | raw |
-| [[Bức xạ điện từ]] | photon, transition rates | vừa | nguồn điện từ học | raw |
+| Lỗ hổng                         | Cần cho phần nào?                      | Mức độ | Nguồn sửa                       |
+| ------------------------------- | -------------------------------------- | ------ | ------------------------------- |
+| [[Eigenvalue và eigenvector]]   | phép đo, observable, energy eigenstate | cao    | nguồn đại số tuyến tính         |
+| [[Hermitian operator]]          | observable, eigenvalue thực            | cao    | đại số tuyến tính / nhập môn QM |
+| [[Unitary operator]]            | đối xứng, tiến hóa thời gian           | cao    | đại số tuyến tính / nhập môn QM |
+| [[Fourier transform]]           | wave packet, biểu diễn momentum        | vừa    | nguồn phương pháp toán          |
+| [[Phương trình vi phân thường]] | bài Schrödinger equation               | cao    | nguồn phương pháp toán          |
+| [[Điều kiện biên]]              | hạt trong hộp, bound states            | cao    | nguồn phương trình vi phân      |
+| [[Hamiltonian]]                 | động lực học và energy operator        | cao    | nguồn cơ học cổ điển            |
+| [[Moment động lượng]]           | central potential và spin              | cao    | cơ học cổ điển + QM             |
+| [[Bức xạ điện từ]]              | photon, transition rates               | vừa    | nguồn điện từ học               |
 
 ## Kế hoạch sửa nền
 

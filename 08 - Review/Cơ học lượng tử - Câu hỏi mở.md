@@ -19,10 +19,10 @@ tags:
 ### Q1. Xác suất trong cơ học lượng tử đến từ đâu?
 
 - Vì sao quan trọng: Đây là căng thẳng lõi giữa tiến hóa tất định của wave function và kết quả đo xác suất.
-- Phỏng đoán hiện tại: Born rule là một postulate hoặc cây cầu diễn giải, không phải điều hiển nhiên từ xác suất cổ điển.
+- Phỏng đoán hiện tại: Born rule là một giả thuyết hoặc cây cầu diễn giải, không phải điều hiển nhiên từ xác suất cổ điển.
 - Điều gì sẽ trả lời được câu hỏi này: Đọc kỹ Weinberg Ch. 1.5 và Ch. 3.7, rồi so sánh các diễn giải.
 - Note liên quan:
-  - [[Quy tắc Born]]
+  - [[Born Rule|Quy tắc Born]]
   - [[Phép đo trong cơ học lượng tử]]
   - [[Tiến hóa unitary]]
 - Nguồn cần kiểm tra:
