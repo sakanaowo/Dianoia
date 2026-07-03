@@ -101,29 +101,112 @@ Trong cơ học lượng tử, lịch sử cũng có nhiều formalism:
 
 ## Cơ chế / cách vận hành
 
-Giải thích concept này hoạt động như thế nào.
+Một formalism thường có các thành phần sau:
 
-- Thành phần chính là gì?
-- Quan hệ nhân quả / quan hệ cấu trúc là gì?
-- Có quá trình, chuỗi bước, hay mô hình nào cần nhớ không?
+### 1. Đối tượng cơ bản
+
+Formalism phải nói rõ nó thao tác trên những thứ gì.
+
+Ví dụ:
+
+- Trong cơ học Newton: vị trí, vận tốc, lực, khối lượng.
+- Trong cơ học Hamilton: tọa độ `q`, động lượng `p`, Hamiltonian `H`.
+- Trong cơ học lượng tử: state vector, Hilbert space, operator, observable.
+
+### 2. Ký hiệu
+
+Formalism cần ký hiệu để viết lý thuyết ngắn gọn và chính xác.
+
+Ví dụ trong cơ học lượng tử:
+
+```matlab
+|ψ⟩
+⟨ψ|ψ⟩
+A|a⟩ = a|a⟩
+P(a) = |⟨a|ψ⟩|²
+```
+
+Các ký hiệu này không chỉ để “viết cho đẹp”. Chúng quyết định cách ta thao tác, tính toán và suy luận.
+
+### 3. Quy tắc biến đổi
+
+Formalism phải có luật cho phép biến đổi từ biểu thức này sang biểu thức khác.
+
+Ví dụ:
+
+- quy tắc đạo hàm
+- quy tắc nhân ma trận
+- quy tắc lấy inner product
+- quy tắc giao hoán tử
+- quy tắc tiến hóa theo thời gian
+
+### 4. Liên hệ với quan sát
+
+Một formalism vật lý không chỉ là toán học thuần túy. Nó cần chỉ ra cách nối với thực nghiệm.
+
+Ví dụ trong cơ học lượng tử:
+
+```
+P(a_n) = |⟨a_n|ψ⟩|²
+```
+
+Công thức này nối state `|ψ⟩` với xác suất đo được kết quả `a_n`.
+
+### 5. Miền áp dụng
+
+Formalism nào cũng có phạm vi.
+
+Ví dụ:
+
+- Cơ học Newton tốt cho vật vĩ mô tốc độ thấp.
+- Cơ học lượng tử cần cho hệ vi mô.
+- Cơ học tương đối cần khi tốc độ gần tốc độ ánh sáng.
+- Quantum field theory cần khi số hạt có thể thay đổi và hiệu ứng tương đối tính quan trọng.
 
 ## Thành phần / đặc điểm chính
 
-- 
-- 
-- 
+- **Ký hiệu**: hệ biểu tượng dùng để viết lý thuyết.
+- **Định nghĩa**: xác định rõ mỗi ký hiệu nghĩa là gì.
+- **Đối tượng toán học**: vector, operator, ma trận, hàm, trường, tensor, v.v.
+- **Tiên đề / postulate**: các nguyên lý nền được chấp nhận trong hệ.
+- **Quy tắc suy luận**: cách biến đổi biểu thức hợp lệ.
+- **Quy tắc dự đoán**: cách lấy kết quả có thể kiểm chứng.
+- **Miền áp dụng**: điều kiện trong đó formalism hoạt động tốt.
+- **Diễn giải**: phần giải thích formalism “nói gì về thực tại”, nhưng không đồng nhất với formalism.
 
 ## Công thức / đại lượng / đơn vị liên quan
 
-Nếu concept có phần định lượng, ghi rõ:
+Không phải concept định lượng chính; trọng tâm là phân biệt ý nghĩa.
 
-- Đại lượng:
-- Đơn vị:
-- Công thức gần đúng:
-- Điều kiện áp dụng:
+Tuy vậy, formalism thường chứa công thức.
 
-Nếu không có công thức, ghi: “Không phải concept định lượng chính; trọng tâm là phân biệt ý nghĩa.”
+Ví dụ trong cơ học cổ điển:
 
+```
+F = ma
+```
+
+Ví dụ trong Lagrangian formalism:
+
+```
+d/dt(∂L/∂qdot) - ∂L/∂q = 0
+```
+
+Ví dụ trong Hamiltonian formalism:
+
+```
+qdot = ∂H/∂p
+pdot = -∂H/∂q
+```
+
+Ví dụ trong quantum formalism:
+
+```
+iℏ d|ψ⟩/dt = H|ψ⟩
+P(a_n) = |⟨a_n|ψ⟩|²
+```
+
+Điểm cần nhớ: formalism không phải một công thức đơn lẻ, mà là cả hệ thống đối tượng, ký hiệu và luật vận hành phía sau các công thức đó.
 ## Cách quan sát / đo lường / nhận biết
 
 - Làm sao biết concept này tồn tại?

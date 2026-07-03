@@ -4,11 +4,11 @@ status: growing
 domains:
 themes:
 source: []
-created: "{{date}}"
-updated: "{{date}}"
+created: "2026-07-03"
+updated: "2026-07-03"
 aliases:
 ---
-# {{title}}
+# Eudaimonia
 
 ## Định nghĩa ngắn
 
