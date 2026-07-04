@@ -2,56 +2,67 @@
 type: concept
 status: growing
 domains:
+  - "[[Philosophy]]"
+  - "[[Psychology]]"
+  - "[[Education]]"
 themes:
+  - "[[Ethics and Morality]]"
+  - "[[Meaning of Life]]"
 source: []
-created: "2026-07-03"
-updated: "2026-07-03"
+created: 2026-07-03
+updated: 2026-07-03
 aliases:
+  - Eudaemonia
+  - Eudemonia
+  - Human Flourishing
 ---
 # Eudaimonia
 
 ## Định nghĩa ngắn
 
-Một câu trả lời trực tiếp: concept này là gì?
+Eudaimonia là khái niệm triết học Hy Lạp cổ đại chỉ trạng thái hạnh phúc đích thực, sự thịnh vượng về mặt tinh thần và một cuộc đời thăng hoa, viên mãn nhờ sống hiện thực hóa tối đa tiềm năng tốt đẹp của bản thân.
 
 ## Nói đơn giản
 
-Giải thích như cho người mới bắt đầu, không dùng quá nhiều thuật ngữ.
+Eudaimonia không phải là cảm giác vui sướng nhất thời khi bạn ăn một món ngon hay trúng số. Nó giống như việc một cái cây được trồng trên đất tốt, được chăm bón đúng cách và nở hoa rực rỡ nhất có thể. Đối với con người, Eudaimonia là cảm giác mãn nguyện sâu sắc khi bạn sống một cuộc đời có ý nghĩa, rèn luyện nhân cách tốt và phát huy hết năng lực của mình.
 
 ## Câu hỏi mà concept này trả lời
 
-- Concept này được tạo ra để giải quyết / mô tả / phân biệt vấn đề gì?
-- Nếu không có concept này, ta sẽ hiểu sai điều gì?
+- Nó giải quyết câu hỏi tối hậu của nhân sinh: _"Mục đích cuối cùng của cuộc đời con người là gì?"_ và _"Thế nào là một cuộc đời đáng sống?"_.
+- Nếu không có concept này, ta sẽ hiểu sai điều gì? 
+	- Chúng ta sẽ đánh đồng "hạnh phúc" với "khoái lạc" (sự thỏa mãn cảm xúc ngắn hạn), từ đó liên tục đuổi theo những ham muốn vật chất vô tận mà vẫn cảm thấy trống rỗng.
 
 ## Vai trò trong domain
 
-Concept này nằm ở đâu trong [[Domain]]?
+Concept này nằm ở đỉnh cao nhất của **Triết học đạo đức học cổ đại (Ancient Ethics)** và **Tâm lý học tích cực hiện đại (Positive Psychology)**.
 
-- Nó là concept cốt lõi, concept nền tảng, công cụ đo lường, mô hình, hiện tượng, hay tranh luận?
-- Nó nối với các concept nào ở tầng trên / tầng dưới?
+- **Vị trí:** Nó là mục đích tối hậu (Telos) - cái đích cuối cùng mà mọi hành động khác của con người đều hướng về để phục vụ nó.
+- **Mối nối:**
+    - _Tầng trên:_ Không có (vì chính nó là cái đích cao nhất).
+    - _Tầng dưới:_ Kết nối xuống các khái niệm **[[Virtue]] (Đức hạnh)**, **[[Phronesis]] (Trí tuệ thực tiễn)**, và **[[Ikigai]] (Lý do hiện sinh)**.
 
 ## Bối cảnh lịch sử / nguồn gốc
 
--  Etymology
-	- Gốc từ và nghĩa gốc 
-	- Bước ngoặt chuyển nghĩa 
-	- Insight gốc từ 
+### Etymology
+- **Từ gốc:** từ Hy Lạp cổ: *Eu* (tốt lành, thuận lợi) và *Daimon* (Thần linh bản mệnh, linh hồn, số phận)
+- Nghĩa gốc mang tính tâm linh/may mắn là "được thần linh phù hộ có số mệnh tốt". Socrates, Plato và Aristotle đã chueyern dịch nó sang nghĩa thế tục và triết học: "Trạng thái tâm hồn được nuôi dưỡng tốt" thông qua nỗ lực tự thân
+- **Insight:** Hạnh phúc đích thực không đén từ thế giới vật chất bên ngoài, mà là kết quả của việc sống hòa hợp với bên trong - sống đúng bản chất chân thật và tiềm năng của chính mình 
+### Bối cảnh và phát triển
 
-- Concept này xuất hiện từ vấn đề nào?
-- Ai / trường phái / nghiên cứu nào làm nó quan trọng?
-- Có thay đổi nghĩa qua thời gian không?
+- **Nguồn gốc:** Khi các triết gia Hy Lạp tìm kiếm một thước đo khách quan cho một cuộc đời thành công, đọc lập với sự may rủi của số phận
+- **Trường phái quan trọng:** Aristotle là người định nghĩa hoàn chỉnh nhất trong tác phẩm *Nicomachean Ethics*, khẳng định Eudaimonia là hoạt động của tâm hồn phù hợp với đức hạnh, lý trí suốt cả cuộc đời
+- **Thay đổi:** Đến thế kỉ 21, tâm lí học hiện đại (Seligman, Ryan & Deci) hồi sinh khái niệm này để phân biệt giữa *"Hạnh phúc eudaimonic"* và *"Hạnh phúc hedonic"* (khoái lạc cảm xúc)
 
 ## Cơ chế / cách vận hành
 
-Giải thích concept này hoạt động như thế nào.
-
-- Thành phần chính là gì?
-- Quan hệ nhân quả / quan hệ cấu trúc là gì?
-- Có quá trình, chuỗi bước, hay mô hình nào cần nhớ không?
+Phát triển như một hệ sinh thái tự thân bền vững, một hành trình, **không** phải đích đến.
+- Thấu hiểu bản thân -> rèn luyện đức hạnh -> lý trí dẫn đường ([[Phronesis]]) -> hành động cống hiến cho cộng đồng
+- **Quan hệ cấu trúc:** Đức hạnh là điều kiện cần và đủ để tạo ra Eudaimonia. Không thể có Eudaimonia mà thiếu đi [[Virtue]] 
+- **Mô hình chức năng con người (Ergon) của Aristotle:** Một vật đạt trạng thái xuất sắc nhất khi nó thực hiện tốt nhất chức năng đặc trưng của nó. Chức năng đặc trưng của con người là **tư duy lý trí**. Do đó, sống theo lý trí và đạo đức là cách duy nhất dẫn tới Eudaimonia
 
 ## Thành phần / đặc điểm chính
 
-- 
+- **Tính khách quan (Objectivity):** Một người có thể nghĩ là mình đang hạnh phúc khi nghiện ngập  nhưng bản chất là đang tự hủy hoại chính mình, tự hủy hoại tiềm năng bản thân -> không thể coi đó là hạnh phúc đích thực 
 - 
 - 
 
