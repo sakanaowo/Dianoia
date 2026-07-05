@@ -53,7 +53,7 @@ Không phải dataset cụ thể; dataset chỉ là mẫu được sinh ra hoặ
 
 ## Phân biệt với
 
-- [[Hàm khối xác suất]]
+- [[Hàm khối lượng xác suất]]
 - [[Hàm mật độ xác suất]]
 - [[Hàm phân phối tích lũy]]
 

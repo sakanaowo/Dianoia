@@ -41,7 +41,7 @@ Xác suất là ngôn ngữ để mô hình hóa bất định. Thống kê dùn
 
 ### Hàm xác suất
 
-- [[Hàm khối xác suất]]
+- [[Hàm khối lượng xác suất]]
 - [[Hàm mật độ xác suất]]
 - [[Hàm phân phối tích lũy]]
 - [[Xác suất đồng thời]]

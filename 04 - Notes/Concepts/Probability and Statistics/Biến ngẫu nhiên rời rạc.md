@@ -52,7 +52,7 @@ Không phải biến nhận mọi giá trị trong một khoảng liên tục.
 ## Phân biệt với
 
 - [[Biến ngẫu nhiên liên tục]]
-- [[Hàm khối xác suất]]
+- [[Hàm khối lượng xác suất]]
 - [[Phân phối categorical]]
 
 ## Tranh luận / điểm chưa chắc

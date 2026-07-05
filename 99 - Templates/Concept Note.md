@@ -32,14 +32,14 @@ Concept này nằm ở đâu trong [[Domain]]?
 
 ## Bối cảnh lịch sử / nguồn gốc
 
--  Etymology
-	- Gốc từ và nghĩa gốc 
-	- Bước ngoặt chuyển nghĩa 
-	- Insight gốc từ 
+### Etymology
+- **Gốc từ và nghĩa gốc** 
+- **Bước ngoặt chuyển nghĩa** 
+- **Insight gốc từ** 
 
-- Concept này xuất hiện từ vấn đề nào?
-- Ai / trường phái / nghiên cứu nào làm nó quan trọng?
-- Có thay đổi nghĩa qua thời gian không?
+### Concept này xuất hiện từ vấn đề nào?
+### Ai / trường phái / nghiên cứu nào làm nó quan trọng?
+### Có thay đổi nghĩa qua thời gian không?
 
 ## Cơ chế / cách vận hành
 

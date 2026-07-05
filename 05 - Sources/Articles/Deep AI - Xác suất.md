@@ -60,7 +60,7 @@ Bài viết giới thiệu các khái niệm xác suất nền tảng thường 
 - [[Hệ số tương quan]]
 - [[Quy luật số lớn]]
 - [[Bất đẳng thức Markov]]
-- [[Hàm khối xác suất]]
+- [[Hàm khối lượng xác suất]]
 - [[Hàm mật độ xác suất]]
 - [[Hàm phân phối tích lũy]]
 - [[Xác suất đồng thời]]

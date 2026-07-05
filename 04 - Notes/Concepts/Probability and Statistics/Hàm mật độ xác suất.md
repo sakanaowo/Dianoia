@@ -55,7 +55,7 @@ Giá trị PDF tại $x$ không phải $P(X=x)$.
 
 ## Phân biệt với
 
-- [[Hàm khối xác suất]]
+- [[Hàm khối lượng xác suất]]
 - [[Hàm phân phối tích lũy]]
 - [[Biến ngẫu nhiên liên tục]]
 
