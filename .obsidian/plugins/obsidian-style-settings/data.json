@@ -42,9 +42,12 @@
   "baseline-style@@callouts-style": "callouts-tactile",
   "baseline-style@@blockquote-background-color@@light": "#4A765B",
   "baseline-style@@blockquote-border-color@@light": "#CAC81F",
-  "baseline-style@@background-primary-alt@@light": "#71804E",
   "baseline-style@@dynamic-type-off": true,
   "baseline-style@@tab-top-right-style": "tab-top-right-icon",
   "baseline-style@@nav-action": "nav-action-dot",
-  "baseline-style@@hide-vault-switcher-off": false
+  "baseline-style@@hide-vault-switcher-off": false,
+  "baseline-style@@hide-baseline-info": true,
+  "baseline-style@@accented-interface": true,
+  "baseline-style@@color-scheme-accent": false,
+  "baseline-style@@plugins-grid-off": false
 }
