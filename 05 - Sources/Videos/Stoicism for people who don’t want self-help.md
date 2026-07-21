@@ -30,9 +30,9 @@ tags:
 - Một đời sống tốt theo Stoicism là đời sống dùng [[lý trí]] để giải quyết vấn đề và sống theo hướng hợp tác, thân xã hội.
 - Insight trung tâm của [[Epictetus]] là phân biệt điều “phụ thuộc vào ta” và điều “không phụ thuộc vào ta”.
 - Tập trung vào thứ không nằm trong quyền tác động của mình làm hao phí năng lượng thể chất và cảm xúc.
-- [[Role ethics]] nhấn mạnh rằng một người luôn sống trong nhiều vai trò cùng lúc: con, cha/mẹ, bạn, công dân, đồng nghiệp, người học, v.v.
+- [[Role Ethics]] nhấn mạnh rằng một người luôn sống trong nhiều vai trò cùng lúc: con, cha/mẹ, bạn, công dân, đồng nghiệp, người học, v.v.
 - [[Eudaimonia]] trong Stoicism là một đời đáng sống, không bị phí hoài; theo Pigliucci, đời đó là sống thông minh, hợp lý và thân xã hội.
-- Stoicism có tính [[cosmopolitanism]]: mọi con người đều thuộc về một “thành phố nhân loại” chung và đáng được đối xử như anh chị em.
+- Stoicism có tính [[Cosmopolitanism]]: mọi con người đều thuộc về một “thành phố nhân loại” chung và đáng được đối xử như anh chị em.
 - Ba kỷ luật của Epictetus là [[discipline of desire]], [[discipline of action]], và [[discipline of assent]].
 - Ba lĩnh vực học của Stoic là physics, ethics, logic; nhưng “physics” ở đây gần với hiểu biết về tự nhiên, “ethics” là nghệ thuật sống, và “logic” là tư duy tốt.
 - Stoic techniques có liên hệ mạnh với [[cognitive behavioral therapy]] và cognitive science, nhưng Stoicism không đồng nhất với trị liệu tâm lý.
@@ -91,7 +91,7 @@ tags:
 - [[Dichotomy of control]]
 - [[Điều phụ thuộc vào ta]]
 - [[Equanimity]]
-- [[Role ethics]]
+- [[Role Ethics]]
 - [[Eudaimonia]]
 - [[Cosmopolitanism]]
 - [[Discipline of desire]]

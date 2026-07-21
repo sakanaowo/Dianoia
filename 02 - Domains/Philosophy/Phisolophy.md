@@ -91,7 +91,7 @@ Những khái niệm hỗ trợ để hiểu sâu hơn.
 ## People / Schools / Traditions
 
 - [[Socrates - Plato - Aristotle]]
-- [[Immanuel Kant và Triết học Khắc kỷ]]
+- [[Immanuel Kant]] và [[Triết học Khắc kỷ]]
 - [[Chủ nghĩa Hiện sinh - Existentialism]]
 - [[Triết học Cấu trúc và Hậu hiện đại]]
 
