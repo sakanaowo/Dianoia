@@ -65,7 +65,7 @@ Những khái niệm nếu không hiểu thì chưa thật sự bước vào dom
 
 Những khái niệm hỗ trợ để hiểu sâu hơn.
 
-- [[Ngụy biện - Fallacy]]
+- [[Fallacy|Ngụy biện - Fallacy]]
 - [[Tiên nghiệm và Hậu nghiệm - A priori and A posteriori]]
 - [[Nhân quả - Causality]]
 - [[Chân lý - Truth]]

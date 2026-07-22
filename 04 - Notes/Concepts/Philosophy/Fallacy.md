@@ -4,9 +4,11 @@ status: growing
 domains:
 themes:
 source: []
-created: "2026-07-22"
-updated: "2026-07-22"
+created: 2026-07-22
+updated: 2026-07-22
 aliases:
+  - Ngụy biện - Fallacy
+  - Ngụy biện
 ---
 # Fallacy
 
