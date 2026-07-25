@@ -18,9 +18,9 @@ Triết học là một lĩnh vực nghiên cứu mang tính hệ thống về n
 ## Mục tiêu của domain này trong vault
 
 - Mình muốn hiểu điều gì từ domain này?
-	- Hiểu được cách các tư tưởng lớn định hình thế giới quan, cách thiết lập tư duy phản biện sắc bén và tìm kiếm câu trả lời cho các vấn đề nhân sinh cốt lõi.
+  - Hiểu được cách các tư tưởng lớn định hình thế giới quan, cách thiết lập tư duy phản biện sắc bén và tìm kiếm câu trả lời cho các vấn đề nhân sinh cốt lõi.
 - Domain này phục vụ học tập, nghiên cứu, project hay viết lách nào?
-	- Phục vụ làm nền tảng tư duy cho mọi bài viết phân tích chuyên sâu, các dự án nghiên cứu về khoa học xã hội và định hình hệ giá trị sống cá nhân.
+  - Phục vụ làm nền tảng tư duy cho mọi bài viết phân tích chuyên sâu, các dự án nghiên cứu về khoa học xã hội và định hình hệ giá trị sống cá nhân.
 
 ## Phạm vi
 
@@ -37,6 +37,7 @@ Triết học là một lĩnh vực nghiên cứu mang tính hệ thống về n
 - [[Thần học và Tôn giáo]] - Triết học dùng lý trí và lập luận phản biện, trong khi thần học/tôn giáo dựa trên đức tin và kinh thánh.
 - [[Tâm lý học chuyên sâu]] - Triết học nghiên cứu bản chất tư duy và ý thức dưới góc độ khái niệm, không đi vào thực nghiệm hành vi hay cơ chế não bộ của khoa học kiểm chứng.
 - [[Ý thức hệ chính trị thuần túy]] - Triết học chính trị tìm kiếm bản chất của công lý, không phải là công cụ tuyên truyền hay vận động chính trị thực dụng.
+
 ## Bản đồ tổng quan
 
 ```text
@@ -65,7 +66,7 @@ Những khái niệm nếu không hiểu thì chưa thật sự bước vào dom
 
 Những khái niệm hỗ trợ để hiểu sâu hơn.
 
-- Ngụy biện - [[Fallacy]]
+- Fallacy|Ngụy biện - [[Fallacy]]
 - [[Tiên nghiệm và Hậu nghiệm - A priori and A posteriori]]
 - [[Nhân quả - Causality]]
 - [[Chân lý - Truth]]
@@ -109,9 +110,9 @@ Những khái niệm hỗ trợ để hiểu sâu hơn.
 
 ## Learning path
 
-1. **Giai đoạn 1: Tiếp cận Lịch sử Triết học** - Đọc các cuốn sách tổng quan để nắm dòng chảy tư tưởng từ Cổ đại đến Hiện đại. 
-2.  **Giai đoạn 2: Rèn luyện Công cụ Logic** - Học về các phương pháp lập luận, phân tích khái niệm và nhận diện các lỗi ngụy biện.
-3.  **Giai đoạn 3: Đi sâu vào Chuyên ngành** - Chọn một nhánh cụ thể (ví dụ: Đạo đức học hoặc Triết học Hiện sinh) để đọc trực tiếp các văn bản gốc của các triết gia.
+1. **Giai đoạn 1: Tiếp cận Lịch sử Triết học** - Đọc các cuốn sách tổng quan để nắm dòng chảy tư tưởng từ Cổ đại đến Hiện đại.
+2. **Giai đoạn 2: Rèn luyện Công cụ Logic** - Học về các phương pháp lập luận, phân tích khái niệm và nhận diện các lỗi ngụy biện.
+3. **Giai đoạn 3: Đi sâu vào Chuyên ngành** - Chọn một nhánh cụ thể (ví dụ: Đạo đức học hoặc Triết học Hiện sinh) để đọc trực tiếp các văn bản gốc của các triết gia.
 
 ## Open questions
 
@@ -120,5 +121,5 @@ Những khái niệm hỗ trợ để hiểu sâu hơn.
 
 ## Gaps / To process
 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
