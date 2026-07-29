@@ -47,7 +47,8 @@
   "baseline-style@@nav-action": "nav-action-dot",
   "baseline-style@@hide-vault-switcher-off": false,
   "baseline-style@@hide-baseline-info": true,
-  "baseline-style@@accented-interface": true,
-  "baseline-style@@color-scheme-accent": false,
-  "baseline-style@@plugins-grid-off": false
+  "baseline-style@@accented-interface": false,
+  "baseline-style@@color-scheme-accent": true,
+  "baseline-style@@plugins-grid-off": false,
+  "baseline-style@@background-contrast-light": "contrast-light-vivid"
 }

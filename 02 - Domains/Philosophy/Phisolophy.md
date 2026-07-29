@@ -66,8 +66,8 @@ Những khái niệm nếu không hiểu thì chưa thật sự bước vào dom
 
 Những khái niệm hỗ trợ để hiểu sâu hơn.
 
-- Fallacy|Ngụy biện - [[Fallacy]]
-- [[Tiên nghiệm và Hậu nghiệm - A priori and A posteriori]]
+- [[Fallacy|Ngụy biện]] - [[Fallacy]]
+- [[Tiên nghiệm]] và [[Hậu nghiệm]] - [[Tiên Nghiệm|a priori]] and [[Hậu Nghiệm|a posteriori]]
 - [[Nhân quả - Causality]]
 - [[Chân lý - Truth]]
 
@@ -93,7 +93,7 @@ Những khái niệm hỗ trợ để hiểu sâu hơn.
 
 - [[Socrates - Plato - Aristotle]]
 - [[Immanuel Kant]] và [[Triết học Khắc kỷ]]
-- [[Chủ nghĩa Hiện sinh - Existentialism]]
+- [[Chủ nghĩa hiện sinh - Existentialism]]
 - [[Triết học Cấu trúc và Hậu hiện đại]]
 
 ## Sources nhập môn
