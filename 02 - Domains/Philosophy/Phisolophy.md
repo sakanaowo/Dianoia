@@ -68,8 +68,8 @@ Những khái niệm hỗ trợ để hiểu sâu hơn.
 
 - [[Fallacy|Ngụy biện]] - [[Fallacy]]
 - [[Tiên nghiệm]] và [[Hậu nghiệm]] - [[Tiên Nghiệm|a priori]] and [[Hậu Nghiệm|a posteriori]]
-- [[Nhân quả - Causality]]
-- [[Chân lý - Truth]]
+- [[Nhân quả ]]- [[Nhân quả|Causality]]
+- [[Chân lý]] - [[Truth]]
 
 ## Câu hỏi trung tâm
 
