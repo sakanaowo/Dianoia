@@ -81,6 +81,6 @@ Hiện tại có thể hiểu ngắn gọn: **Bất đẳng thức Markov** là 
 
 ## Cần kiểm chứng / cập nhật
 
-- [ ] Đối chiếu với một giáo trình xác suất thống kê chuẩn.
-- [ ] Làm ít nhất 1 bài tập nhỏ dùng concept này.
+- [x] Đối chiếu với một giáo trình xác suất thống kê chuẩn. ✅ 2026-08-04
+- [x] Làm ít nhất 1 bài tập nhỏ dùng concept này. ✅ 2026-08-04
 - [ ] Liên kết thêm với note ML khi gặp lại concept trong mô hình thật.
