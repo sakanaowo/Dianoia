@@ -5,7 +5,7 @@ status: growing
 created: 2026-06-24
 updated: 2026-06-24
 domains:
-  - "[[Quantum Mechanics]]"
+  - "[[Quantum Mechanics - README]]"
 tags:
   - review
   - prerequisites
