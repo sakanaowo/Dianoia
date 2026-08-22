@@ -42,7 +42,9 @@ related:
 - Reliability: medium-high; tốt hơn Wikipedia để hiểu lập luận tổng quan, nhưng vẫn nên kiểm tra thêm bằng nguồn gốc như Emerson, Thoreau hoặc tuyển tập học thuật.
 
 ## Main takeaway
+
 Chủ nghĩa siêu việt Mỹ là một phong trào đặt thực hành sống lên trước lý thuyết: nó tìm cách tạm rời khỏi thế giới sự kiện, giới hạn và thường thức để đi vào thế giới của ý niệm, tưởng tượng, đạo đức và cái đẹp nhằm làm đời sống tinh thần trở nên tự do hơn.
+
 ## Key claims
 
 - Chủ nghĩa siêu việt Mỹ không bắt đầu như một hệ thống triết học chặt chẽ, mà bắt đầu từ các thực hành sống rồi mới cố gắng tìm nền tảng lý thuyết cho chúng.

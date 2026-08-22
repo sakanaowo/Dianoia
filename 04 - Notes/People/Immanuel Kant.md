@@ -2,16 +2,17 @@
 type: person
 status: growing
 domains:
-  - "[[Domain]]"
+  - "[[Phisolophy|Philosophy]]"
 themes:
-  - "[[Theme]]"
+  - "[[Human Nature]]"
+  - "[[Power and Society]]"
 created: 2026-06-19
 updated: 2026-06-19
 aliases:
   - Kant
 ---
 
-# Immanuel Kant 1
+# Immanuel Kant 
 
 ## Người này là ai?
 

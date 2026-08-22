@@ -20,6 +20,8 @@ aliases:
 
 > [!summary]  
 > **Tiên nghiệm** sự biện minh mà cơ sở nhận thức của nó không phụ thuộc thiết yếu vào quan sát hay kinh nghiệm cảm giác cụ thể.
+> Hoặc:
+> Là tri thức hoặc phán đoán có được trước kinh nghiệm, độc lập với mọi thực tế giác quan
 
 ## Định nghĩa ngắn
 
@@ -27,7 +29,7 @@ aliases:
 
 Nó thường được đối lập với **[[Hậu nghiệm]]** (_a posteriori_): tri thức cần quan sát, thí nghiệm, ký ức, nội quan hoặc lời chứng về thế giới để được biện minh. Nói đơn giản
 
-Một điều được biết **tiên nghiệm** khi ta không cần đi kiểm tra thế giới để có lý do tin rằng nó đúng.
+>Một điều được biết **tiên nghiệm** khi ta không cần đi kiểm tra thế giới để có lý do tin rằng nó đúng.
 
 Ví dụ:
 
