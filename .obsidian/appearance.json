@@ -1,7 +1,13 @@
 {
-  "cssTheme": "Baseline",
+  "cssTheme": "Cupertino",
   "accentColor": "#5da3b1",
-  "nativeMenus": false,
+  "nativeMenus": true,
   "showRibbon": false,
-  "showViewHeader": true
+  "showViewHeader": true,
+  "interfaceFontFamily": "SF Pro Display",
+  "textFontFamily": "SF Pro Display",
+  "monospaceFontFamily": "SpaceMono Nerd Font Propo,SpaceMono Nerd Font Mono",
+  "enabledCssSnippets": [
+    "bg"
+  ]
 }

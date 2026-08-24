@@ -1,0 +1,19 @@
+/* Applies the background image across the workspace layout */
+.horizontal-main-container {
+    background-image: url('/home/sakana/Pictures/63dbd3d032f5.jpg')
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Translucent overlay for Dark Mode to make text readable */
+.theme-dark .workspace-leaf-content {
+    --background-primary: rgba(30, 30, 30, 0.75);
+    background-color: transparent;
+}
+
+/* Translucent overlay for Light Mode */
+.theme-light .workspace-leaf-content {
+    --background-primary: rgba(255, 255, 255, 0.75);
+    background-color: transparent;
+}
