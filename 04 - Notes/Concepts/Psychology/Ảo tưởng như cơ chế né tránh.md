@@ -32,5 +32,4 @@ Vấn đề không nằm ở tưởng tượng, mà nằm ở việc tưởng t�
 ## Atomic notes liên quan
 
 - [[Ảo tưởng giúp con người tạm thoát khỏi thực tại nhưng có thể giữ họ mắc kẹt trong ảo tưởng]]
-- 
 ## Nguồn liên quan
