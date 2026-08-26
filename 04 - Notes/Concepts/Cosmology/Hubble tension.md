@@ -16,7 +16,7 @@ aliases:
   - Hubble constant tension
   - H0 tension
 ---
-![[Pasted image 20260622152849.png]]
+![[Cosmic Web.png]]
 # Hubble tension
 
 ## Định nghĩa ngắn

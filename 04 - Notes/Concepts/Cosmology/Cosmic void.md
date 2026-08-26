@@ -15,7 +15,7 @@ aliases:
   - Void vũ trụ
   - Khoảng trống vũ trụ
 ---
-![[Pasted image 20260622153002.png]]
+![[local group.png]]
 # Cosmic void
 
 ## Định nghĩa ngắn
