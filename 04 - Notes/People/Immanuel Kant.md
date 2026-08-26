@@ -2,7 +2,7 @@
 type: person
 status: growing
 domains:
-  - "[[Phisolophy|Philosophy]]"
+  - "[[Philosophy|Philosophy]]"
 themes:
   - "[[Human Nature]]"
   - "[[Power and Society]]"

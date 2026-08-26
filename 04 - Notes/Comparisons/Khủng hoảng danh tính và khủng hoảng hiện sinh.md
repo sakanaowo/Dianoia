@@ -3,7 +3,7 @@ type: comparison
 status: growing
 domains:
   - "[[Psychology]]"
-  - "[[Phisolophy|Philosophy]]"
+  - "[[Philosophy|Philosophy]]"
 themes:
   - "[[Human Nature]]"
   - "[[Meaning of Life]]"
@@ -11,8 +11,8 @@ themes:
 source:
   - "[[Khủng hoảng danh tính]]"
   - "[[Khủng hoảng hiện sinh]]"
-created: "2026-08-03"
-updated: "2026-08-03"
+created: 2026-08-03
+updated: 2026-08-03
 ---
 
 # Khủng hoảng danh tính và khủng hoảng hiện sinh

@@ -49,7 +49,7 @@ Source này đáng giữ vì nó không chỉ tóm tắt một bộ phim. Nó s�
 - khả năng thấu hiểu, tha thứ và lựa chọn không lặp lại cha mẹ;
 - nghệ thuật như phương tiện để nghệ sĩ đối thoại với đứa trẻ bên trong.
 
-Nó đặc biệt hữu ích để nối các domain [[Phisolophy]], [[Psychology]], [[Art & Aesthetics]] và [[Literature]] với các theme [[Human Nature]], [[Meaning of Life]], [[Freedom and Responsibility]] và [[Ethics and Morality]].
+Nó đặc biệt hữu ích để nối các domain [[Philosophy]], [[Psychology]], [[Art & Aesthetics]] và [[Literature]] với các theme [[Human Nature]], [[Meaning of Life]], [[Freedom and Responsibility]] và [[Ethics and Morality]].
 
 ## Main takeaway
 
@@ -387,7 +387,7 @@ Tác phẩm được đọc như nơi Guillermo del Toro xử lý quan hệ vớ
 - [ ] [[Thấu hiểu nguyên nhân của hành vi không đồng nghĩa với biện minh cho hành vi]]
 - [ ] [[Trưởng thành bắt đầu khi con người nhận ra mình đang lặp lại cha mẹ]]
 - [ ] [[Con người có thể tìm thấy tự do trong việc không tiếp tục chuỗi đau khổ liên thế hệ]]
-- [ ] [[Khả năng đau khổ là mặt còn lại của khả năng gắn bó]]
+- [ ] [[Khả năng cảm nhận đau khổ là một phần của khả năng gắn bó]]
 - [ ] [[Một đứa trẻ có thể yêu người làm tổn thương mình vì người đó vẫn là toàn bộ thế giới ban đầu của nó]]
 - [ ] [[Không đặt tên cho một sinh thể là một cách từ chối địa vị chủ thể của nó]]
 - [ ] [[Cha mẹ xem con như dự án sẽ đánh giá con bằng khả năng bảo vệ niềm tự hào của mình]]
