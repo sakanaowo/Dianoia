@@ -2,11 +2,13 @@
 type: project
 status: active
 created: 2026-08-25
-updated: 2026-08-25
+updated: 2026-08-30
 domains:
   - "[[Music Theory]]"
 themes:
   - "[[Learning and Intelligence]]"
+source_notes:
+  - "[[Nhạc Lý Căn Bản - Ngô Ngọc Thắng]]"
 tags:
   - project
   - study-plan
@@ -23,7 +25,7 @@ aliases:
 
 ## 1. Mục tiêu (Goal)
 
-Sau khi hoàn thành lộ trình này từ con số 0, mình đạt được các năng lực cụ thể sau:
+Sau khi hoàn thành lộ trình này từ con số 0 theo giáo trình **[[Nhạc Lý Căn Bản - Ngô Ngọc Thắng]]**, mình đạt được các năng lực cụ thể sau:
 1. **Đọc hiểu trọn vẹn một bản ký âm tiêu chuẩn (Standard Sheet Music):**
    - Đọc thông thạo cao độ trên cả **Khóa Sol (Treble Clef)** và **Khóa Fa (Bass Clef)**.
    - Hiểu và thị tấu chính xác các cấu trúc tiết tấu cơ bản (nhịp 4/4, 3/4, 2/4, 6/8, trường độ nốt từ tròn đến móc kép, dấu chấm dôi, liên ba).
@@ -34,16 +36,27 @@ Sau khi hoàn thành lộ trình này từ con số 0, mình đạt được cá
 
 ---
 
-## 2. Hệ sinh thái Quản lý Dự án trong Vault
+## 2. Giáo trình & Nguyên tắc học tập mới
+
+- **Giáo trình cốt lõi:** [[Nhạc Lý Căn Bản - Ngô Ngọc Thắng]] (NXB Âm Nhạc — File PDF tại `05 - Sources/Books/Nhạc Lý Cơ Bản.pdf`).
+- **Nguyên tắc hình ảnh:**
+  - **Không dùng ảnh AI tạo sinh.**
+  - Ưu tiên trích xuất trực tiếp ví dụ minh họa và bài tập xướng âm từ các trang sách PDF.
+  - Khi cần hình ngoài thực tế (như thế tay đàn, ảnh phím đàn), ghi rõ chú thích `> [!NOTE] Cần hình minh họa: [Mô tả cụ thể]` để người học tự tìm hoặc chụp thực tế chèn vào.
+
+---
+
+## 3. Hệ sinh thái Quản lý Dự án trong Vault
 
 - **Bản đồ tri thức ngành:** [[Music Theory]] (Domain MOC)
+- **Nguồn tài liệu học tập:** [[Nhạc Lý Căn Bản - Ngô Ngọc Thắng]]
 - **Quản lý lỗ hổng kỹ năng:** [[Music Theory - Prerequisite Gaps]]
 - **Nhật ký bắt lỗi thực hành:** [[Music Theory - Error Log]]
 - **Câu hỏi bản chất & Mở rộng:** [[Music Theory - Open Questions]]
 
 ---
 
-## 3. Bản đồ đối sánh Nhạc lý: Piano vs Guitar
+## 4. Bản đồ đối sánh Nhạc lý: Piano vs Guitar
 
 | Tiêu chí | Piano | Guitar |
 | :--- | :--- | :--- |
@@ -54,100 +67,79 @@ Sau khi hoàn thành lộ trình này từ con số 0, mình đạt được cá
 
 ---
 
-## 4. Lộ trình 4 giai đoạn chi tiết (Roadmap)
+## 5. Lộ trình học tập bám sát Giáo trình "Nhạc Lý Căn Bản" (Roadmap)
 
 ```text
-Lộ trình Nhạc lý & Đọc Sheet (Từ con số 0)
-├── Giai đoạn 1: Cao độ & Hệ tọa độ Khuông nhạc (Pitch & Clefs)
-├── Giai đoạn 2: Tiết tấu, Trường độ & Nhịp phách (Rhythm & Meter)
-├── Giai đoạn 3: Âm giai, Cung & Hóa biểu (Scales & Key Signatures)
-└── Giai đoạn 4: Quãng, Hợp âm & Kỹ thuật Thị tấu (Sight-Reading)
+Giáo trình Nhạc Lý Căn Bản (Ngô Ngọc Thắng)
+├── Chặng 1: Cao độ & Ký âm cơ bản (Bài 1 ──► Bài 7)
+├── Chặng 2: Nhịp phách & Biến thể trường độ (Bài 8 ──► Bài 13)
+├── Chặng 3: Khóa Fa & Tiết tấu bất thường (Bài 14 ──► Bài 15)
+└── Chặng 4: Gam, Quãng, Hợp âm & Đảo phách (Bài 16 ──► Bài 22)
 ```
 
 ---
 
-### Giai đoạn 1: Cao độ & Hệ tọa độ Khuông nhạc (Pitch & Clefs)
+### Chặng 1: Cao độ & Ký hiệu cơ bản (Trang 7 – 25)
 
-- [x] **1.1. Hệ thống tên nốt & Bảng chữ cái âm nhạc:** ✅ 2026-08-25
-	- [x] 7 nốt tự nhiên: $C - D - E - F - G - A - B$ tương ứng $Do - Re - Mi - Fa - Sol - La - Si$. ✅ 2026-08-25
-	- [x] Khái niệm Quãng tám (Octave) và nốt Đô trung tâm (**Middle C / C4**). ✅ 2026-08-25
-- [ ] **1.2. Giải phẫu [[Khuông nhạc]] 5 dòng 4 khe:**
-	- [x] **[[Khóa Sol và Khóa Fa]]:** ✅ 2026-08-25
-		- Khóa Sol (Treble Clef $\oint$): Nốt trên dòng ($E4 - G4 - B4 - D5 - F5$), nốt trong khe ($F4 - A4 - C5 - E5$).
-		- Khóa Fa (Bass Clef $\bar{9:}$): Nốt trên dòng ($G2 - B2 - D3 - F3 - A3$), nốt trong khe ($A2 - C3 - E3 - G3$).
-	- [x] **[[Dòng kẻ phụ]] (Ledger lines):** Đọc nốt vượt ra ngoài khuông nhạc. ✅ 2026-08-25
-- [ ] **1.3. Ánh xạ lên nhạc cụ:**
-	- [ ] **Piano:** Tìm C4 (phím trắng nằm ngay trước cụm 2 phím đen ở giữa đàn); tay phải đọc Khóa Sol, tay trái đọc Khóa Fa.
-	- [ ] **Guitar:** 6 dây buông ($E2 - A2 - D3 - G3 - B3 - E4$); định vị toàn bộ nốt tự nhiên ở Thế tay 1 (Ngăn 0 đến Ngăn 3).
-
----
-
-### Giai đoạn 2: Tiết tấu, Trường độ & Nhịp phách (Rhythm & Meter)
-
-- [ ] **2.1. Cây phân nhánh Trường độ & Dấu lặng:**
-  - Nốt Tròn (Whole note = 4 phách) $\rightarrow$ Nốt Trắng (Half note = 2 phách) $\rightarrow$ Nốt Đen (Quarter note = 1 phách) $\rightarrow$ Nốt Móc đơn (Eighth note = 1/2 phách) $\rightarrow$ Nốt Móc kép (Sixteenth note = 1/4 phách).
-  - Dấu lặng tương ứng (Rest symbols).
-- [ ] **2.2. Số chỉ nhịp (Time Signature):**
-  - Ý nghĩa chỉ số trên/dưới: $\frac{\text{Số phách trong 1 ô nhịp}}{\text{Loại nốt tương đương 1 phách}}$.
-  - Nhịp đơn: $4/4$ (Common time), $3/4$ (Waltz), $2/4$ (March).
-  - Nhịp phức cơ bản: $6/8$ (2 phách lớn, mỗi phách gồm 3 móc đơn).
-- [ ] **2.3. Các yếu tố làm biến đổi tiết tấu:**
-  - Dấu chấm dôi (*Dotted note* = giá trị gốc + $50\%$).
-  - Dấu nối (*Tie* - kéo dài âm) vs Dấu luyến (*Slur* - chơi liền tiếng).
-  - Liên ba (*Triplets* - 3 nốt chia đều vào 1 phách).
-- [ ] **2.4. Phương pháp luyện tập:** Đếm phách thành tiếng kết hợp gõ chân (Subdivision: *1 - and - 2 - and...* hoặc *1 - e - and - a*).
+- [x] **Bài 1 & 2: Khái niệm âm nhạc & Âm thanh (tr. 7–8)** ✅ 2026-08-25
+  - 4 thuộc tính của âm thanh: Cao độ, Trường độ, Cường độ, Âm sắc.
+- [x] **Bài 3: [[Hệ thống tên nốt]] (tr. 9)** ✅ 2026-08-25
+  - 7 tên nốt: $C - D - E - F - G - A - B \leftrightarrow Do - Re - Mi - Fa - Sol - La - Si$.
+  - Khái niệm [[Quãng tám]] và [[Nốt Đô trung tâm C4]].
+- [x] **Bài 4: [[Khuông nhạc]] và [[Khóa Sol và Khóa Fa]] (tr. 10–11)** ✅ 2026-08-25
+  - 5 dòng 4 khe, nấc thang xen kẽ Dòng $\leftrightarrow$ Khe.
+  - Điểm neo của Khóa Sol (Dòng 2) và Khóa Fa (Dòng 4).
+  - [[Dòng kẻ phụ]]: Hàng phụ và khe phụ (đếm từ trong khuông nhạc đếm ra).
+- [x] **Bài 5: [[Trường độ nốt và Dấu lặng]] - Hình dáng và giá trị nốt (tr. 12–13)** ✅ 2026-08-29
+  - 7 hình nốt: Tròn, Trắng, Đen, Móc đơn, Móc đôi (kép), Móc ba, Móc tư.
+  - Quy tắc đuôi nốt: Từ hàng thứ 3 trở lên đuôi quay xuống; dưới hàng thứ 3 đuôi quay lên.
+  - Dấu gạch ngang nối các nốt móc kế cận (Beam).
+- [x] **Bài 6: [[Cung và Nửa cung]] (tr. 14–15):** ✅ 2026-08-30
+  - Khoảng cách cao độ tự nhiên giữa 7 nốt: $E-F$ và $B-C$ là Nửa cung; các nốt còn lại cách nhau 1 Cung.
+  - Phân loại: Nửa cung Dị (khác tên) vs Nửa cung Đồng (cùng tên kèm dấu hóa).
+  - Khái niệm Comma (1 cung = 2 nửa cung = 10 comma).
+- [ ] **Bài 7: Vị trí nốt nhạc trên khuông nhạc Khóa Sol & Ánh xạ lên đàn (tr. 16–25):**
+  - Đọc thạo các bài luyện đọc nốt Khóa Sol trong sách (tr. 16–25).
+  - Ánh xạ lên Piano: Tìm C4, tay phải Khóa Sol, tay trái Khóa Fa.
+  - Ánh xạ lên Guitar: 6 dây buông ($E2 - A2 - D3 - G3 - B3 - E4$); nốt tự nhiên ở Thế tay 1 (Ngăn 0 đến 3).
+    - *Ghi chú cá nhân:* `do re mi fa sol la si - c d e f g a b -> mi la re sol si mi`
 
 ---
 
-### Giai đoạn 3: Âm giai, Cung & Hóa biểu (Scales & Key Signatures)
+### Chặng 2: Tiết tấu, Nhịp phách & Dấu biến hóa (Trang 26 – 48)
 
-- [ ] **3.1. Cung và Nửa cung (Tone & Semitone):**
-  - Trên Piano: 2 phím liền kề = 1 nửa cung (kể cả phím đen và trắng; chú ý cặp $E-F$ và $B-C$).
-  - Trên Guitar: 1 ngăn phím (fret) = 1 nửa cung; 2 ngăn = 1 cung.
-- [ ] **3.2. Dấu hóa bất thường (Accidentals):**
-  - Dấu Thăng ($\sharp$ - tăng nửa cung), Dấu Giáng ($\flat$ - giảm nửa cung), Dấu Bình ($\natural$ - trả về nốt gốc).
-- [ ] **3.3. Cấu trúc Âm giai Trưởng & Thứ:**
-  - **Âm giai Trưởng (Major Scale):** Công thức $\text{Cung - Cung - Nửa - Cung - Cung - Cung - Nửa}$ ($W - W - H - W - W - W - H$).
-  - **Âm giai Thứ tự nhiên (Natural Minor Scale):** $W - H - W - W - H - W - W$.
-  - Cặp giọng song song (*Relative Major/Minor*, ví dụ: C Major & A Minor).
-- [ ] **3.4. Hóa biểu & Vòng tròn bậc 5 (Circle of Fifths):**
-  - Quy tắc thứ tự dấu thăng: *Fa - Do - Sol - Re - La - Mi - Si* ($F^\sharp, C^\sharp, G^\sharp, D^\sharp, A^\sharp, E^\sharp, B^\sharp$).
-  - Quy tắc thứ tự dấu giáng: *Si - Mi - La - Re - Sol - Do - Fa* ($B^\flat, E^\flat, A^\flat, D^\flat, G^\flat, C^\flat, F^\flat$).
-  - Mẹo nhìn hóa biểu để xác định ngay giọng chính của bài.
+- [ ] **Bài 8: Nhịp - Phách (tr. 26):** Khái niệm phách, ô nhịp, vạch nhịp.
+- [ ] **Bài 9: Số chỉ nhịp (tr. 27–34):** Nhịp đơn ($2/4, 3/4, 4/4$), nhịp kép ($6/8...$).
+- [ ] **Bài 10: Dấu hóa (tr. 35–40):** Dấu thăng, giáng, bình; dấu hóa theo khóa (hóa biểu) vs dấu hóa bất thường.
+- [ ] **Bài 11: Dấu lặng (tr. 41–44):** Lặng tròn, trắng, đen, móc...
+- [ ] **Bài 12: Dấu nối - Dấu chấm dôi - Dấu chấm ngân (tr. 45–46):** Quy tắc tăng $50\%$ trường độ.
+- [ ] **Bài 13: Dấu hồi tấu (tr. 47–48):** Dấu nhắc lại, khung thay đổi, D.C., D.S., Coda, Fine.
 
 ---
 
-### Giai đoạn 4: Quãng, Hợp âm & Kỹ thuật Thị tấu (Sight-Reading)
+### Chặng 3: Khóa Fa & Tiết tấu nâng cao (Trang 49 – 57)
 
-- [ ] **4.1. Nhận diện Quãng (Intervals):**
-  - Quãng 2, 3 (Trưởng/Thứ), Quãng 4, 5, 8 (Đúng - Perfect), Quãng 6, 7.
-  - Nhận diện trực quan trên sheet: Nốt cùng dòng/cùng khe $\rightarrow$ Quãng lẻ (3, 5, 7); Nốt lệch dòng/khe $\rightarrow$ Quãng chẵn (2, 4, 6).
-- [ ] **4.2. Cấu tạo Hợp âm ba (Triads) & Hợp âm 7:**
-  - Hợp âm Trưởng ($1 - 3 - 5$), Hợp âm Thứ ($1 - \flat 3 - 5$), Hợp âm 7 ($1 - 3 - 5 - \flat 7$).
-  - Đọc Lead sheet (Melody trên khuông nhạc + Ký hiệu hợp âm $C, Am, G7$ ở trên).
-- [ ] **4.3. Chiến lược luyện tập Thị tấu (Sight-Reading Strategy):**
-  - **Bước 1 (Scan trước khi chơi):** Nhìn Khóa nhạc $\rightarrow$ Số chỉ nhịp $\rightarrow$ Hóa biểu $\rightarrow$ Quét các đoạn tiết tấu khó $\rightarrow$ Tìm nốt cao nhất / thấp nhất.
-  - **Bước 2 (Chơi chậm với Metronome):** Giữ nhịp đều quan trọng hơn đánh đúng tốc độ; không dừng lại khi đánh sai nốt.
-  - **Bước 3 (Đọc theo cụm - Chunking):** Nhìn quãng và thế hợp âm thay vì đánh vần từng nốt đơn lẻ.
+- [ ] **Bài 14: Vị trí nốt nhạc trên khuông nhạc Khóa Fa (tr. 49–53):** Luyện đọc nốt bè trầm cho Piano/Bass.
+- [ ] **Bài 15: Những nhóm nốt bất thường (tr. 54–57):** Chùm ba (Liên ba - Triplet), chùm năm, chùm sáu.
 
 ---
 
-## 5. Nhật ký tiến độ tuần (Weekly Review Log)
+### Chặng 4: Gam, Quãng, Hợp âm & Đảo phách (Trang 58 – 125)
+
+- [ ] **Bài 16: Âm giai (Gam) (tr. 58–64):** Gam Trưởng, Gam Thứ tự nhiên, hòa âm, giai điệu.
+- [ ] **Bài 17: Quãng (tr. 65–66):** Quãng 1 đến 8 (Đúng, Trưởng, Thứ, Tăng, Giảm).
+- [ ] **Bài 18 & 19: Hợp âm & Ký hiệu viết tắt (tr. 67–73):** Hợp âm ba (Triad), Hợp âm 7, ký hiệu Lead sheet.
+- [ ] **Bài 20: Âm thể (Điệu tính - Key) (tr. 74–80):** Xác định giọng của bài hát qua hóa biểu.
+- [ ] **Bài 21: Phách mạnh - Phách nhẹ & Nhịp lấy đà (tr. 81–84):** Nhịp lấy đà (*Anacrusis / Pickup measure*).
+- [ ] **Bài 22: Đảo phách & Nghịch phách (tr. 85–125):** Syncopation và các bài tập tổng hợp thực hành.
+
+---
+
+## 6. Nhật ký tiến độ tuần (Weekly Review Log)
 
 | Tuần | Mục tiêu trọng tâm | Đã hoàn thành | Điểm nghẽn / Lỗi gặp phải | Kế hoạch tuần tới |
 | :---: | :--- | :--- | :--- | :--- |
-| **Tuần 1** | Thuộc 7 nốt tự nhiên, vị trí trên Khóa Sol/Fa & tìm C4 trên đàn |  |  | Luyện đếm phách nhịp 4/4 |
-| **Tuần 2** | Nắm vững trường độ nốt Tròn, Trắng, Đen, Móc đơn & Metronome |  |  | Bắt đầu đọc bài tập C Major |
-| **Tuần 3** | Cung / Nửa cung, Âm giai Trưởng và vỡ bài đơn giản đầu tiên |  |  | Luyện nhận diện Quãng |
-| **Tuần 4** | Cấu tạo Hợp âm ba & Đọc thử một bài Lead sheet hoàn chỉnh |  |  | Tự đánh giá và hoàn thiện |
-
----
-
-## 6. Tài liệu & Công cụ luyện tập khuyến nghị
-
-- **Sách bài tập nhạc lý & Sight-reading:**
-  - *Alfred's Basic Adult All-in-One Course* (Dành cho Piano).
-  - *A Modern Method for Guitar - William Leavitt* (Giáo trình Berklee luyện đọc nốt guitar cực chuẩn).
-- **Ứng dụng luyện phản xạ đọc nốt (Flashcards / Daily Drill 5-10 phút/ngày):**
-  - *Complete Music Reading Trainer* hoặc *Music Tutor*.
-- **Phần mềm gõ sheet / tra cứu:** MuseScore, Guitar Pro.
+| **Tuần 1** | Hoàn thành Bài 1 đến Bài 5 (Tên nốt, Khuông/Khóa nhạc, Hình dáng nốt) | ✅ Xong Bài 1 - 5 |  | Học Bài 6 (Cung & nửa cung) và Bài 7 |
+| **Tuần 2** | Học Bài 6 (Cung/nửa cung) và luyện đọc Bài 7 (Vị trí nốt Khóa Sol tr. 16-25) |  |  | Bắt đầu Chặng 2 (Nhịp - Phách) |
+| **Tuần 3** | Học Bài 8 đến 12 (Nhịp, Số chỉ nhịp, Dấu hóa, Dấu nối, Chấm dôi) |  |  | Luyện vỗ phách thực tế |
+| **Tuần 4** | Bài 14 (Khóa Fa), Bài 16-18 (Gam, Quãng, Hợp âm) |  |  | Vỡ bài tập hoàn chỉnh |
