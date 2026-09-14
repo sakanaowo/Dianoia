@@ -20,7 +20,9 @@ aliases:
 
 ## Định nghĩa ngắn
 
-Phronesis là năng lực trí tuệ giúp một người biết cách đưa ra quyết định đúng đắn và thực hiện hành động đạo đức phù hợp nhất trong từng hoàn cảnh cụ thể của cuộc sống
+
+> [!NOTE] Phronesis: Trí tuệ thực tế/Khôn ngoan
+ là năng lực trí tuệ giúp một người biết cách đưa ra quyết định đúng đắn và thực hiện hành động đạo đức phù hợp nhất trong từng hoàn cảnh cụ thể của cuộc sống
 
 ## Nói đơn giản
 

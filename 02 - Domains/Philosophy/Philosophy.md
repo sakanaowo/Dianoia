@@ -57,7 +57,7 @@ Triết học (Philosophy)
 
 Những khái niệm nếu không hiểu thì chưa thật sự bước vào domain này.
 
-- [[Bản thể luận - Ontology]]
+- [[Ontology|Bản thể luận - Ontology]]
 - [[Tính chủ thể - Subjectivity]]
 - [[Biện chứng - Dialectics]]
 - [[Khách thể - Object]]
@@ -87,7 +87,7 @@ Những khái niệm hỗ trợ để hiểu sâu hơn.
 
 - [[Tranh luận giữa Duy lý và Duy nghiệm về nguồn gốc tri thức]]
 - [[Tranh luận giữa Tự do ý chí và Định mệnh luận]]
-- [[Vấn đề Tâm - Thân: Ý thức có tách rời vật chất không?]]
+- [[Mind-Body Problem|Vấn đề Tâm - Thân: Ý thức có tách rời vật chất không?]]
 
 ## People / Schools / Traditions
 
@@ -107,6 +107,10 @@ Những khái niệm hỗ trợ để hiểu sâu hơn.
 - [[Sách: Cộng hòa - Plato]]
 - [[Sách: Phê phán Lý tính Thuần túy - Immanuel Kant]]
 - [[Sách: Tồn tại và Hư vô - Jean-Paul Sartre]]
+
+## Projects liên quan
+
+- [[Study - Siêu hình học và Triết học Tâm trí]] — Kế hoạch nghiên cứu bản thể luận, Vấn đề Tâm - Thân và các trường phái siêu hình học.
 
 ## Learning path
 

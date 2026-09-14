@@ -69,15 +69,10 @@ Nguyên nhân + điều kiện nền + cơ chế
 ```
 
 Ví dụ, một que diêm đang cháy có thể gây cháy giấy, nhưng chỉ khi:
-
 - Có đủ oxy.
-    
 - Giấy đủ khô.
-    
 - Ngọn lửa tiếp xúc với giấy.
-    
 - Không có nước dập lửa.
-    
 
 Vì vậy, nguyên nhân thường không hoạt động một mình mà nằm trong một **hệ thống điều kiện**.
 
@@ -88,44 +83,26 @@ Vì vậy, nguyên nhân thường không hoạt động một mình mà nằm t
 ### Concept này được tạo ra để giải quyết hoặc mô tả vấn đề gì?
 
 Nhân quả giúp trả lời những câu hỏi dạng:
-
 - Tại sao sự kiện này xảy ra?
-    
 - Điều gì đã tạo ra kết quả này?
-    
 - Nếu ta thay đổi (X), (Y) sẽ thay đổi như thế nào?
-    
 - Yếu tố nào chỉ liên quan thống kê và yếu tố nào thực sự có tác động?
-    
 - Can thiệp nào có thể tạo ra kết quả mong muốn?
-    
-- Điều gì đáng lẽ đã xảy ra nếu nguyên nhân không xuất hiện?
-    
+- Điều gì đáng lẽ đã xảy ra nếu nguyên nhân không xuất hiện?    
 - Kết quả này là do một nguyên nhân cụ thể hay do điều kiện nền?
-    
 - Một yếu tố là nguyên nhân trực tiếp, gián tiếp hay chỉ là dấu hiệu?
-    
 
 ### Nếu không có concept này, ta sẽ hiểu sai điều gì?
 
 Ta có thể:
-
 - Đồng nhất [[Tương quan]] với nhân quả.
-    
 - Cho rằng việc xảy ra trước luôn gây ra việc xảy ra sau.
-    
 - Đưa ra chính sách dựa trên một quan hệ giả.
-    
 - Điều trị triệu chứng mà không tác động đến nguyên nhân.
-    
 - Nhầm một dấu hiệu dự báo với một yếu tố tạo ra kết quả.
-    
-- Bỏ qua biến gây nhiễu.
-    
+- Bỏ qua biến gây nhiễu
 - Quy trách nhiệm cho một cá nhân dù kết quả có nhiều nguyên nhân.
-    
 - Tin rằng mô hình dự đoán tốt cũng đã hiểu cơ chế của hiện tượng.
-    
 
 Ví dụ:
 
@@ -147,28 +124,17 @@ Nếu không phân biệt tương quan và nhân quả, ta có thể kết luậ
 
 Nhân quả là concept cốt lõi nằm tại giao điểm của nhiều domain:
 
-- [[Siêu hình học]]: Quan hệ nhân quả có thực sự tồn tại trong thế giới không?
-    
+- [[Metaphysics|Siêu hình học]]: Quan hệ nhân quả có thực sự tồn tại trong thế giới không?
 - [[Nhận thức luận]]: Làm sao ta biết một quan hệ là nhân quả?
-    
 - [[Triết học khoa học]]: Giải thích khoa học và quy luật liên hệ với nhân quả thế nào?
-    
 - [[Logic]]: Cấu trúc của suy luận nhân quả là gì?
-    
 - [[Thống kê]]: Làm sao ước lượng tác động nhân quả từ dữ liệu?
-    
 - [[Khoa học dữ liệu]]: Làm sao phân biệt dự đoán với can thiệp?
-    
 - [[Machine Learning]]: Mô hình có học quan hệ ổn định hay chỉ học tương quan?
-    
 - [[Y học]]: Một phương pháp điều trị có thực sự làm thay đổi kết quả sức khỏe không?
-    
 - [[Kinh tế học]]: Chính sách nào gây ra thay đổi trong hành vi hoặc thị trường?
-    
 - [[Luật học]]: Hành động nào đủ liên quan để quy trách nhiệm?
-    
 - [[Đạo đức học]]: Một chủ thể chịu trách nhiệm đến đâu đối với hậu quả?
-    
 
 ### Vị trí trong hệ thống concept
 
@@ -193,51 +159,31 @@ Nhân quả là concept cốt lõi nằm tại giao điểm của nhiều domain
 ### Concept tầng trên
 
 - [[Quan hệ]]
-    
 - [[Thay đổi]]
-    
 - [[Sự kiện]]
-    
 - [[Giải thích]]
-    
 - [[Quy luật tự nhiên]]
-    
 
 ### Concept cùng tầng
 
 - [[Tương quan]]
-    
 - [[Phụ thuộc xác suất]]
-    
 - [[Quan hệ phản thực]]
-    
 - [[Quan hệ chức năng]]
-    
 - [[Quan hệ giải thích]]
-    
 
 ### Concept tầng dưới hoặc ứng dụng
 
 - [[Biến gây nhiễu]]
-    
 - [[Causal DAG]]
-    
 - [[Potential Outcomes]]
-    
 - [[Do-operator]]
-    
 - [[Randomized Controlled Trial]]
-    
 - [[Causal Effect]]
-    
 - [[Mediation]]
-    
 - [[Selection Bias]]
-    
 - [[Counterfactual]]
-    
 - [[Causal Discovery]]
-    
 
 ---
 
