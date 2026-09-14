@@ -31,6 +31,8 @@ Bản đồ này gom các lĩnh vực chính trong vault để dễ đi theo t�
 ## Nhân văn và triết học
 
 - [[Philosophy]] — khảo sát các câu hỏi cốt lõi về tồn tại, tri thức, đạo đức và lý trí.
+- [[Metaphysics]] — siêu hình học, nghiên cứu bản chất tối hậu của thực tại, sự tồn tại, nhân quả và thời gian.
+- [[Ontology]] — bản thể luận, nghiên cứu bản chất của sự tồn tại, các phạm trù thực thể và cái phổ quát.
 
 ## Nghệ thuật và âm nhạc
 

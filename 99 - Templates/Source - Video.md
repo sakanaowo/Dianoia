@@ -2,80 +2,76 @@
 type: source
 subtype: video
 status: raw
-source: 
-language: 
-fetched:
+source:
+  - ""
+creator: 
+published: 
+fetched: "{{date}}"
+language: Vietnamese
+domains:
+  - "[[Domain]]"
+themes:
+  - "[[Theme]]"
 tags:
-  - video/youtube
-  - raw-source
+  - source
+  - video
+aliases: []
 ---
 
 # {{title}}
 
-## Source info
+## 1. Thông tin nguồn & Đánh giá (Source Info)
 
-- URL:
-- Channel:
-- Date watched: {{date}}
-- Source type: video / popular science / lecture / interview / essay
-- Reliability:
+- **URL:** 
+- **Kênh / Tác giả:** 
+- **Thời lượng:** 
+- **Phân loại:** Khoa học đại chúng / Bài giảng học thuật / Phỏng vấn / Video luận đề (Video essay)
+- **Độ tin cậy (Reliability):** *(Thấp / Trung bình / Cao — Lý do: có trích dẫn nguồn uy tín, dữ liệu thực nghiệm, hay chỉ là góc nhìn cá nhân?)*
+- **Main Takeaway (1-2 câu):** *(Thông điệp cốt lõi nhất mà video muốn truyền tải là gì?)*
 
-## Why this source matters
+---
 
-Vì sao source này đáng giữ trong vault?
+## 2. Diễn biến nội dung & Mốc thời gian (Outline & Timestamps)
 
-## Main takeaway
+*(Ghi chép liền mạch theo dòng thời gian của video; gom các luận điểm, ví dụ và phân tích vào từng mốc)*
 
+- **[00:00]** Đặt vấn đề: 
+- **[02:30]** Luận điểm 1: 
+  - *Dẫn chứng / Ví dụ:* 
+- **[07:15]** Luận điểm 2: 
+- **[12:40]** Kết luận / Đề xuất của tác giả: 
 
-## Content map
+---
 
-```text
-Video
-├── Phần 1
-├── Phần 2
-└── Phần 3
-```
+## 3. Đánh giá phản biện & Điểm cần kiểm chứng (Critical Stance)
 
-## Key ideas
+- **Các giả định / Điểm đáng ngờ:** *(Tác giả đang giả định điều gì? Có ngụy biện hay khái quát hóa vội vã không?)*
+- **Điều mình đồng ý / không đồng ý:** *(Góc nhìn riêng của bạn)*
+- **Cần kiểm chứng lại bằng nguồn học thuật:**
+  - [ ] 
 
-- 
-- 
-- 
+---
 
-## Strong claims
+## 4. Trạm trích xuất tri thức (Extraction Pipeline)
 
-- 
-
-## Evidence / Examples
-
-- 
-
-## Concepts to extract
-
+### Concepts to extract
 - [[Concept 1]]
 - [[Concept 2]]
 
-## Atomic notes to create
+### Atomic notes to create
+- [ ] [[Insight dạng mệnh đề khẳng định 1]]
+- [ ] [[Insight dạng mệnh đề khẳng định 2]]
 
-- [ ] [[Một insight dạng mệnh đề]]
-- [ ] [[Một insight khác]]
+### Questions / Arguments to create
+- [ ] [[Câu hỏi hoặc Luận điểm đối lập phát sinh]]
 
-## Arguments / Questions to create
+---
 
-- [ ] [[Argument nếu có]]
-- [ ] [[Question nếu có]]
+## 5. Raw Notes / Transcript (Tùy chọn)
 
-## Claims to verify
+<details>
+<summary>Nhấn để mở Transcript hoặc Ghi chú thô</summary>
 
-- [ ] 
-- [ ] 
+(Dán transcript hoặc highlight thô tại đây nếu cần)
 
-## What I disagree with / doubt
-
-- 
-
-## My notes
-
-
-## Transcript / Raw content
-
+</details>

@@ -1,72 +1,69 @@
 ---
 type: source
+subtype: generic
 status: raw
 source:
-author:
-published:
+  - ""
+author: 
+published: 
 fetched: "{{date}}"
-language:
+language: Vietnamese
 domains:
   - "[[Domain]]"
 themes:
   - "[[Theme]]"
 tags:
-  - raw-source
-created: "{{date}}"
-updated: "{{date}}"
+  - source
+aliases: []
 ---
 
 # {{title}}
 
-## Source info
+## 1. Thông tin nguồn & Đánh giá (Source Info)
 
-- URL:
-- Author:
-- Publication:
-- Date read: {{date}}
-- Source type:
-- Reliability:
+- **URL / Nguồn gốc:** 
+- **Tác giả / Tổ chức:** 
+- **Ngày tiếp cận:** {{date}}
+- **Phân loại nguồn:** Podcast / Phỏng vấn / Tài liệu hướng dẫn / Báo cáo
+- **Độ tin cậy (Reliability):** *(Thấp / Trung bình / Cao)*
+- **Main Takeaway (1-2 câu):** 
 
-## Why this source matters
+---
 
-Vì sao nguồn này đáng giữ trong vault?
+## 2. Ý tưởng & Luận điểm chính (Key Ideas)
 
-## Main takeaway
+- **Ý chính 1:** 
+- **Ý chính 2:** 
+- **Ý chính 3:** 
 
+---
 
-## Content map
+## 3. Đánh giá phản biện (Critical Stance)
 
+- **Điểm đồng ý / không đồng ý:** 
+- **Điểm cần kiểm chứng:** 
+  - [ ] 
 
-## Key claims
+---
 
--
--
--
+## 4. Trạm trích xuất tri thức (Extraction Pipeline)
 
-## Evidence / Examples
-
--
-
-## Concepts to extract
-
+### Concepts to extract
 - [[Concept 1]]
-- [[Concept 2]]
 
-## Atomic notes to create
+### Atomic notes to create
+- [ ] [[Insight dạng mệnh đề khẳng định]]
 
-- [ ] [[Một insight dạng mệnh đề]]
-- [ ] [[Một insight khác]]
+### Questions / Arguments to create
+- [ ] [[Question hoặc Argument]]
 
-## Arguments / Questions to create
+---
 
-- [ ] [[Argument nếu có]]
-- [ ] [[Question nếu có]]
+## 5. Raw Notes / Trích dẫn (Tùy chọn)
 
-## Claims to verify
+<details>
+<summary>Nhấn để mở ghi chú thô</summary>
 
-- [ ]
+(Dán nội dung thô tại đây)
 
-## What I disagree with / doubt
-
-
-## Raw highlights
+</details>

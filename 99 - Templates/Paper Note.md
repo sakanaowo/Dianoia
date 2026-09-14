@@ -1,63 +1,70 @@
 ---
 type: paper
 status: raw
-authors:
-year:
-venue:
-doi:
+authors: 
+year: 
+venue: 
+doi: 
 domains:
   - "[[Domain]]"
 themes:
   - "[[Theme]]"
+tags:
+  - source
+  - paper
+aliases: []
 created: "{{date}}"
 updated: "{{date}}"
 ---
 
 # {{title}}
 
-## Bibliographic info
+## 1. Thông tin bài báo & Tác giả (Bibliographic Info)
 
-- Authors:
-- Year:
-- Venue:
-- DOI / URL:
-- Date read: {{date}}
+- **Tác giả:** 
+- **Năm / Tạp chí (Venue):** 
+- **DOI / Link:** 
+- **Ngày đọc:** {{date}}
+- **Độ tin cậy / Tầm ảnh hưởng:** *(Review bài báo, số trích dẫn, chất lượng thực nghiệm)*
 
-## Research question
+---
 
+## 2. Câu hỏi nghiên cứu & Đóng góp chính (Research Core)
 
-## Main contribution
+- **Research Question (Bài báo giải quyết vấn đề gì?):** 
+- **Main Contribution (Đóng góp mới cốt lõi):** 
+- **Phương pháp / Dữ liệu thực nghiệm (Methodology & Data):** 
 
+---
 
-## Method
+## 3. Các luận điểm & Kết quả then chốt (Key Claims & Results)
 
+- **Kết quả 1:** 
+- **Kết quả 2:** 
+- **Giới hạn của nghiên cứu (Limitations):** 
 
-## Key claims
+---
 
--
--
--
+## 4. Trạm trích xuất tri thức (Extraction Pipeline)
 
-## Evidence / Results
-
--
-
-## Concepts to extract
-
+### Concepts to extract
 - [[Concept 1]]
 - [[Concept 2]]
 
-## Atomic notes to create
+### Atomic notes to create
+- [ ] [[Insight dạng mệnh đề khẳng định 1]]
+- [ ] [[Insight dạng mệnh đề khẳng định 2]]
 
-- [ ] [[Một insight dạng mệnh đề]]
-- [ ] [[Một insight khác]]
+### Questions / Arguments to create
+- [ ] [[Question hoặc Argument]]
 
-## Limitations / objections
+---
 
--
+## 5. Raw Highlights & Ghi chú thô
 
-## Related sources
+<details>
+<summary>Nhấn để mở Highlights từ Paper</summary>
 
-- [[Source liên quan]]
+(Dán đoạn trích hoặc highlight tại đây)
 
-## Raw highlights
+</details>

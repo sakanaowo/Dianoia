@@ -11,220 +11,63 @@ updated: "{{date}}"
 ---
 # {{title}}
 
-## Câu hỏi
+## 1. Câu hỏi & Ranh giới (Question & Scope)
 
-Viết câu hỏi ở dạng rõ ràng, có thể nghiên cứu hoặc tranh luận.
+### Câu hỏi cốt lõi
+Viết câu hỏi ở dạng trực diện, rõ ràng và có thể kiểm chứng hoặc tranh luận.
 
-## Phạm vi và cách hiểu
+### Phạm vi
+- **Bao gồm:**
+- **Loại trừ / Chưa bao gồm:**
 
-### Các thuật ngữ chính
+### Vì sao câu hỏi này quan trọng?
+Câu trả lời sẽ giúp phân biệt, làm sáng tỏ hoặc giải quyết vấn đề gì?
 
-- **Thuật ngữ 1:**
-    
-- **Thuật ngữ 2:**
-    
+---
 
-### Câu hỏi đang xét
+## 2. Những phân biệt khái niệm then chốt (Key Distinctions)
 
-- Phạm vi thời gian / đối tượng / domain:
-    
-- Câu hỏi này bao gồm:
-    
-- Câu hỏi này chưa bao gồm:
-    
+- **A ≠ B:** 
+- **C ≠ D:** 
 
-## Loại câu hỏi
+---
 
-- Định nghĩa
-    
-- Mô tả
-    
-- Nguyên nhân
-    
-- Cơ chế
-    
-- So sánh
-    
-- Đánh giá / lập luận
-    
-- Chuẩn tắc / đạo đức
-    
-- Hiện sinh / ý nghĩa
-    
-- Ứng dụng
-    
+## 3. Bản đồ các hướng giải quyết (Inquiry Map)
 
-## Vì sao câu hỏi này quan trọng?
+| Hướng tiếp cận | Luận điểm cốt lõi | Giải thích được gì? | Giới hạn | Note liên kết |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hướng 1** | | | | `[[...]]` |
+| **Hướng 2** | | | | `[[...]]` |
+| **Hướng 3** | | | | `[[...]]` |
 
-Câu trả lời sẽ giúp hiểu, phân biệt hoặc quyết định điều gì?
+---
 
-## Bối cảnh / nguồn gốc câu hỏi
+## 4. Các luận điểm & Nhận thức hiện tại (Key Arguments & Insights)
 
-Câu hỏi xuất hiện từ source, project, domain, trải nghiệm hoặc mâu thuẫn nào?
+### Các Atomic / Concept notes cốt lõi
+- `[[Atomic note 1]]` — Tóm tắt 1 dòng mệnh đề.
+- `[[Atomic note 2]]` — Tóm tắt 1 dòng mệnh đề.
+- `[[Concept note 1]]` — Định nghĩa công cụ tư duy.
 
-- Nguồn khởi đầu:
-    
-- Vấn đề kích hoạt:
-    
-- Liên hệ với câu hỏi lớn hơn:
-    
+### Tạm kết hiện tại
+Khung giải thích tạm thời tốt nhất mà mình đang nắm giữ là gì?
 
-## Câu trả lời tạm thời
+---
 
-Trả lời trực tiếp trong một đến ba đoạn. Đây là kết luận hiện tại, không phải kết luận cuối cùng.
+## 5. Điểm nghẽn, Nghịch lý & Mâu thuẫn chưa giải quyết (Tensions & Paradoxes)
 
-## Bản đồ các hướng trả lời
+- **Nghịch lý / Điểm nghẽn 1:**
+- **Cần bằng chứng / nguồn gì để trả lời tốt hơn:**
+  - [ ] 
 
-|Hướng tiếp cận|Câu trả lời cốt lõi|Giải thích được gì?|Giới hạn|
-|---|---|---|---|
-|Hướng 1||||
-|Hướng 2||||
-|Hướng 3||||
+---
 
-## Những phân biệt cần giữ
+## 6. Câu hỏi mở & Bước tiếp theo (Next Actions)
 
-- **A ≠ B:**
-    
-- **C ≠ D:**
-    
+### Câu hỏi mở phát sinh
+- `[[Câu hỏi liên quan 1]]`
+- `[[Câu hỏi liên quan 2]]`
 
-Các khái niệm nào dễ bị trộn lẫn khiến câu hỏi trở nên mơ hồ?
-
-## Lập luận / cơ chế chính
-
-### Hướng 1
-
-- Claim:
-    
-- Cơ chế hoặc chuỗi lập luận:
-    
-- Ví dụ:
-    
-- Giới hạn:
-    
-
-### Hướng 2
-
-- Claim:
-    
-- Cơ chế hoặc chuỗi lập luận:
-    
-- Ví dụ:
-    
-- Giới hạn:
-    
-
-## Claims và mức độ bằng chứng
-
-|   |   |   |   |
-|---|---|---|---|
-|Claim|Loại|Nguồn / lý do|Mức chắc chắn|
-||Dữ kiện / diễn giải / suy luận / chuẩn tắc||Thấp / Trung bình / Cao|
-
-> Phân biệt rõ điều source trực tiếp khẳng định với phần mình suy luận hoặc tổng hợp.
-
-## Điều mình đang giả định
-
-## Phản biện / cách giải thích thay thế
-
-- Quan điểm đối lập:
-    
-- Ngoại lệ:
-    
-- Trường hợp mà câu trả lời hiện tại không giải thích tốt:
-    
-
-## Mâu thuẫn / vùng chưa giải quyết
-
-## Cần bằng chứng gì để trả lời tốt hơn?
-
-- Định nghĩa học thuật hoặc nguồn nền tảng
-    
-- Dữ liệu thực nghiệm
-    
-- Nguồn phản biện
-    
-- Ví dụ hoặc trường hợp đối chứng
-    
-- Phân biệt tương quan với nhân quả
-    
-- [ ]
-    
-
-## Câu hỏi mở phát sinh
-
-- [[Câu hỏi liên quan 1]]
-    
-- [[Câu hỏi liên quan 2]]
-    
-
-## Notes liên quan
-
-### Concepts
-
-- [[Concept liên quan 1]]
-    
-- [[Concept liên quan 2]]
-    
-
-### Atomic notes
-
-- [[Một mệnh đề liên quan]]
-    
-- [[Một mệnh đề phản biện]]
-    
-
-### Arguments / Comparisons
-
-- [[Argument liên quan]]
-    
-- [[Comparison liên quan]]
-    
-
-## Source map
-
-### Đã đọc / đã dùng
-
-- [[Source đã dùng]]
-    
-
-### Cần đọc
-
-- [[Source cần đọc 1]]
-    
-- [[Source cần đọc 2]]
-    
-
-## Notes có thể tách ra
-
-### Concepts to extract
-
-- [[Concept mới]]
-    
-
-### Atomic notes to create
-
-- [[Insight dạng mệnh đề]]
-    
-
-### Arguments / Questions to create
-
-- [[Argument hoặc câu hỏi mới]]
-    
-
-## My current understanding
-
-Viết lại bằng lời của mình: hiện tại mình hiểu câu hỏi và câu trả lời như thế nào?
-
-## Tạm kết hiện tại
-
-Kết luận nào đang được giữ? Điều gì vẫn chưa chắc?
-
-## Next action
-
-- [ ]
-    
-
-## Update log
-
-- {{date}} — Tạo note.
+### Nguồn cần đọc & Hành động
+- [ ] `[[Source cần đọc]]`
+- [ ] Action item
