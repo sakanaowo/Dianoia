@@ -1,0 +1,461 @@
+{
+  "openOnStartup": true,
+  "groupMode": "smart",
+  "excludedFolders": [
+    ".trash",
+    "附件",
+    "tmp",
+    "tools",
+    "系统",
+    "模板",
+    "生成图片"
+  ],
+  "maxRecent": 8,
+  "maxTasks": 14,
+  "autoDecorateFolders": true,
+  "organizerBootstrapped": true,
+  "organizerProfileVersion": 3,
+  "organizerVisuals": {
+    "00 - Inbox": {
+      "icon": "folder",
+      "color": "#10b981",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502168
+    },
+    "01 - Home & Maps": {
+      "icon": "folder",
+      "color": "#ef4444",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502168
+    },
+    "02 - Domains": {
+      "icon": "folder",
+      "color": "#8b5cf6",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502168
+    },
+    "03 - Themes": {
+      "icon": "folder",
+      "color": "#eab308",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502168
+    },
+    "04 - Notes": {
+      "icon": "folder",
+      "color": "#eab308",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502168
+    },
+    "05 - Sources": {
+      "icon": "folder",
+      "color": "#eab308",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    },
+    "06 - Projects": {
+      "icon": "folder",
+      "color": "#ec4899",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    },
+    "07 - Outputs": {
+      "icon": "folder",
+      "color": "#8b5cf6",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    },
+    "08 - Review": {
+      "icon": "folder",
+      "color": "#10b981",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    },
+    "98 - Attachments": {
+      "icon": "folder",
+      "color": "#14b8a6",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    },
+    "99 - Templates": {
+      "icon": "folder",
+      "color": "#8b5cf6",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    },
+    "docs": {
+      "icon": "folder",
+      "color": "#10b981",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    },
+    "scripts": {
+      "icon": "folder",
+      "color": "#ef4444",
+      "automatic": true,
+      "domain": "其他笔记",
+      "noteType": "普通笔记",
+      "status": "学习中",
+      "priority": "普通",
+      "reviewDate": null,
+      "mastery": 45,
+      "reviewCount": 0,
+      "reviewInterval": 0,
+      "lastReview": null,
+      "progressTracked": false,
+      "updatedAt": 1788786502169
+    }
+  },
+  "domainDefinitions": [
+    {
+      "name": "数学与公式",
+      "icon": "sigma",
+      "keywords": [
+        "高数",
+        "数学",
+        "线性代数",
+        "矩阵",
+        "行列式",
+        "二次型",
+        "导数",
+        "积分",
+        "微分",
+        "向量",
+        "无穷小"
+      ],
+      "color": "#8b5cf6"
+    },
+    {
+      "name": "计算机网络",
+      "icon": "network",
+      "keywords": [
+        "计算机网络",
+        "计网",
+        "网络协议",
+        "tcp",
+        "udp",
+        "ip地址",
+        "路由",
+        "数据链路"
+      ],
+      "color": "#3b82f6"
+    },
+    {
+      "name": "人工智能",
+      "icon": "brain-circuit",
+      "keywords": [
+        "人工智能",
+        "ai",
+        "pca",
+        "人脸识别",
+        "回归分析",
+        "n皇后",
+        "斑马问题",
+        "机器学习"
+      ],
+      "color": "#ec4899"
+    },
+    {
+      "name": "项目与课设",
+      "icon": "folder-kanban",
+      "keywords": [
+        "课程设计",
+        "课设",
+        "项目",
+        "prd",
+        "产品分析",
+        "实验报告"
+      ],
+      "color": "#10b981"
+    },
+    {
+      "name": "课程与考试",
+      "icon": "graduation-cap",
+      "keywords": [
+        "课程学习",
+        "讲义",
+        "复习",
+        "题库",
+        "考试",
+        "重点笔记"
+      ],
+      "color": "#14b8a6"
+    },
+    {
+      "name": "英语学习",
+      "icon": "languages",
+      "keywords": [
+        "english",
+        "英语",
+        "单词",
+        "语法"
+      ],
+      "color": "#0ea5e9"
+    },
+    {
+      "name": "日记与记录",
+      "icon": "notebook-pen",
+      "keywords": [
+        "日记",
+        "每日",
+        "周记",
+        "见闻"
+      ],
+      "color": "#f59e0b"
+    },
+    {
+      "name": "文章与资讯",
+      "icon": "newspaper",
+      "keywords": [
+        "文章",
+        "新闻",
+        "资讯",
+        "写作",
+        "文稿",
+        "论文",
+        "研究",
+        "翻译",
+        "资料"
+      ],
+      "color": "#f59e0b"
+    }
+  ],
+  "noteTypeDefinitions": [
+    {
+      "name": "普通笔记",
+      "icon": "file-text",
+      "keywords": []
+    },
+    {
+      "name": "课程笔记",
+      "icon": "book-open",
+      "keywords": [
+        "课程",
+        "讲义",
+        "知识点",
+        "概念",
+        "复习"
+      ]
+    },
+    {
+      "name": "习题与试卷",
+      "icon": "list-checks",
+      "keywords": [
+        "习题",
+        "练习",
+        "题库",
+        "试卷",
+        "答案"
+      ]
+    },
+    {
+      "name": "实验与实践",
+      "icon": "flask-conical",
+      "keywords": [
+        "实验",
+        "实践",
+        "实训",
+        "演示"
+      ]
+    },
+    {
+      "name": "项目文档",
+      "icon": "folder-kanban",
+      "keywords": [
+        "项目",
+        "课设",
+        "设计",
+        "prd",
+        "报告"
+      ]
+    },
+    {
+      "name": "日记与记录",
+      "icon": "notebook-pen",
+      "keywords": [
+        "日记",
+        "每日",
+        "周记",
+        "见闻"
+      ]
+    },
+    {
+      "name": "文章与资料",
+      "icon": "newspaper",
+      "keywords": [
+        "文章",
+        "论文",
+        "新闻",
+        "资料",
+        "翻译"
+      ]
+    },
+    {
+      "name": "灵感与想法",
+      "icon": "lightbulb",
+      "keywords": [
+        "灵感",
+        "想法",
+        "随笔",
+        "草稿"
+      ]
+    }
+  ],
+  "uncategorizedDomain": "其他笔记",
+  "normalNoteTemplatePath": ".obsidian/templates/通用文档模板.md",
+  "journalFallbackFolder": "日记",
+  "taskDueMarkers": [
+    "📅",
+    "due::"
+  ],
+  "propertyKeys": {
+    "color": "归类颜色",
+    "icon": "归类图标",
+    "domain": "学习领域",
+    "noteType": "资料类型",
+    "status": "学习状态",
+    "priority": "优先级",
+    "mastery": "掌握程度",
+    "reviewCount": "复习次数",
+    "reviewInterval": "复习间隔",
+    "progressTracked": "进度已确认",
+    "lastReview": "上次复习",
+    "reviewDate": "下次复习"
+  },
+  "reviewRules": {
+    "hard": {
+      "minimumDays": 1,
+      "factor": 1,
+      "mastery": 3
+    },
+    "normal": {
+      "minimumDays": 3,
+      "factor": 1.8,
+      "mastery": 9
+    },
+    "easy": {
+      "minimumDays": 7,
+      "factor": 2.5,
+      "mastery": 16
+    }
+  }
+}

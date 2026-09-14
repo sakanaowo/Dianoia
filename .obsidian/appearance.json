@@ -2,12 +2,11 @@
   "cssTheme": "Cupertino",
   "accentColor": "#5da3b1",
   "nativeMenus": true,
-  "showRibbon": false,
+  "showRibbon": true,
   "showViewHeader": true,
   "interfaceFontFamily": "SF Pro Display",
   "textFontFamily": "SF Pro Display",
   "monospaceFontFamily": "SpaceMono Nerd Font Propo,SpaceMono Nerd Font Mono",
-  "enabledCssSnippets": [
-    "bg"
-  ]
+  "enabledCssSnippets": [],
+  "baseFontSize": 17
 }

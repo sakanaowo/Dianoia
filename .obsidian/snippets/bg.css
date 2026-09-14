@@ -1,19 +1,29 @@
-/* Applies the background image across the workspace layout */
-.horizontal-main-container {
-    background-image: url('/home/sakana/Pictures/63dbd3d032f5.jpg')
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* Inject the image into the absolute base container */
+.app-container {
+    background-image: url("https://images.unsplash.com/photo-1454496522488-7a8e488e8606") !important; 
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
-/* Translucent overlay for Dark Mode to make text readable */
-.theme-dark .workspace-leaf-content {
-    --background-primary: rgba(30, 30, 30, 0.75);
-    background-color: transparent;
+/* Force all stacked workspace layers to be completely transparent */
+body, 
+.workspace, 
+.workspace-split, 
+.workspace-tabs, 
+.workspace-tab-container, 
+.workspace-leaf, 
+.workspace-leaf-content, 
+.view-content, 
+.markdown-source-view, 
+.markdown-preview-view {
+    background-color: transparent !important;
+    background: transparent !important;
 }
 
-/* Translucent overlay for Light Mode */
-.theme-light .workspace-leaf-content {
-    --background-primary: rgba(255, 255, 255, 0.75);
-    background-color: transparent;
+/* Add a subtle dark/light translucent tint so text remains readable */
+.view-content {
+    background-color: rgba(var(--background-primary-rgb), 0.75) !important;
+    backdrop-filter: blur(2px);
 }
+

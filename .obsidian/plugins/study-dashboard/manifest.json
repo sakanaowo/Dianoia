@@ -1,0 +1,10 @@
+{
+  "id": "study-dashboard",
+  "name": "Study Dashboard",
+  "version": "1.8.1",
+  "minAppVersion": "1.5.0",
+  "description": "A configurable learning dashboard with custom domains, metadata mapping, spaced review, tasks, and calendar.",
+  "author": "laozheng1949",
+  "authorUrl": "https://github.com/laozheng1949",
+  "isDesktopOnly": false
+}
