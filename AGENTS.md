@@ -20,6 +20,8 @@ Do not treat this vault as a normal software repository only. Treat it as a Mark
 8. When uncertain, make the smallest useful change and explain what remains uncertain.
 9. Do not invent sources, citations, book claims, or paper details.
 10. For controversial social, philosophical, political, or historical topics, preserve multiple viewpoints and surface assumptions.
+11. When exploring or creating notes for a topic within a domain/subdomain that lacks a study project note, proactively propose creating one. Each Study Note serves as the learning management hub for that domain/subdomain.
+12. Never automatically generate images. Check `98 - Attachments` first; if an illustration is needed, use a placeholder `![[filename.png]]` with a description for the user to add.
 
 ## Vault structure
 
@@ -206,6 +208,22 @@ For philosophy, society, politics, economics, history, ethics, and culture:
 3. Include objections or counterarguments.
 4. Avoid presenting disputed claims as settled facts.
 5. Prefer balanced, steelmanned summaries over one-sided notes.
+
+## Study note & learning workflow
+
+Each Study Project Note (`06 - Projects/Study Plans/Study - ...`) serves as the **dedicated learning management hub** for that specific domain or subdomain:
+1. It anchors the learning roadmap, tracking of concepts mastered, exercise/problem logs, active open questions, and milestone reviews for that domain/subdomain.
+2. When exploring, researching, or creating notes for a topic within a domain or subdomain:
+   - Check whether a corresponding Study Project Note exists for that domain/subdomain.
+   - If no study note exists, **proactively ask the user / propose creating a Study Project Note** to manage the learning of that domain/subdomain.
+   - Maintain and update existing Study Project Notes when new concepts or arguments are mastered.
+3. Domain MOCs represent the objective knowledge map of the field; Study Project Notes represent the subjective and chronological management of learning that field.
+
+## Image & media rules
+
+1. Never use image generation tools (`generate_image`) to create artificial images.
+2. Always search `98 - Attachments` first for existing files.
+3. If visual illustration is needed and not available, use a clear placeholder `![[image_name.png]]` with a descriptive note for the user to add later.
 
 ## Safe editing rules
 

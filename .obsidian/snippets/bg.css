@@ -1,0 +1,29 @@
+/* Inject the image into the absolute base container */
+.app-container {
+    background-image: url("https://images.unsplash.com/photo-1454496522488-7a8e488e8606") !important; 
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+/* Force all stacked workspace layers to be completely transparent */
+body, 
+.workspace, 
+.workspace-split, 
+.workspace-tabs, 
+.workspace-tab-container, 
+.workspace-leaf, 
+.workspace-leaf-content, 
+.view-content, 
+.markdown-source-view, 
+.markdown-preview-view {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Add a subtle dark/light translucent tint so text remains readable */
+.view-content {
+    background-color: rgba(var(--background-primary-rgb), 0.75) !important;
+    backdrop-filter: blur(2px);
+}
+

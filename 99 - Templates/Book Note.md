@@ -1,86 +1,84 @@
 ---
 type: book
 status: raw
-author:
-year:
-publisher:
-isbn:
+author: 
+year: 
+publisher: 
+isbn: 
+language: Vietnamese
 domains:
+  - "[[Domain]]"
 themes:
+  - "[[Theme]]"
+tags:
+  - source
+  - book
+aliases: []
 created: "{{date}}"
 updated: "{{date}}"
 ---
 
 # {{title}}
 
-## Bibliographic info
+## 1. Thông tin thư mục & Định vị (Bibliographic Info)
 
-- Author:
-- Year:
-- Publisher:
-- Translator:
-- Edition:
+- **Tác giả:** 
+- **Năm xuất bản:** 
+- **Nhà xuất bản / Người dịch:** 
+- **Lý do đọc cuốn sách này:** 
+- **Book in one sentence (1 câu tóm tắt):** 
+- **Main Thesis (Luận đề trung tâm của cuốn sách):** 
 
-## Why am I reading this?
+---
 
-
-## Book in one sentence
-
-
-## Main thesis
-
-
-## Book map
+## 2. Bản đồ cấu trúc & Ghi chú từng chương (Book Map & Chapters)
 
 ```text
-Book
-├── Part 1
-├── Part 2
-└── Part 3
+{{title}}
+├── Phần 1: ...
+├── Phần 2: ...
+└── Phần 3: ...
 ```
 
-## Key concepts
+### Chapter 1: ...
+- **Ý chính:** 
+- **Insight đắt giá:** 
+- **Nghi vấn / Điểm chưa đồng tình:** 
 
+### Chapter 2: ...
+- **Ý chính:** 
+- **Insight đắt giá:** 
+
+---
+
+## 3. Đánh giá phản biện & Hạn chế (Critical Evaluation)
+
+- **Điểm mạnh / Đóng góp lớn nhất của sách:** 
+- **Hạn chế / Điểm tác giả thiên kiến hoặc bỏ sót:** 
+- **So sánh với các tác giả/trường phái khác:** 
+
+---
+
+## 4. Trạm trích xuất tri thức (Extraction Pipeline)
+
+### Concepts to extract
 - [[Concept 1]]
 - [[Concept 2]]
 
-## Chapter notes
+### Atomic notes to create
+- [ ] [[Insight dạng mệnh đề khẳng định 1]]
+- [ ] [[Insight dạng mệnh đề khẳng định 2]]
 
-### Chapter 1
+### Arguments / Questions to create
+- [ ] [[Argument hoặc Question]]
 
-- Main point:
-- Useful ideas:
-- Doubts:
+---
 
-### Chapter 2
+## 5. Raw Highlights & Trích dẫn đắt giá
 
-- Main point:
-- Useful ideas:
-- Doubts:
+<details>
+<summary>Nhấn để mở Highlights từ sách</summary>
 
-## Strong claims
+(Dán trích dẫn hoặc highlight từ Kindle/sách tại đây)
 
-- 
-
-## Evidence / Examples
-
-- 
-
-## Objections / doubts
-
-- 
-
-## Atomic notes to create
-
-- [ ] [[Một insight dạng mệnh đề]]
-- [ ] [[Một insight khác]]
-
-## Concepts / Arguments / Questions to create
-
-- [ ] [[Concept]]
-- [ ] [[Argument]]
-- [ ] [[Question]]
-
-## Related books / sources
-
-- [[Book liên quan]]
+</details>

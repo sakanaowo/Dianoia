@@ -2,7 +2,9 @@
 type: concept
 status: growing
 domains:
+  - "[[Philosophy]]"
 themes:
+  - "[[Learning and Intelligence]]"
 source: []
 created: 2026-07-22
 updated: 2026-07-22

@@ -7,9 +7,11 @@
   "mehrmaid",
   "recent-notes",
   "advanced-new-file",
-  "obsidian-git",
   "open-in-new-tab",
   "obsidian-tasks-plugin",
   "vertical-tabs",
-  "quick-latex"
+  "quick-latex",
+  "mermaid-themes",
+  "obsidian-kanban",
+  "advanced-multi-column"
 ]

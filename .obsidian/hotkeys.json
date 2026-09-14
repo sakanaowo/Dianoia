@@ -27,20 +27,12 @@
       "key": "L"
     }
   ],
-  "app:toggle-left-sidebar": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "`"
-    }
-  ],
   "app:toggle-right-sidebar": [
     {
       "modifiers": [
         "Alt"
       ],
-      "key": "1"
+      "key": "2"
     }
   ],
   "switcher:open": [
@@ -136,6 +128,31 @@
         "Alt"
       ],
       "key": "ArrowLeft"
+    }
+  ],
+  "workspace:next-tab": [
+    {
+      "modifiers": [
+        "Ctrl"
+      ],
+      "key": "Tab"
+    }
+  ],
+  "workspace:previous-tab": [
+    {
+      "modifiers": [
+        "Ctrl",
+        "Shift"
+      ],
+      "key": "Tab"
+    }
+  ],
+  "app:toggle-left-sidebar": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "1"
     }
   ]
 }

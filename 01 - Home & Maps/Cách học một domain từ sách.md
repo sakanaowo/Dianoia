@@ -135,4 +135,4 @@ Một domain con được xem là "ổn" khi có:
 ## Liên kết
 
 - [[Study Templates]] — bộ template hỗ trợ quy trình trên
-- [[Quantum Mechanics - README]] — ví dụ Domain MOC đang dùng
+- [[Quantum Mechanics]] — ví dụ Domain MOC đang dùng

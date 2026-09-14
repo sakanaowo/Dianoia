@@ -16,7 +16,7 @@ themes:
   - Freedom and Responsibility
 ---
 # Immanuel Kant
-![[Pasted image 20260617221106.png|right]]
+![[Kant.png|right]]
 ## Source info
 
 - URL: https://vi.wikipedia.org/wiki/Immanuel_Kant

@@ -21,6 +21,7 @@ aliases:
 ## Atomic notes
 
 - [[Quyền lực là khả năng định hướng diễn giải thực tại]]
+- [[Nỗi đau không được nhận diện có xu hướng chuyển giao sang thế hệ sau]]
 
 ## Nguồn
 

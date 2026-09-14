@@ -2,7 +2,7 @@
 type: concept
 status: growing
 domains:
-  - "[[Phisolophy|Philosophy]]"
+  - "[[Philosophy|Philosophy]]"
   - "[[Psychology]]"
 themes:
   - "[[Meaning of Life]]"
@@ -12,8 +12,8 @@ source:
   - "[[Stanford Encyclopedia of Philosophy - Existentialism]]"
   - "[[Internet Encyclopedia of Philosophy - Existentialism]]"
   - "[[Irvin Yalom - Existential Psychotherapy]]"
-created: "2026-08-03"
-updated: "2026-08-03"
+created: 2026-08-03
+updated: 2026-08-03
 aliases:
   - Existential crisis
   - Khủng hoảng ý nghĩa
@@ -45,7 +45,7 @@ Nếu thiếu concept này, ta dễ giảm mọi bất an sâu sắc thành vấ
 
 ## Vai trò trong domain
 
-Trong [[Phisolophy|Philosophy]], khủng hoảng hiện sinh nằm tại giao điểm của [[Chủ nghĩa hiện sinh]], [[Ý nghĩa cuộc sống]], [[Tự do]], [[Trách nhiệm]], [[Cái chết]], [[Sự phi lý]] và [[Tính xác thực]]. Nó là một hiện tượng trong đó các vấn đề triết học không còn chỉ là câu hỏi trừu tượng mà trở thành trải nghiệm trực tiếp.
+Trong [[Philosophy|Philosophy]], khủng hoảng hiện sinh nằm tại giao điểm của [[Chủ nghĩa hiện sinh]], [[Ý nghĩa cuộc sống]], [[Tự do]], [[Trách nhiệm]], [[Cái chết]], [[Sự phi lý]] và [[Tính xác thực]]. Nó là một hiện tượng trong đó các vấn đề triết học không còn chỉ là câu hỏi trừu tượng mà trở thành trải nghiệm trực tiếp.
 
 Trong [[Psychology]], nó liên quan đến nghiên cứu và trị liệu về ý nghĩa, lo âu hiện sinh, mất mát, chuyển tiếp đời sống và đối diện với hữu hạn.
 
