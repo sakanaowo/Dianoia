@@ -72,6 +72,10 @@ Xác suất là ngôn ngữ để mô hình hóa bất định. Thống kê dùn
 | $P(A|B)=\frac{P(A\cap B)}{P(B)}$ | Xác suất có điều kiện |
 | $P(H|D)=\frac{P(D|H)P(H)}{P(D)}$ | Định lý Bayes |
 
+## Projects liên quan
+
+- [[Study - Xác suất và Thống kê]] — Trạm quản lý toàn bộ lộ trình học tập, chuẩn hóa công thức và phân rã theo nguồn của subdomain Xác suất & Thống kê.
+
 ## Sources
 
 - [[Deep AI - Xác suất]]
