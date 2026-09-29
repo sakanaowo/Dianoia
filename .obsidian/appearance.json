@@ -2,7 +2,7 @@
   "cssTheme": "Cupertino",
   "accentColor": "#5da3b1",
   "nativeMenus": true,
-  "showRibbon": true,
+  "showRibbon": false,
   "showViewHeader": true,
   "interfaceFontFamily": "SF Pro Display",
   "textFontFamily": "SF Pro Display",
