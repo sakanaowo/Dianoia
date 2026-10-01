@@ -59,16 +59,39 @@ def normalize_link_target(raw: str) -> str:
     return target.strip()
 
 
+def extract_aliases(text: str) -> list[str]:
+    aliases = []
+    if not (text.startswith("---\n") or text.startswith("---\r\n")):
+        return aliases
+    end_idx = text.find("\n---", 4)
+    if end_idx == -1:
+        return aliases
+    fm = text[4:end_idx]
+    match = re.search(r"aliases:\s*\n((?:\s*-\s*[^\n]+\n?)+)", fm)
+    if match:
+        for line in match.group(1).splitlines():
+            line = line.strip()
+            if line.startswith("-"):
+                alias = line[1:].strip().strip("\"'")
+                if alias:
+                    aliases.append(alias)
+    return aliases
+
+
 def build_note_index(files: list[Path]) -> set[str]:
     stems: set[str] = set()
     rel_without_suffix: set[str] = set()
+    aliases: set[str] = set()
 
     for path in files:
         rel = path.relative_to(ROOT).with_suffix("")
         stems.add(path.stem)
         rel_without_suffix.add(str(rel))
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for alias in extract_aliases(text):
+            aliases.add(alias)
 
-    return stems | rel_without_suffix
+    return stems | rel_without_suffix | aliases
 
 
 def check_readmes() -> list[str]:
@@ -79,7 +102,18 @@ def check_readmes() -> list[str]:
     return warnings
 
 
-def check_wikilinks(files: list[Path], note_index: set[str]) -> list[str]:
+def build_attachment_index() -> set[str]:
+    att_dir = ROOT / "98 - Attachments"
+    if not att_dir.exists():
+        return set()
+    return {p.name for p in att_dir.iterdir() if p.is_file()} | {
+        p.stem for p in att_dir.iterdir() if p.is_file()
+    }
+
+
+def check_wikilinks(
+    files: list[Path], note_index: set[str], attachment_index: set[str]
+) -> list[str]:
     warnings: list[str] = []
 
     for path in files:
@@ -94,7 +128,7 @@ def check_wikilinks(files: list[Path], note_index: set[str]) -> list[str]:
             if target in {"...", "TODO", "TBD"}:
                 continue
 
-            if target not in note_index:
+            if target not in note_index and target not in attachment_index:
                 rel = path.relative_to(ROOT)
                 warnings.append(f"Possible broken wikilink in {rel}: [[{raw}]]")
 
@@ -133,10 +167,11 @@ def check_note_frontmatter(files: list[Path]) -> list[str]:
 def main() -> int:
     files = iter_markdown_files()
     note_index = build_note_index(files)
+    attachment_index = build_attachment_index()
 
     warnings = []
     warnings.extend(check_readmes())
-    warnings.extend(check_wikilinks(files, note_index))
+    warnings.extend(check_wikilinks(files, note_index, attachment_index))
     warnings.extend(check_note_frontmatter(files))
 
     if not warnings:

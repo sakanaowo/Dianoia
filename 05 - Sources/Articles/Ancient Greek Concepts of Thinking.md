@@ -17,7 +17,7 @@ The important distinction is that these words do not all mean "thinking" in the 
 ## Key terms
 
 - [[φρονέω - phroneō]]: practical, action-guiding thinking.
-- [[φρόνησις - phronēsis]]: practical wisdom or prudence.
+- [[φρόνησις ]]- [[phronēsis]]: practical wisdom or prudence.
 - [[φρόνημα - phronēma]]: mindset, disposition, settled attitude.
 - [[νοέω - noeō]]: intellectual perception or comprehension.
 - [[νόησις - noēsis]]: act of understanding or intellection.
