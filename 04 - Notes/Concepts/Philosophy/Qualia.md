@@ -4,6 +4,7 @@ status: growing
 domains:
   - "[[Metaphysics]]"
   - "[[Philosophy]]"
+  - "[[Psychology]]"
 themes:
   - "[[Human Nature]]"
 source: []

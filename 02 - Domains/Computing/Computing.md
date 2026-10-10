@@ -21,6 +21,7 @@ Computing là lĩnh vực nghiên cứu về cách máy tính xử lý thông ti
 - [[Algorithm]] — thuật toán và hiệu quả tính toán.
 - [[Data Structures]] — cấu trúc dữ liệu và cách tổ chức thông tin.
 - [[Computer Science]] — nền tảng khoa học máy tính rộng hơn.
+- [[Object Detection]] — phát hiện và định vị vật thể trong thị giác máy tính (Computer Vision).
 
 ## Mục tiêu
 

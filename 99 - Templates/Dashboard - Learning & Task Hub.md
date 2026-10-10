@@ -12,7 +12,7 @@ aliases:
 Mô tả ngắn gọn mục tiêu của Dashboard này.
 
 > [!tip] Điều hướng
-> [[Index of Domains]] • [[Index of Projects]] • [[Index of Questions]] • [[TODO|To-do Hub]]
+> [[Index of Domains]] • [[Index of Projects]] • [[Index of Questions]] • [[00 - Inbox/TODO|To-do Hub]]
 
 ---
 

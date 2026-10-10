@@ -16,7 +16,7 @@ updated: 2026-09-18
 Trang điều phối trung tâm của vault διάνοια. Được thiết kế tối giản, vận hành dựa trên các truy vấn động để phục vụ việc học theo sự hiếu kỳ (Curiosity-Driven Learning), quản lý tác vụ tức thời và duy trì mạng lưới tri thức mà không tạo áp lực bảo trì thủ công.
 
 > [!tip] Bản đồ Điều hướng
-> [[Index of Domains]] • [[Index of Projects]] • [[Index of Questions]] • [[Index of People]] • [[Index of Books]] • [[TODO|To-do Hub]]
+> [[Index of Domains]] • [[Index of Projects]] • [[Index of Questions]] • [[Index of People]] • [[Index of Books]] • [[00 - Inbox/TODO|To-do Hub]]
 
 ---
 
@@ -25,6 +25,7 @@ Trang điều phối trung tâm của vault διάνοια. Được thiết k�
 Khu vực neo giữ các chủ đề, khái niệm hoặc câu hỏi đang gợi mở sự tò mò trong giai đoạn hiện tại:
 
 - **Triết học & Nhận thức:** [[Tranh luận giữa Tự do ý chí và Định mệnh luận]] — Đối chiếu lập trường tất định luận cứng, tương thích luận và tự do luận.
+- **Thị giác Máy tính & AI:** [[06 - Projects/AutoCheckout/README|AutoCheckout-CL]] — Tối ưu hóa mô hình Replay-Free Continual Object Detection (PDP CVPR 2026) trên tập dữ liệu bán lẻ RPC.
 - **Toán học & Xác suất:** [[Xác suất và Thống kê]] — Rà soát công thức phân phối Dirichlet và định lý giới hạn trung tâm.
 - **Vật lý & Năng lượng:** [[Fusor]] & [[Plasma]] — Khảo sát cơ chế thất thoát năng lượng và điều kiện phản ứng hạt nhân.
 - **Âm nhạc & Ký âm:** [[Nhạc lý cơ bản và Đọc Sheet nhạc]] — Luyện đọc nốt trên khuông nhạc Khóa Sol và ánh xạ phím đàn.

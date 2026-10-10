@@ -1,5 +1,55 @@
 /* Rich Table plugin */
 
+/* Never zoomed — see renderer.ts's own doc comment on `shell` for why the
+ * status bar (its other child, alongside .bt-render-root) has to live
+ * outside the zoomed subtree. position:relative is load-bearing, not
+ * incidental: the hover-only status bar (.bt-status-mode-hover) is
+ * position:absolute with --sb-top/-left computed (renderer.ts) relative to
+ * ROOT's own box — before the status bar moved out here, root itself
+ * supplied that positioning context for free. Without shell also being a
+ * positioned ancestor, the status bar's absolute box resolves against
+ * whatever positioned ancestor comes next up the DOM (typically the
+ * viewport), landing nowhere near where those coordinates meant it to. This
+ * is a separate bug from --sb-top's own formula overlapping the add-row "+"
+ * button (see positionStatusBar's own comment, renderer.ts) — that one is a
+ * wrong anchor point (table's bottom vs. wrapper's), not a wrong coordinate
+ * space, and needed its own fix. */
+.bt-render-root-shell {
+	display: block;
+	position: relative;
+}
+
+/* The table's own outer frame — one border wrapping everything visually part
+ * of "this table" (grid, left toolbar, row/col selector strips, the resize
+ * handles, and a PINNED status bar), matching obsidian-rich-view's fully-
+ * enclosed look. A `shell` child, positioned via JS-computed --of-l/-t/-w/-h
+ * (see renderer.ts's updateOuterFrame / renderGeometry.ts's applyOuterFrame)
+ * rather than a plain `inset: 0`: vertically, a PINNED status bar's own box
+ * can extend past root's (shell's bounding rect then covers it, since it's a
+ * normal-flow sibling); horizontally, a manually narrower viewWidth shrinks
+ * the frame down to the table's own real width instead of the full available
+ * space (replacing an earlier separate corner-bracket marker for the same
+ * fact — see updateOuterFrame's own comment). Neither of those is a static
+ * `inset: 0` could express. Explicit width/height (not right/bottom) since
+ * --of-* are already resolved to plain px distances in JS — deriving
+ * right/bottom back out via CSS calc() would need shell's own width/height
+ * available to CSS, which they aren't. box-sizing: border-box so the visible
+ * border itself lands exactly on the measured edges, not 1-2px outside them.
+ * pointer-events: none — this is decoration, never a hit target that could
+ * intercept a click meant for whatever's underneath. */
+.bt-outer-frame {
+	position: absolute;
+	left:   var(--of-l, 0px);
+	top:    var(--of-t, 0px);
+	width:  var(--of-w, 100%);
+	height: var(--of-h, 100%);
+	box-sizing: border-box;
+	border: var(--bt-outer-frame-border, 1px solid var(--background-modifier-border));
+	border-radius: var(--bt-outer-frame-radius, var(--radius-m));
+	pointer-events: none;
+	z-index: 1;
+}
+
 .bt-render-root {
 	position: relative;
 	/* Selector strip layout constants — keep in sync with src/selectorLayout.ts */
@@ -14,13 +64,39 @@
 	 * Themes override by setting the same variable with higher specificity.
 	 *   --bt-wrapper-width:      table's content width (centered by default)
 	 *   --bt-wrapper-margin:     auto → horizontal centering
-	 *   --bt-title-mb-pull:      0px  → no overlap between title and table
+	 *   --bt-title-mb-pull:      -20px → title sits closer to the table at rest
 	 *   --bt-cell-border:        none → all-sides cell border shorthand
 	 *   --bt-cell-border-top/right/bottom/left  per-side overrides, fall back to --bt-cell-border */
 	--bt-wrapper-width:  max-content;
 	--bt-wrapper-margin: auto;
-	--bt-title-mb-pull:  0px;
+	/* Only affects the AT-REST gap: hover always cancels this via
+	 * --bt-title-mb-adj (see .bt-table-title's own comment), reserving the
+	 * full --bt-title-sel-pad space for the col-selector strip regardless of
+	 * this value — raising it can never make the strip overlap the title. */
+	--bt-title-mb-pull:  -20px;
 	--bt-cell-border:    none;
+	/* Per-cell override variables — reset to their guaranteed-invalid value here
+	 * so var(--x, fallback) below correctly falls back to `fallback` for any
+	 * cell in THIS table that doesn't set its own. Custom properties inherit by
+	 * default; without this reset, a nested rich-table block (rendered inside a
+	 * cell of another one — its whole DOM tree sits INSIDE that cell, hence
+	 * inside whatever this reaches) would otherwise inherit whatever value an
+	 * OUTER cell happens to have inline-set for one of these, even though the
+	 * two tables' rows/cells have nothing to do with each other. Reported as
+	 * dragging the outer row's resize handle making the nested table's own
+	 * rows balloon to the same explicit height, all at once: --bt-row-height is
+	 * set inline per-cell (renderCell.ts) and consumed via `height: var(--bt-
+	 * row-height, auto)` (below) — every one of the nested table's own "auto"
+	 * rows inherited the OUTER row's just-set explicit pixel height instead of
+	 * falling back to auto, and a table cell's `height` acts as a per-row
+	 * minimum, so EVERY nested row tried to be that tall independently.
+	 * --bt-cell-font-size follows the identical set-inline-per-cell/fall-back-
+	 * elsewhere pattern (renderCellStyle.ts / styles.css's own font-size rule)
+	 * and would leak the same way. Applies uniformly to every table, nested or
+	 * not — a top-level table has no ancestor .bt-render-root setting these in
+	 * the first place, so this is a no-op for it either way. */
+	--bt-row-height: initial;
+	--bt-cell-font-size: initial;
 }
 /* Applied the instant a write-back is queued (tableBlock.ts) and left on until this root
  * is torn down and replaced by the re-render it triggers. Themes with continuous filter/
@@ -90,9 +166,10 @@
 	width:  var(--cs-width, 100px);
 	height: var(--bt-sel-total); /* grip zone (top) + label zone (bottom) */
 	/* Clip column letters/grips/seams to the visible viewport: the strip is pinned to
-	 * the visible region and its children are offset by --cs-off to track horizontal
-	 * scroll, so anything scrolled past either edge is hidden rather than spilling over
-	 * the row selector / off-screen. */
+	 * the visible region and its .bt-sel-track child is transformed to track
+	 * horizontal scroll (see that class's own comment below), so anything scrolled
+	 * past either edge is hidden rather than spilling over the row selector /
+	 * off-screen. */
 	overflow: hidden;
 }
 .bt-render-root.bt-has-strips .bt-row-selector {
@@ -102,8 +179,9 @@
 	width:  var(--bt-sel-total); /* grip zone (left) + label zone (right) */
 	height: var(--rs-height, 100px);
 	/* Vertical mirror of the col selector: pinned to the visible band and
-	 * clipped, so row numbers offset by --rs-off (inner vertical scroll) are
-	 * hidden past the visible top/bottom instead of spilling off. */
+	 * clipped, so row numbers — shifted by its own .bt-sel-track's transform to
+	 * track inner vertical scroll — are hidden past the visible top/bottom
+	 * instead of spilling off. */
 	overflow: hidden;
 }
 .bt-table-wrapper {
@@ -153,64 +231,26 @@
 .bt-render-root .bt-table-wrapper.bt-view-fixed-w {
 	width: var(--bt-view-width);
 }
-/* Corner brackets mark a manual view WIDTH that's narrower than the space
- * actually available (renderer.ts's updateViewFrame — see its own comment
- * for the exact condition and for --vf-l/-t/-r/-b) — like Word's page-
- * boundary corners, a quieter alternative to visibly stretching addRowBtn/
- * the table across dead space to show the same fact.
- *
- * Children of `root`, NOT `wrapper`, positioned via JS-computed --vf-*
- * (root-relative px, matching wrapper's actual getBoundingClientRect()
- * edges) rather than right:/bottom: anchoring from inside wrapper itself —
- * tried that first and it measurably missed by ~14-15px on the right/bottom
- * corners specifically: `right`/`bottom` on an absolutely-positioned child
- * resolve against the containing block's PADDING box, which `overflow:auto`
- * shrinks by the scrollbar's width/height whenever one is actually showing
- * — exactly the corners meant to mark wrapper's real, scrollbar-included
- * OUTER edge, so anchoring from inside it was self-defeating. Root has no
- * scrollbar of its own, so plain top:/left: from computed pixel values
- * sidesteps the whole issue. Same reasoning as why the other overlay strips
- * are positioned this way already. */
-.bt-view-corner {
-	position: absolute;
-	/* border-box, not the content-box default: each corner's border (below)
-	 * is on only 2 of its 4 sides, so content-box sizing would add the
-	 * border width onto whichever far edge that corner's border touches,
-	 * measurably missing the wrapper edge it's meant to mark by exactly
-	 * that amount (2px) — confirmed by measuring it in a repro. */
-	box-sizing: border-box;
-	width: 14px;
-	height: 14px;
+/* tableSnapshot.ts's off-screen host for the detached clone it rasterizes —
+ * laid out (not display:none, which most DOM-to-image approaches can't
+ * measure) but far outside the viewport, so nothing ever paints it visibly. */
+.bt-snapshot-host {
+	position: fixed;
+	top: 0;
+	left: -99999px;
 	pointer-events: none;
-	opacity: 0;
-	transition: opacity 0.15s;
 }
-.bt-render-root.bt-view-framed .bt-view-corner {
-	opacity: 1;
-}
-.bt-view-corner-tl {
-	top:  var(--vf-t, 0px);
-	left: var(--vf-l, 0px);
-	border-top:  2px solid var(--interactive-accent);
-	border-left: 2px solid var(--interactive-accent);
-}
-.bt-view-corner-tr {
-	top:  var(--vf-t, 0px);
-	left: calc(var(--vf-r, 0px) - 14px);
-	border-top:   2px solid var(--interactive-accent);
-	border-right: 2px solid var(--interactive-accent);
-}
-.bt-view-corner-bl {
-	top:  calc(var(--vf-b, 0px) - 14px);
-	left: var(--vf-l, 0px);
-	border-bottom: 2px solid var(--interactive-accent);
-	border-left:   2px solid var(--interactive-accent);
-}
-.bt-view-corner-br {
-	top:  calc(var(--vf-b, 0px) - 14px);
-	left: calc(var(--vf-r, 0px) - 14px);
-	border-bottom: 2px solid var(--interactive-accent);
-	border-right:  2px solid var(--interactive-accent);
+/* tableSnapshot.ts applies this to the CLONED .bt-table-wrapper only (never
+ * the live one) so a snapshot captures the table's full natural size, not
+ * whatever's currently scrolled into view — !important since plain source
+ * order can't be relied on to win over .bt-table-wrapper's own same-
+ * specificity rule above once this is appended anywhere else in the file. */
+.bt-snapshot-expanded {
+	overflow: visible !important;
+	max-height: none !important;
+	height: auto !important;
+	width: max-content !important;
+	max-width: none !important;
 }
 /* Wraps <table> + addColBtn side by side so addColBtn sits immediately to the
  * table's right without any JS left/width math.
@@ -295,28 +335,81 @@
 	opacity: 0;
 	transition: opacity 0.12s;
 }
-.bt-render-root:hover .bt-view-resize { opacity: 1; }
-.bt-view-resize-b { left: 0; right: 0; bottom: 0; height: 6px; cursor: ns-resize; }
-.bt-view-resize-r { top: 0; bottom: 0; right: 0; width: 6px; cursor: ew-resize; }
-.bt-view-resize-br { right: 0; bottom: 0; width: 12px; height: 12px; cursor: nwse-resize; }
-.bt-view-resize:hover { background: var(--interactive-accent); opacity: 0.35; }
-.bt-view-resize-br:hover { opacity: 0.55; }
-/* Height handle now lives inside .bt-status-bar (Task 8) — a short dash on
- * hover marks its middle as the drag point, since a plain background tint
- * reads ambiguously inside a bar that already has its own background/text. */
+/* Keyed on .bt-render-root-shell, not .bt-render-root itself: the shell wraps
+ * BOTH root and the status bar (bt-view-resize-b lives inside the latter),
+ * as two siblings — see renderer.ts's own shell doc comment for why the
+ * status bar had to move out of root. A root-only :hover rule would drop
+ * this the moment the cursor crosses from the table into the status bar. */
+.bt-render-root-shell:hover .bt-view-resize { opacity: 1; }
+.bt-view-resize-b { left: 0; right: 0; bottom: 0; height: 8px; cursor: ns-resize; }
+/* --of-r-gap (renderer.ts's updateOuterFrame): how far root's own right edge
+ * sits past the frame's real right border once a manual viewWidth narrows
+ * it — 0 for an unnarrowed table, so this defaults to the exact same `right:
+ * 0` these always had. Glues the handle (and its dash below) to the frame's
+ * true right edge instead of root's own, the same symmetry the height
+ * handle already gets for free by living INSIDE the (now frame-width-
+ * matching) status bar — see updateOuterFrame's own comment. */
+.bt-view-resize-r { top: 0; bottom: 0; right: var(--of-r-gap, 0px); width: 8px; cursor: ew-resize; }
+.bt-view-resize-br { right: var(--of-r-gap, 0px); bottom: 0; width: 12px; height: 12px; cursor: nwse-resize; }
+/* Corner handle has no dash of its own (below) to recolor on hover, so it
+ * keeps a small tint of its own — a 12x12px hotspot, not the full-edge
+ * "long line" the -b/-r dash recoloring below replaces. */
+.bt-view-resize-br:hover { background: var(--interactive-accent); opacity: 0.35; }
+/* Height handle now lives inside .bt-status-bar (Task 8) — a short dash marks
+ * its middle as the drag point, since a plain background tint reads
+ * ambiguously inside a bar that already has its own background/text.
+ *
+ * Reported ("一般人都不知道高度能调"): this dash used to need the cursor
+ * precisely over the 6px-tall hotspot itself (:hover) before showing at
+ * all — nothing hinted the affordance existed until a user happened to land
+ * on that exact strip. Every other discoverability hint in this file (ctrl
+ * column, row/col selectors) instead shows on `.bt-render-root-shell:hover`
+ * — entering the outer frame at all, same as `.bt-view-resize` itself
+ * already does two rules up. Matching that convention here: the dash now
+ * shows as soon as the whole table is hovered, not only once the cursor is
+ * already on the exact pixel-precise strip it's advertising. */
 .bt-view-resize-b::after {
 	content: '';
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 24px;
-	height: 2px;
+	width: 32px;
+	height: 3px;
 	background: var(--text-faint);
-	border-radius: 1px;
+	border-radius: 1.5px;
 	transform: translate(-50%, -50%);
 	opacity: 0;
+	transition: opacity 0.12s, background-color 0.12s;
 }
-.bt-view-resize-b:hover::after { opacity: 1; }
+.bt-render-root-shell:hover .bt-view-resize-b::after { opacity: 1; }
+/* Width handle's own mirror of the dash above — same "一般人都不知道...能调"
+ * discoverability fix, other axis. .bt-view-resize-r lives directly on
+ * `root` (not inside the status bar), so its dash is centered on root's own
+ * height rather than the handle's short 6px-wide hotspot — same
+ * `.bt-render-root-shell:hover` reveal-on-entering-the-outer-frame trigger
+ * as every other hint here. */
+.bt-view-resize-r::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3px;
+	height: 32px;
+	background: var(--text-faint);
+	border-radius: 1.5px;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity 0.12s, background-color 0.12s;
+}
+.bt-render-root-shell:hover .bt-view-resize-r::after { opacity: 1; }
+/* Pinpointing the grabbable hotspot without the previous full-edge "long
+ * blue line" (removed: "调整宽度和高度hover边界时有一条长蓝线...不好看") —
+ * only the short dash itself recolors to the accent on hover, not the whole
+ * 6px-tall/-wide strip it sits in. */
+.bt-view-resize-b:hover::after,
+.bt-view-resize-r:hover::after {
+	background: var(--interactive-accent);
+}
 /* Suppress Obsidian-theme margins and cell borders that bleed into rich-table.
  * Themes control lines via CSS variables (§15: themes only set variables, base sets properties):
  *   --bt-cell-border          shorthand for all four sides  (default: none)
@@ -349,33 +442,53 @@
 
 
 /* ── Table title ─────────────────────────────────────────────────────────── */
-/* --bt-title-mb-pull: 主题通过此变量表达"拉近标题与表格距离"的意图（默认 0px）。
- * renderer.ts 负责将 root 上的该变量桥接到 titleEl（兄弟节点无法直接继承）；桥接
- * 在极少数时机（尚未桥接完成）下可能读不到值，calc() 的 fallback 必须与基准主题
- * 默认值一致（0px，而非旧的 -9px），否则会短暂出现标题压进表格的重叠。
+/* --bt-title-mb-pull: 主题通过此变量表达"拉近标题与表格距离"的意图（基准默认
+ * -20px，主题可覆盖成别的值）。renderer.ts 负责将 root 上的该变量桥接到 titleEl
+ * （兄弟节点无法直接继承）；桥接在极少数时机（尚未桥接完成）下可能读不到值，
+ * calc() 的 fallback 必须与基准主题默认值一致（-20px），否则会短暂出现标题与
+ * 表格间距变宽的跳变。
  * --bt-title-mb-adj: JS 在 hover 时设为 -mb-pull（动态抵消，而非固定值），让标题
- * 紧贴 col-selector 顶部，不会在主题的拉近值之上再叠加一段空隙。 */
+ * 紧贴 col-selector 顶部，不会在主题的拉近值之上再叠加一段空隙。
+ * --bt-title-sel-pad: renderer.ts 在创建 titleEl 时设一次、之后不再改动（跟
+ * --bt-sel-pad "只设一次，永不收回" 是同一套道理）——列选择条固定悬浮在表格正上方
+ * SEL_TOTAL 高度那道缝里，标题挪进 root 内部之后这道缝必须由标题自己的
+ * margin-bottom 留出来，而不能再指望 root 的 padding-top（那样只会把标题往下推，
+ * 缝隙留在标题上方而不是标题和表格之间，导致条把标题整个盖住）。*/
 .bt-table-title {
 	text-align: center;
 	font-size: var(--h4-size, 1.1em);
 	font-weight: var(--font-semibold);
 	color: var(--text-normal);
-	margin: 0 0 calc(var(--bt-title-mb-pull, 0px) + var(--bt-title-mb-adj, 0px));
+	margin: 0 0 calc(var(--bt-title-mb-pull, -20px) + var(--bt-title-mb-adj, 0px) + var(--bt-title-sel-pad, 0px));
 	line-height: 1.4;
+	/* --bt-title-center-adj (renderer.ts's updateOuterFrame): re-centers the
+	 * title over <table>'s own box instead of the wider box text-align:center
+	 * centers it in by default — see that function's own comment for why the
+	 * two can differ. transform, not margin — a translate never affects any
+	 * OTHER element's layout, so this can't reopen the title/table-gap issue
+	 * margin-bottom is otherwise responsible for. */
+	transform: translateX(var(--bt-title-center-adj, 0px));
 }
 
 /* ── Table footer ────────────────────────────────────────────────────────── */
 .bt-table-footer {
 	text-align: center;
-	margin: 0;
+	margin: 0 auto;
 	font-size: var(--font-ui-small);
 	color: var(--text-muted);
 	line-height: 1.4;
+	/* Capped to contentRow's own rendered width (renderer.ts's positionFooter),
+	 * kept live via ResizeObserver — a footer line longer than the table wraps
+	 * onto more visual lines instead of widening the table's own wrapper past
+	 * it (wrapper's width: max-content otherwise follows whichever of its
+	 * children is currently widest — see .bt-table-wrapper's own comment). */
+	max-width: var(--bt-footer-max-width, none);
 }
 
 .bt-table-footer-line {
 	margin: 0;
 	padding: 0;
+	overflow-wrap: break-word;
 }
 
 /* ── Editable title / footer (click to edit) ─────────────────────────────── */
@@ -523,6 +636,14 @@
 	display: block;
 }
 
+/* The "Import from .xlsx" button has no table content to preview before a
+ * file is even chosen — a plain centered hint instead of a rendered table. */
+.bt-template-preview-text {
+	padding: 2em 1em;
+	text-align: center;
+	color: var(--text-muted);
+}
+
 /* ── Grid size picker (Word/Sheets-style "insert table" hover grid) ───────── */
 /* Mounted on document.body, not as a DOM sibling of the "insert blank table"
  * button — CONFIRMED necessary via live diagnostics (see gridSizePicker.ts's
@@ -637,7 +758,10 @@
 .bt-ctrl-col::-webkit-scrollbar {
 	display: none;
 }
-.bt-render-root:hover .bt-ctrl-col { opacity: 1; }
+/* Same reasoning as .bt-view-resize's own comment above — keyed on the
+ * shell, not root, since the status bar (also part of "the table" for
+ * hover purposes) is root's sibling now, not its descendant. */
+.bt-render-root-shell:hover .bt-ctrl-col { opacity: 1; }
 .bt-ctrl-col.is-locked             { opacity: 1; }   /* stay visible when locked */
 .bt-ctrl-btn {
 	width: var(--bt-sel-cell);
@@ -703,55 +827,72 @@
 	color: var(--text-on-accent);
 	border-color: var(--interactive-accent);
 }
-/* Col selector: labels sit in the lower label zone; top grip zone reserved for drag grips.
- * --cs-off (set on the strip container) shifts every child to track horizontal scroll. */
+/* Inner scroll (horizontal for columns, vertical for rows) is tracked by ONE
+ * `transform` on a shared inner wrapper (`.bt-sel-track`, one per strip), not by
+ * every individual cell. There's one `.bt-sel-cell` per COLUMN/ROW of the whole
+ * table (un-virtualized), so writing the offset into EACH cell's own style —
+ * even via `transform`, which skips layout — still costs a real style
+ * recalculation for every one of them on every scroll frame (measured, 300-row
+ * table: ~8.5ms/frame).
+ *
+ * renderer.ts's positionSelectors sets this transform directly via
+ * `track.style.setProperty('transform', ...)`, deliberately NOT through a CSS
+ * custom property (the usual `setCssProps` pattern elsewhere in this file) — a
+ * custom-property change forces the browser to re-examine style for its WHOLE
+ * descendant subtree regardless of which descendant (if any) actually reads it.
+ * Measured: routing the very same value through a variable cost ~9ms/frame for
+ * that subtree, vs ~0.02ms setting `transform` directly — i.e. the custom
+ * property indirection alone was responsible for nearly all the remaining cost
+ * a plain wrapper transform was supposed to have already eliminated. So this
+ * rule intentionally sets no `transform` at all; look for the `.style.
+ * setProperty` calls in renderer.ts instead.
+ *
+ * A frozen row/column's real cell doesn't move on scroll (position:sticky) — its
+ * selector-strip label/grip/resize-handle shouldn't either, so renderer.ts's
+ * rebuild() parents a frozen one directly under `.bt-col-selector`/
+ * `.bt-row-selector` itself, OUTSIDE the track, instead of inside it — a sibling
+ * of the track, not a descendant, so it never inherits the track's transform in
+ * the first place. `.bt-sel-cell-frozen` no longer needs to override `left`/
+ * `transform` for this reason (both are already identical either way); it's kept
+ * only for the z-index bump below, so a frozen cell — added to its parent before
+ * the (higher-DOM-order) track — still paints ABOVE the track's whole subtree as
+ * non-frozen siblings scroll past underneath. */
+.bt-col-selector .bt-sel-track,
+.bt-row-selector .bt-sel-track {
+	position: absolute;
+	inset: 0;
+}
+/* Col selector: labels sit in the lower label zone; top grip zone reserved for drag grips. */
 .bt-col-selector .bt-sel-cell {
 	top: var(--bt-sel-grip); height: var(--bt-sel-cell);
-	left:  calc(var(--cl, 0px) + var(--cs-off, 0px));
+	left:  var(--cl, 0px);
 	width: var(--cw, 60px);
 }
-/* A frozen column's real cell doesn't move on horizontal scroll — its label
- * (and drag grip, same rule below) shouldn't either. --cl alone is already
- * the label's correct fixed position: it's the same table-relative left
- * offset (sum of preceding columns' widths) that applyFreeze computes into
- * --bt-frozen-left for the real cell, just dropping --cs-off so it stops
- * tracking scroll. renderer.ts's rebuild() adds this class only to cells for
- * columns actually within the current model.freezeCols. */
 .bt-col-selector .bt-sel-cell.bt-sel-cell-frozen {
-	left: var(--cl, 0px);
 	/* Both cell and grip are already position:absolute with an opaque
 	 * background (base rules above) — DOM order alone decides paint order
 	 * otherwise, and a frozen cell is added to colSel earlier than the
-	 * non-frozen cells scrolling past it, so without a higher z-index the
-	 * later (non-frozen) cells painted on top as they slid underneath,
+	 * track (whose non-frozen cells scroll past it), so without a higher
+	 * z-index the track's contents painted on top as they slid underneath,
 	 * covering the now-fixed frozen label — reported as still being
 	 * "curtained" even after the position fix. z-index 2 matches the real
 	 * frozen table cells' own z-index for the same reason. */
 	z-index: 2;
 }
 .bt-col-selector .bt-sel-col-drag.bt-sel-cell-frozen {
-	left: var(--cdx, 0px);
 	z-index: 2;
 }
 /* Row selector: labels sit in the right label zone; left grip zone reserved for drag grips */
 .bt-row-selector .bt-sel-cell {
 	left: calc(var(--bt-sel-total) - var(--bt-sel-cell)); width: var(--bt-sel-cell);
-	/* + --rs-off tracks inner vertical scroll — mirror of the col cell's --cs-off. */
-	top:    calc(var(--rt, 0px) + var(--rs-off, 0px));
+	top:    var(--rt, 0px);
 	height: var(--rh, 30px);
 }
-/* A frozen row's real cell doesn't move on vertical inner-scroll — its row-number
- * label (and drag grip, same rule below) shouldn't either. --rt alone is already
- * the label's correct fixed position (the same table-relative top offset the row's
- * sticky --bt-frozen-top mirrors), just dropping --rs-off so it stops tracking
- * scroll. z-index 2 keeps it above the non-frozen labels sliding underneath — same
- * reasoning as the frozen-column rule above. */
+/* Z-index only — same reasoning as the frozen-column rule above. */
 .bt-row-selector .bt-sel-cell.bt-sel-cell-frozen {
-	top: var(--rt, 0px);
 	z-index: 2;
 }
 .bt-row-selector .bt-sel-row-drag.bt-sel-cell-frozen {
-	top: var(--rdy, 0px);
 	z-index: 2;
 }
 
@@ -785,12 +926,21 @@
  * reproduced in the harness across every dpr and layout mode tried, so this
  * remains the one part of the fix resting on the user's testing rather than on a
  * test. */
+/* translateX(-50%) centers the seam on the boundary. Scroll-tracking is NOT part
+ * of this element's own transform any more — a non-frozen handle lives inside
+ * `.bt-sel-track` (which carries the scroll-tracking transform itself, set
+ * directly from JS — see that class's own comment), a frozen one lives
+ * directly under `.bt-col-selector` instead (see the .bt-sel-track comment
+ * above) — so this same -50%-only transform is correct for both, and there's no
+ * separate `.bt-sel-cell-frozen` override needed here at all (unlike the label
+ * cells above, resize handles don't need z-index either: the base rule's z-index
+ * 3 already wins over everything, frozen or not). */
 .bt-sel-resize-col {
 	position: absolute;
 	top: 0;
 	height: var(--bt-sel-total); /* spans full col-selector height */
 	width: 9px;
-	left: calc(var(--rx, 0px) + var(--cs-off, 0px));
+	left: var(--rx, 0px);
 	transform: translateX(-50%);
 	cursor: col-resize;
 	z-index: 3;
@@ -800,22 +950,10 @@
 	left: 0;
 	width: var(--bt-sel-total); /* spans full row-selector width */
 	height: 9px;
-	top: calc(var(--ry, 0px) + var(--rs-off, 0px)); /* track inner vertical scroll */
+	top: var(--ry, 0px);
 	transform: translateY(-50%);
 	cursor: row-resize;
 	z-index: 3; /* mirror of the column seam above */
-}
-/* A frozen row/column's real cell doesn't move on inner scroll, so the hover
- * zone that resizes it mustn't either — same rule, and the same class, as the
- * frozen label cells above: drop the scroll offset and use the measured
- * table-relative position alone (renderGeometry.ts is what guarantees the two
- * agree). Without this the zone slid away from the boundary line it drags,
- * ending up outside the strip along that line's extension. */
-.bt-col-selector .bt-sel-resize-col.bt-sel-cell-frozen {
-	left: var(--rx, 0px);
-}
-.bt-row-selector .bt-sel-resize-row.bt-sel-cell-frozen {
-	top: var(--ry, 0px);
 }
 .bt-sel-resize-hidden {
 	display: none;
@@ -957,7 +1095,7 @@
 	left: 1px;
 	width: var(--bt-sel-grip);
 	height: var(--bt-sel-cell);
-	top: calc(var(--rdy, 0px) + var(--rs-off, 0px)); /* track inner vertical scroll */
+	top: var(--rdy, 0px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -971,8 +1109,8 @@
 	top: 1px;
 	height: var(--bt-sel-grip);
 	width: var(--bt-sel-cell);
-	left: calc(var(--cdx, 0px) + var(--cs-off, 0px));
-	transform: translateX(-50%);
+	left: var(--cdx, 0px);
+	transform: translateX(-50%); /* centers the grip on the boundary point */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1165,6 +1303,35 @@
 	 */
 	min-height: 1.4em;
 }
+/* Obsidian's own reading-view/live-preview table CSS trims a row's first cell's
+ * leading padding (and, by the same convention, the last cell's trailing padding)
+ * to sit flush with the surrounding note text — via
+ * ".markdown-preview-view td:first-child { padding-inline-start: ... }", confirmed
+ * live via the browser's own matched-rules inspection (this exact selector, from
+ * Obsidian's injected stylesheet, was the one actually winning). Its specificity
+ * (2 classes + a pseudo-class + an element selector) already beats the base rule
+ * above (2 classes only) on its own — no !important, no load-order luck involved.
+ * Reported: a table's own first-column cells rendered visibly off-center — the
+ * text itself was correctly centered WITHIN that half-trimmed padding box, so
+ * nothing about alignment resolution was wrong, only the box it was centered in.
+ * Fixed by out-specificity-ing Obsidian's rule instead of overriding with
+ * !important (Obsidian's developer policy discourages it): repeating .bt-table
+ * adds one more class to this selector's own count, for a plain, order-independent
+ * specificity win — same padding-inline-start/-end vocabulary Obsidian's own rule
+ * uses, not the physical padding-left/-right shorthand, so this stays correct
+ * under RTL too. Never reproducible in this plugin's own e2e harness:
+ * obsidian-vars.css deliberately stubs only the competing declarations earlier
+ * bugs needed (border-collapse), not this one — confirmed solely via the
+ * reporter's own live DOM (getComputedStyle + a matched-CSSRules dump).
+ */
+.bt-table.bt-table .bt-td:first-child,
+.bt-table.bt-table .bt-th:first-child {
+	padding-inline-start: var(--size-4-3);
+}
+.bt-table.bt-table .bt-td:last-child,
+.bt-table.bt-table .bt-th:last-child {
+	padding-inline-end: var(--size-4-3);
+}
 
 /* !important: Obsidian's own reading-view table CSS styles bare <tr>/<td>
  * elements directly (zebra striping, native hover) — without this, that
@@ -1186,6 +1353,20 @@
 }
 
 .bt-table .bt-th {
+	background-color: var(--bt-header-bg, var(--background-secondary)) !important;
+	font-weight: var(--font-semibold);
+}
+
+/* A row a header split absorbs into <thead> (see computeHeaderRowSpan in
+ * renderGridHelpers.ts) stays a real .bt-td data cell — sortable/editable/
+ * filterable exactly like any other row — but the user sees it as a second
+ * header line, so it should still look like one. Without this, such a row
+ * fell back to the plain .bt-td rule above (transparent/--bt-cell-bg)
+ * instead of matching row 1's header background, even though no explicit
+ * per-cell style was ever involved on either side. Higher specificity
+ * (.bt-table.bt-table, the same doubling used for :first-child/:last-child
+ * padding above) wins over the plain .bt-td rule regardless of source order. */
+.bt-table.bt-table thead .bt-td {
 	background-color: var(--bt-header-bg, var(--background-secondary)) !important;
 	font-weight: var(--font-semibold);
 }
@@ -1346,6 +1527,11 @@
 .bt-table .bt-th p {
 	margin: 0;
 	text-align: inherit;
+	/* Set by applyCodeLineHeightFix (renderAutofit.ts) only when this table
+	 * actually has inline code whose own rendered height needs more room than
+	 * the theme's line-height gives it — falls through to the theme's own
+	 * value (inherited, untouched) for every table that never needs this. */
+	line-height: var(--bt-cell-line-height, inherit);
 }
 /* bt-list-block: inline-block so the list centers as a unit while items stay left-aligned */
 .bt-table .bt-td .bt-list-block,
@@ -1365,11 +1551,16 @@
 	white-space: pre !important;
 	overflow-x: auto;
 }
-/* Cell editor is always left-aligned so code indentation is visible while typing */
+/* Cell editor is always left-aligned so code indentation is visible while typing.
+ * white-space:pre (not pre-wrap): a narrow auto column must widen to fit what's
+ * being typed instead of wrapping to multiple lines — renderCell.ts grows the
+ * column live on every keystroke (growColLiveForTextEdit). Real newlines
+ * (Shift+Enter) still render as line breaks either way; only
+ * auto-wrap-on-overflow is disabled. */
 .bt-table .bt-td .bt-cell-editor,
 .bt-table .bt-th .bt-cell-editor {
 	text-align: left;
-	white-space: pre-wrap;
+	white-space: pre;
 }
 .bt-table .bt-td .bt-list-marker,
 .bt-table .bt-th .bt-list-marker {
@@ -1596,13 +1787,20 @@
 	background: var(--background-modifier-hover);
 }
 
-/* Live-sort indicator — same corner as the filter button, one slot higher, so
- * a column that's both filtered and live-sorted shows both stacked instead of
- * overlapping. Always opaque (unlike the filter button) since it's only ever
- * in the DOM at all while a live sort is actually active on this column. */
+/* Live-sort indicator — top-right corner, diagonally opposite the filter
+ * button (bottom-right). A top:3px and a bottom:3px 16px icon need 38px of
+ * combined vertical room (3+16+3+16), which a normal single-line header
+ * (~32px) doesn't have on its own — see the bt-th-tall-icons rule right
+ * below, which grows exactly this header to fit both rather than relocating
+ * either icon (an earlier version stacked sort directly above filter in one
+ * corner, or moved it beside filter in a row, or diagonally to bottom-left —
+ * all sidestepped the height problem instead of solving it, at the cost of a
+ * spot other than the intended top-right corner). Always opaque (unlike the
+ * filter button) since it's only ever in the DOM at all while a live sort is
+ * actually active on this column. */
 .bt-table .bt-th .bt-sort-active-btn {
 	position: absolute;
-	bottom: 21px;
+	top: 3px;
 	right: 3px;
 	width: 16px;
 	height: 16px;
@@ -1616,6 +1814,41 @@
 .bt-table .bt-th .bt-sort-active-btn svg { width: var(--font-ui-smaller); height: var(--font-ui-smaller); }
 .bt-table .bt-th .bt-sort-active-btn:hover {
 	background: var(--background-modifier-hover);
+}
+/* Added to a header cell only while it's driving a live sort (renderCell.ts)
+ * — grows it enough to give the top-right sort icon and the bottom-right
+ * filter icon their own 3px-from-the-edge room without overlapping in the
+ * middle. `height`, not `min-height`: measured directly, min-height on a
+ * table cell does NOT grow the row in this layout engine (same limitation
+ * already documented for the base cell's own min-height above, which is why
+ * empty-cell height is actually fixed by inserting real content, not by that
+ * rule) — but plain `height` on a table cell IS already relied on elsewhere
+ * in this file as a row-height minimum (see "Row height" above), so this
+ * uses the same mechanism. `max(...)` keeps a taller manually-set row height
+ * (`--bt-row-height`) from being shrunk back down to this floor.
+ *
+ * This file never sets box-sizing on `.bt-th`/`.bt-td`, so `height` here
+ * could legally end up meaning either a CONTENT height (padding added on
+ * top for the rendered box) or a padding-INCLUSIVE total, depending on
+ * whatever box-sizing default is in effect for this element by the time the
+ * cascade resolves — and that default genuinely differs between this test
+ * harness (content-box, nothing here overrides the browser default) and the
+ * real Obsidian app (border-box, confirmed by reproducing the report with a
+ * simulated global `*, *::before, *::after { box-sizing: border-box }`
+ * reset). An EARLIER version of this rule picked a value sized for the
+ * content-box case (44px content + 16px padding = 60px total) and shipped
+ * passing its own test — then still overlapped in the real vault, where
+ * border-box makes that same "44px" the full 44px total instead, 6px under
+ * this comment's own 38px+buffer target the first time around (28px then,
+ * an even tighter miss). The explicit `box-sizing: border-box` below pins
+ * down which one 44px means; the value itself was raised so the rule stays
+ * correct (44px total under border-box, 60px total under content-box —
+ * either is ≥ the 38px actually needed) even for an ambient default this
+ * rule doesn't fully control. 44px = the 38px combined icon zone
+ * (3+16+3+16) plus a few px of breathing room. */
+.bt-table .bt-th.bt-th-tall-icons {
+	box-sizing: border-box;
+	height: max(44px, var(--bt-row-height, 0px));
 }
 
 
@@ -1686,23 +1919,47 @@
 	width: var(--bt-suggest-width, 260px);
 }
 
-/* Typed header cells — indicate they're interactive */
-.bt-table .bt-th-typed {
-	cursor: pointer;
+/* Column-type indicator — an inline icon inside .bt-th-text, right before the
+ * header's own name (renderCell.ts), not a corner overlay like filter/sort.
+ * A corner-pinned badge was tried first and tracked the CELL's corner rather
+ * than the TEXT — with the default centered alignment, or really any column
+ * wider than the icon itself, that put visible daylight between the badge
+ * and the name it was meant to label. Living inside .bt-th-text instead means
+ * it always sits flush against the name, whatever the column's alignment or
+ * width, and — since it's placed first — auto-fit's own .bt-th-text.
+ * offsetWidth measurement (renderAutofit.ts) naturally includes it.
+ *
+ * .bt-th-text itself becomes the flex container (not just the icon): the icon
+ * and the text both become flex items, vertically centered against each
+ * OTHER by the flex algorithm's own cross-axis alignment — reported as not
+ * quite centered under `vertical-align: middle` on the icon alone, which
+ * aligns to a fixed point half an ex above the text's baseline rather than
+ * the text's actual visual center, measurably off by a couple px for this
+ * icon/font combination. Still an inline-level box (`inline-flex`, not
+ * `flex`), so .bt-th's own text-align continues to position the whole
+ * icon+name unit exactly as before.
+ *
+ * Scoped to `.bt-th-typed` (only a header that actually has the icon), not
+ * every `.bt-th-text` — applying `display: inline-flex` to EVERY header's
+ * text span, typed or not, was tried first and broke auto-layout tables
+ * (no explicit column widths): a flex container's children don't wrap by
+ * Chrome's default flex sizing the way plain inline text does, so an
+ * untyped header's name stopped wrapping/shrinking, silently widening every
+ * auto-layout table — caught by the existing locked-wide-table-ctrl-col
+ * suite, which measures the ctrl column's position relative to the table's
+ * actual rendered width. */
+.bt-table .bt-th .bt-th-text.bt-th-typed {
+	display: inline-flex;
+	align-items: center;
 }
-
-.bt-table .bt-th-typed::after {
-	content: ' ▾';
-	font-size: 0.75em;
+.bt-table .bt-th .bt-th-type-icon {
+	display: inline-flex;
+	align-items: center;
+	margin-right: 3px;
 	opacity: 0.45;
+	color: var(--text-muted);
 }
-
-/* Hover tint is JS-driven (renderer.ts, see above) — same consolidation as
- * bt-td-editable/bt-th-editable. */
-.bt-table .bt-th-typed:focus-visible {
-	outline: 2px solid var(--interactive-accent);
-	outline-offset: -2px;
-}
+.bt-table .bt-th .bt-th-type-icon svg { width: var(--font-ui-smaller); height: var(--font-ui-smaller); }
 
 /* Choice pill badges */
 .bt-choice {
@@ -1715,6 +1972,17 @@
 	background-color: var(--bt-choice-bg, var(--tag-background));
 	color: var(--tag-color);
 	white-space: nowrap;
+}
+
+/* task-status pills read as state labels rather than plain tags — bolder
+ * weight sets them apart from the medium-weight default every other choice
+ * type still uses. Text color is fixed dark, not --tag-color: that variable
+ * assumes the low-opacity pastel backgrounds every OTHER choice type still
+ * uses, and reads as low-contrast gray against task-status's own solid,
+ * saturated backgrounds (reported: "字体颜色好像都是浅灰色，对比度很差"). */
+.bt-choice[data-choice-type="task-status"] {
+	font-weight: var(--font-bold);
+	color: #1a1a1a;
 }
 
 .bt-choice-unknown {
@@ -2102,6 +2370,50 @@
 
 .bt-builtin-pill {
 	pointer-events: none;
+}
+
+/* Settings — ctrlCol button visibility chips */
+.bt-ctrlcol-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+	margin-bottom: var(--size-4-4);
+}
+
+.bt-ctrlcol-chip {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: var(--size-4-1) var(--size-4-2);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	cursor: pointer;
+	/* Roughly a quarter-width column on a typical settings-pane width, so four
+	 * chips share a row instead of one giant Setting per button — the whole
+	 * point of this layout over the previous one-row-per-button list. */
+	flex: 1 1 160px;
+}
+
+.bt-ctrlcol-chip-icon {
+	display: flex;
+	color: var(--text-muted);
+}
+
+.bt-ctrlcol-chip-icon svg {
+	width: var(--icon-s);
+	height: var(--icon-s);
+}
+
+.bt-ctrlcol-chip-label {
+	flex: 1 1 auto;
+	font-size: var(--font-ui-small);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.bt-ctrlcol-chip-toggle {
+	margin: 0;
 }
 
 /* Settings — custom types */
@@ -2499,6 +2811,17 @@
 	display: flex;
 	align-items: stretch;
 	height: 28px;
+	/* PINNED mode only: matches the outer frame's own (possibly manually-
+	 * narrowed) left/width exactly, so a narrow view reads as one consistent
+	 * box rather than a full-width bar under a narrower table — see
+	 * updateOuterFrame's own comment (renderer.ts) for why these reuse
+	 * --of-l/-w's values directly. Falls back to a flush, full-width bar
+	 * (0/auto) before the first JS pass sets them, and permanently for a
+	 * table with no manual viewWidth at all — box-sizing: border-box so this
+	 * margin/width pair doesn't add on top of shell's own box. */
+	margin-left: var(--sb-pinned-l, 0px);
+	width: var(--sb-pinned-w, auto);
+	box-sizing: border-box;
 	border-top: 1px solid var(--background-modifier-border);
 	font-size: var(--font-ui-smaller);
 	color: var(--text-muted);
@@ -2510,12 +2833,30 @@
  * would reintroduce the exact scroll-jump/document-height-collapse bug class
  * the hover-strip flicker fixes elsewhere in this file exist to prevent (see
  * the matching comment at this class's assignment in renderer.ts). Opacity-
- * only toggle, same bt-strip-visible convention as every other hover strip. */
+ * only toggle, same bt-strip-visible convention as every other hover strip.
+ *
+ * Reported ("状态栏不常驻时，hover之后底部外边框消失了，像是被什么遮挡了，高度
+ * 调节也不能hover出来"): this used to float BELOW the table's own visible box
+ * (--sb-top anchored past root's bottom edge — see positionStatusBar's own
+ * comment for the exact history). Obsidian wraps every rendered code block's
+ * content in a real `contain: paint` + `overflow: hidden` container sized to
+ * the content's normal FLOW box (see gridSizePicker.ts's own doc comment for
+ * the confirmed mechanism) — an absolutely-positioned element that extends
+ * past that flow box doesn't just get z-fought, it gets clipped away
+ * entirely, invisible regardless of z-index. No test caught this because the
+ * test harness has no such wrapper. Fixed by having the hover bar OVERLAY the
+ * table's own last row(s) instead of floating below them — --sb-top now
+ * anchors to (root's own visible bottom − this bar's height), i.e. strictly
+ * INSIDE root's box, which the real wrapper's flow-box sizing already
+ * accounts for. A solid background (not transparent) is load-bearing now
+ * that it sits over real cell content instead of empty space below it. */
 .bt-status-bar.bt-status-mode-hover {
 	position: absolute;
 	top: var(--sb-top, 0px);
 	left: var(--sb-left, 0px);
 	width: var(--sb-width, auto);
+	background: var(--background-primary);
+	box-shadow: 0 -1px 0 0 var(--background-modifier-border);
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
@@ -2534,6 +2875,24 @@
 	align-items: center;
 	overflow: hidden;
 }
+/* Momentary probe classes (updateOuterFrame, renderer.ts) — always applied
+ * together, one synchronous read: .bt-status-bar's own switches to
+ * max-content so it stops constraining ANY child (not just the flex-grow
+ * one) to less than its natural size, and .bt-status-tabs opts out of
+ * "fill whatever space isn't otherwise claimed" so its own min-content
+ * width is what gets measured, not an expand-to-fill one. Without the BAR's
+ * own override, its fixed-size siblings (stats/zoom/scroll) stayed clipped
+ * to the still-narrow bar and reported wrong "current" widths, which fed
+ * back into a wrong natural-width estimate (reported: sheet tabs and
+ * .bt-status-stats visibly overlapping — the bar had been narrowed to less
+ * than its fixed-size children's own combined width, not just the tabs'). */
+.bt-status-bar.bt-measure-natural {
+	width: max-content !important;
+}
+.bt-status-tabs.bt-measure-natural {
+	flex: 0 0 auto;
+	overflow: visible;
+}
 .bt-status-stats {
 	flex: 0 0 auto;
 	display: flex;
@@ -2541,6 +2900,64 @@
 	padding: 0 var(--size-4-2);
 	white-space: nowrap;
 }
+/* Static separator right before the zoom widget — same vertical-line look as
+ * statusDivider's own ::after, but this one never drags (it's just visual
+ * grouping, not a resize handle). */
+.bt-status-sep {
+	flex: 0 0 1px;
+	align-self: stretch;
+	margin: 5px 0;
+	background: var(--background-modifier-border);
+}
+/* Zoom widget — between stats and the divider/scrollbar section, matching
+ * Excel's own status-bar zoom control layout (-, slider, +, percent). */
+.bt-status-zoom {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	padding: 0 var(--size-4-2);
+	white-space: nowrap;
+}
+.bt-status-zoom-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	user-select: none;
+	line-height: 1;
+}
+.bt-status-zoom-btn:hover {
+	background: var(--background-modifier-hover);
+}
+.bt-status-zoom-slider {
+	width: 80px;
+	margin: 0;
+}
+.bt-status-zoom-value {
+	/* Just enough for the widest value ("400%") — 3.5em left a wide blank
+	 * strip between the + button and the (right-aligned) text for every
+	 * narrower value, reported as "缩放按钮+和后面的百分比按钮中间有挺大一块空白". */
+	min-width: 2.6em;
+	text-align: right;
+	cursor: pointer;
+}
+.bt-status-zoom-value:hover {
+	color: var(--text-normal);
+}
+.bt-status-zoom-input {
+	width: 2.6em;
+	text-align: right;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	color: inherit;
+	font: inherit;
+}
+
 /* Drag target between the tabs/stats area and the scrollbar section — widens
  * .bt-status-scroll's reserved width (--bt-status-scroll-w) at the expense
  * of .bt-status-tabs' flexible space, or the reverse. The visible grip is a
@@ -2785,6 +3202,18 @@
 	color: var(--text-normal);
 }
 
+/* Changelog modal */
+.bt-changelog-modal .bt-changelog-entry {
+	margin-bottom: var(--size-4-4);
+}
+.bt-changelog-modal h3 {
+	margin-bottom: var(--size-4-1);
+}
+.bt-changelog-modal ul {
+	margin: 0;
+	padding-left: var(--size-4-5);
+}
+
 
 /* ── Built-in themes (auto-generated — do not edit below) ──── */
 /* @theme-label-en: Academic 📐 */
@@ -2825,6 +3254,21 @@
  * row lives in an earlier <tr> and would never receive a tr:last-child-scoped shadow,
  * leaving a gap in the rule under that column. */
 .bt-theme-academic .bt-table tbody {
+    box-shadow: inset 0 -1.5px 0 var(--text-muted);
+}
+
+/* Also drawn directly on the last row's own cells: a per-cell background
+ * (applyResolvedStyle, inline !important) paints on top of tbody's own
+ * box-shadow — table cells paint after their row group under normal CSS
+ * table-painting order — hiding the rule wherever the last row has a
+ * background set (reported: github.com/SdKay/obsidian-rich-table/issues/8).
+ * Kept ALONGSIDE the tbody rule above, not instead of it: a rowspanned cell
+ * reaching the last row has no <td> of its own in that row's <tr> (its cell
+ * lives in the earlier row it started in), so this selector alone would
+ * leave that column with no rule under it — exactly the gap the tbody rule
+ * exists to cover. Two rules, two different failure modes; both are real. */
+.bt-theme-academic .bt-table tbody > tr:last-child > .bt-td,
+.bt-theme-academic .bt-table tbody > tr:last-child > .bt-th {
     box-shadow: inset 0 -1.5px 0 var(--text-muted);
 }
 
@@ -2926,7 +3370,6 @@
 /* ── Root variables & cursor glow ────────────────────────────────────── */
 .bt-render-root.bt-theme-plain {
     --bt-cell-border:   none;
-    --bt-title-mb-pull: 0px;
     animation: bt-plain-hue 10s linear infinite;
 
     /* Cursor atmosphere — visible at root edges, strip area, add-row zone */

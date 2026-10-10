@@ -32,7 +32,14 @@ Bản đồ điều hướng toàn bộ các dự án nghiên cứu, kế hoạc
 
 ---
 
-## 2. Nguyên tắc quản lý dự án học tập trong Vault
+## 2. Dự án Nghiên cứu & Kỹ thuật Ứng dụng (Applied AI & Engineering Projects)
+
+- [[06 - Projects/AutoCheckout/README|AutoCheckout-CL]] — Hệ thống nhận diện sản phẩm quầy thanh toán tự động thông minh bằng Học tăng cường không lưu dữ liệu cũ (*Replay-Free Continual Object Detection* trên tập dữ liệu RPC bám sát Paper PDP - CVPR 2026).
+- [[EDU-02 - Trợ lý Giảng dạy AI]] — Trợ lý AI sư phạm tích hợp GraphRAG, Multi-Agent workflow và đánh giá LLM-as-a-Judge.
+
+---
+
+## 3. Nguyên tắc quản lý dự án trong Vault
 - Mỗi lộ trình học tập độc lập nên có một file **Study Project Note** trong `06 - Projects/Study Plans/`.
 - Project Note là **trạm chỉ huy (Command Center)**: lưu trữ mục tiêu, roadmap, checklist tiến độ, nhật ký tuần và các câu hỏi mở.
 - Tri thức bền vững được kết xuất từ dự án phải được phân phối về đúng các tầng:

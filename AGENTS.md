@@ -21,7 +21,7 @@ Do not treat this vault as a normal software repository only. Treat it as a Mark
 9. Do not invent sources, citations, book claims, or paper details.
 10. For controversial social, philosophical, political, or historical topics, preserve multiple viewpoints and surface assumptions.
 11. When exploring or creating notes for a topic within a domain/subdomain that lacks a study project note, proactively propose creating one. Each Study Note serves as the learning management hub for that domain/subdomain.
-12. Never automatically generate images. Check `98 - Attachments` first; if an illustration is needed, use a placeholder `![[filename.png]]` with a description for the user to add.
+12. Never automatically generate images. Check `98 - Attachments` first; nếu cần thiết sử dụng hình ảnh để minh họa mà không có sẵn: Nếu không phải các sơ đồ, có thể đặt placeholder `![[filename.png]]` mô tả về ảnh cần tìm để người dùng tự tìm kiếm và thay thế vào đó, kèm đặt tên rõ nghĩa cho ảnh.
 13. Minimize icons and emojis: Avoid decorative emojis or icons in headings, lists, tables, callouts, and notes. Keep notes and assistant responses clean, academic, and distraction-free.
 14. Ưu tiên hình ảnh cho sơ đồ/luồng thay vì Mermaid: Mermaid định dạng quá xấu và gây rối khi nhìn vào trong Obsidian. Nếu có hình ảnh chụp luồng/kiến trúc sẵn có, hãy giữ lại và sử dụng trực tiếp hình ảnh thay vì vẽ lại bằng Mermaid; các hình ảnh thừa thãi không mang thông tin luồng có thể xóa/bỏ qua.
 15. Tự động đặt tên có nghĩa cho ảnh: Không để ảnh ở dạng tên mặc định (như `Pasted image YYYYMMDDHHMMSS.png`). Khi tiếp nhận hoặc đưa ảnh vào vault, tự động đổi tên file trong `98 - Attachments` thành tên mô tả ngắn gọn, rõ nghĩa theo nội dung/chủ đề và cập nhật đồng bộ các wikilink `![[...]]` trong các note liên quan.
@@ -227,7 +227,7 @@ Each Study Project Note (`06 - Projects/Study Plans/Study - ...`) serves as the 
 
 1. Never use image generation tools (`generate_image`) to create artificial images.
 2. Always search `98 - Attachments` first for existing files.
-3. If visual illustration is needed and not available, use a clear placeholder `![[image_name.png]]` with a descriptive note for the user to add later.
+3. Nếu cần thiết sử dụng hình ảnh để minh họa mà không có sẵn: Nếu không phải các sơ đồ (đối với sơ đồ/luồng tuân theo quy tắc ở mục 4), có thể đặt placeholder `![[image_name.png]]` kèm mô tả chi tiết về ảnh cần tìm để người dùng tự tìm kiếm và thay thế vào đó, đồng thời đặt tên rõ nghĩa cho file ảnh.
 4. Ưu tiên hình ảnh cho sơ đồ/luồng thay vì Mermaid: Mermaid thường hiển thị xấu, định dạng thô và gây rối mắt trong Obsidian. Nếu đã có hình ảnh trực quan thể hiện rõ luồng quy trình hoặc kiến trúc, hãy giữ lại và nhúng trực tiếp hình ảnh, không vẽ lại bằng Mermaid. Các hình ảnh không liên quan hoặc không mang thông tin luồng có thể xóa/bỏ qua.
 5. Tự động đặt tên có nghĩa cho ảnh:
    - Tránh để tên ảnh mặc định dạng chuỗi thời gian vô nghĩa (ví dụ: `Pasted image YYYYMMDDHHMMSS.png`).
