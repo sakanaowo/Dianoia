@@ -1,7 +1,6 @@
 ---
 source: https://www.youtube.com/watch?v=YjPxfsqEmRM
 language: Vietnamese (auto-generated)
-status: processing
 created: 2026-06-14
 tags:
   - video/youtube

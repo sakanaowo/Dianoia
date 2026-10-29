@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: generic
-status: raw
 source:
   - ""
 author: 

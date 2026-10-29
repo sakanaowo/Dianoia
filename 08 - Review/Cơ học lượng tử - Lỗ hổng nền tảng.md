@@ -1,7 +1,6 @@
 ---
 type: review
 subtype: prerequisite-gaps
-status: growing
 created: 2026-06-24
 updated: 2026-06-24
 domains:

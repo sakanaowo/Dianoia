@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 scope: domain
 created: "2026-08-19"
 updated: "2026-08-19"

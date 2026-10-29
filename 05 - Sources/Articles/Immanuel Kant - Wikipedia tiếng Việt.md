@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: article
-status: raw
 source:
   - https://vi.wikipedia.org/wiki/Immanuel_Kant
 fetched: 2026-06-17

@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: article
-status: raw
 source:
   - https://vi.wikipedia.org/wiki/Thuy%E1%BA%BFt_si%C3%AAu_vi%E1%BB%87t
 author: Wikipedia contributors

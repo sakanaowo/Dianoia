@@ -1,6 +1,5 @@
 ---
 type: concept
-status: growing
 domains:
   - "[[Nuclear Fusion]]"
   - "[[Plasma Physics]]"

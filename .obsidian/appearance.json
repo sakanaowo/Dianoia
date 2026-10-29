@@ -1,12 +1,14 @@
 {
-  "cssTheme": "Cupertino",
-  "accentColor": "#5da3b1",
+  "cssTheme": "Baseline",
+  "accentColor": "#72b7c5",
   "nativeMenus": true,
-  "showRibbon": true,
+  "showRibbon": false,
   "showViewHeader": true,
   "interfaceFontFamily": "SF Pro Display",
   "textFontFamily": "SF Pro Display",
-  "monospaceFontFamily": "SpaceMono Nerd Font Propo,SpaceMono Nerd Font Mono",
-  "enabledCssSnippets": [],
+  "monospaceFontFamily": "GoogleSansCode Nerd Font,GoogleSansCode Nerd Font Mono,GoogleSansCode Nerd Font Propo",
+  "enabledCssSnippets": [
+    "math-block"
+  ],
   "baseFontSize": 17
 }

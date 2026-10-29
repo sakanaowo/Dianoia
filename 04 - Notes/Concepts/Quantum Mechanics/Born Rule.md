@@ -1,6 +1,5 @@
 ---
 type: concept
-status: growing
 domains:
   - "[[Quantum Mechanics]]"
 themes:

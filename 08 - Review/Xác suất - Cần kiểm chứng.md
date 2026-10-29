@@ -1,6 +1,5 @@
 ---
 type: review
-status: raw
 created: 2026-06-26
 domains:
   - "[[Mathematics]]"

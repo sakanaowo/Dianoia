@@ -1,6 +1,5 @@
 ---
 type: comparison
-status: growing
 domains:
   - "[[Domain]]"
 themes:

@@ -272,7 +272,7 @@ Framework cung cấp 4 tiêu chí định lượng (thang 1–5) để đánh gi
 * **Không có công cụ (Tools) nào để gọi:** Agent chỉ "ngồi suy nghĩ" mà không thể tương tác hành động ra môi trường.
 * Tác vụ đòi hỏi **tính tất định (deterministic) 100%** và mỗi sai sót đều phải trả giá đắt (tài chính, pháp lý).
 * Yêu cầu **độ trễ (latency) cực thấp** vì vòng lặp của agent luôn chậm hơn nhiều lần so với gọi đơn lẻ.
-* 👉 **Nguyên tắc vàng:** *Luôn benchmark trên Rule, Workflow hoặc Chatbot trước khi quyết định mở Agent loop.*
+* **Nguyên tắc vàng:** *Luôn benchmark trên Rule, Workflow hoặc Chatbot trước khi quyết định mở Agent loop.*
 
 ---
 
@@ -419,13 +419,13 @@ return "Stopped: max iterations reached"
 ┌─────────────────────────────────────────────────────────────┐
 │                 DEBUG CHECKLIST KHI AGENT LỖI               │
 ├─────────────────────────────────────────────────────────────┤
-│ 🔍 1. SOI VÀO TRACE TRƯỚC HẾT:                              │
+│ 1. SOI VÀO TRACE TRƯỚC HẾT:                                 │
 │    [ ] Thought có bám sát đúng mục tiêu người dùng không?   │
 │    [ ] Agent chọn đúng tool phù hợp với bài toán chưa?      │
 │    [ ] Args truyền vào tool có đúng schema/hợp lệ không?    │
 │    [ ] Observation trả về có bị thiếu field dữ liệu nào?    │
 │                                                             │
-│ 🛠️ 2. 4 NƠI THƯỜNG PHẢI SỬA CHỮA:                           │
+│ 2. 4 NƠI THƯỜNG PHẢI SỬA CHỮA:                              │
 │    1. Tool description quá mơ hồ -> Viết lại rõ ràng        │
 │    2. System prompt thiếu rule dừng -> Thêm exit conditions │
 │    3. Không có safeguard retry/loop -> Đặt max iterations   │
@@ -437,7 +437,7 @@ return "Stopped: max iterations reached"
 
 ## 15. Khi Nào Chatbot Thắng, Khi Nào Agent Thắng?
 
-| Khía cạnh | Chatbot Thắng 🏆 | Agent Thắng 🏆 |
+| Khía cạnh | Chatbot Thắng | Agent Thắng |
 |---|---|---|
 | **Tác vụ** | Tra cứu FAQ, hỗ trợ khách hàng đơn giản, tóm tắt nội dung 1 lượt | Đặt vé đa chặng (*booking*), nghiên cứu đối thủ, lập trình, phân tích dữ liệu nhiều bước |
 | **Tốc độ** | Rất nhanh, ít round-trip mạng | Chậm hơn rõ rệt do độ trễ của vòng lặp và các lượt gọi tool |
@@ -445,6 +445,6 @@ return "Stopped: max iterations reached"
 | **Kiểm soát** | Dễ kiểm soát hơn, trạng thái tĩnh ít rủi ro | Khó hơn nhiều, cần bộ orchestration và đánh giá theo từng trace |
 | **Trải nghiệm UX** | Phản hồi tức thì, đơn giản, rõ ràng | Tạo cảm giác *"hệ thống đang chủ động làm việc giúp bạn"* |
 
-👉 **Nguyên tắc quyết định:** *Bắt đầu bằng Chatbot là lựa chọn mặc định tốt nhất cho mọi sản phẩm.*
+**Nguyên tắc quyết định:** *Bắt đầu bằng Chatbot là lựa chọn mặc định tốt nhất cho mọi sản phẩm.*
 
 ---

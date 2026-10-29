@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 created: 2026-06-29
 tags:
   - moc

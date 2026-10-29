@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: book
-status: processing
 created: 2026-06-24
 updated: 2026-06-24
 title: Lectures on Quantum Mechanics

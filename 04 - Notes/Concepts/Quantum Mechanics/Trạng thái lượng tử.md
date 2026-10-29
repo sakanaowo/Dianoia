@@ -1,6 +1,5 @@
 ---
 type: concept
-status: growing
 domains:
   - "[[Cơ học lượng tử]]"
   - "[[Physics]]"

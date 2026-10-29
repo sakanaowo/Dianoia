@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: processing
 source:
   - https://www.youtube.com/watch?v=ASY2uo8fNaI
 creator: Thư Viện Thiên Văn

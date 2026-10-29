@@ -1,6 +1,5 @@
 ---
 type: review
-status: growing
 created: 2026-08-25
 updated: 2026-08-25
 domains:

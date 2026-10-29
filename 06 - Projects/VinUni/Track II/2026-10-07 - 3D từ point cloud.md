@@ -1,0 +1,57 @@
+---
+type: daily
+created: "2026-10-07"
+---
+
+# 2026-10-07 - Day21 - 3D from point clouds
+
+
+
+- Pipeline thực chiến từ raw point cloud  -> 3D detector 
+
+| 1   | Sensor input   | Lidar packets, pose, timestampt       |
+| --- | -------------- | ------------------------------------- |
+| 2   | Preprocess     | Deskew, crop range, remove ego/ground |
+| 3   | Representation | Point, voxell, pillar, range view     |
+| 4   | Backbone       | PointNet, sparse conv, 2D CNN on BEV  |
+| 5   | Head           | Anchor-based/center-base              |
+| 6   | Postprocess    | NMS, tracking hook, confidence gating |
+
+- Bắt đầu từ pipeline đơn giản, chạy được đo được -> sau đó mới thêm fusion, model nặng
+- Chỉ tối ưu metric sau khi data ổn 
+
+
+> [!NOTE] **Point Cloud** (đám mây điểm)
+>  ==là một tập hợp hàng triệu hoặc hàng tỷ điểm dữ liệu nằm trong không gian ba chiều, dùng để tái tạo hình dạng và bề mặt của một đối tượng hay không gian thực tế==. Mỗi điểm riêng lẻ trong tập dữ liệu này được xác định bởi các tọa độ hình học **X, Y và Z**, và có thể kèm theo thông tin về màu sắc hoặc độ phản xạ ánh sáng
+- Khác biệt giữa point cloud với ảnh:
+	- Không phải lưới -> không áp được 2D CNN
+	- Mật độ giảm theo khoảng cách 
+	- Occlusion (che khuất/tắc nghẽn/khép kín) -> vật thế biến mất 1 nửa / bị che khuất
+
+- Cách tạo Point cloud:
+	- Quét laser 3D, LiDAR
+	- Chụp ảnh quang học: chụp ảnh nhiều góc độ và dựng lại bằng phần mềm 
+
+> [!NOTE] **3D Perception** (Nhận thức 3D)
+>  ==là **khả năng của máy tính, robot hoặc hệ thống trí tuệ nhân tạo (AI) trong việc hiểu, giải mã và tương tác với thế giới vật lý theo ba chiều** (chiều rộng, chiều cao và chiều sâu==
+
+- Khó khăn của 3D perception trong dự án thật:
+	- Sparsity: vật nhỏ hoặc ở xa chỉ có vài điểm point
+	- Class imbalance: nhãn bị bỏ qua do data bias nhãn 
+	- Label cost
+	- Coordinate bugs: sai frame, trục z/y 
+	- Latency: pipeline 3D nặng 
+	- Domain shift: ảnh hưởng môi trường bên ngoài tới sensor, data, model 
+
+- Các cách biểu diễn point cloud:
+	- Point based: 
+	- Voxel based:
+	- Pillar/BEV:
+	- Range-view:
+
+- Point-based learning: PointNet/PointNet++
+- Voxel + sparse convolution: 
+- Pillar/BEV
+
+
+- Detector head: anchorbased vs centerbased 

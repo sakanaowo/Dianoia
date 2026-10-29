@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: processing
 source:
   - https://www.youtube.com/watch?v=VTBZ0VwIgs8
 creator: Plasma Channel

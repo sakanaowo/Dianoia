@@ -1,0 +1,11 @@
+{
+  "customChoices": [],
+  "allowReadingViewEdit": false,
+  "singleClickEdit": false,
+  "ctrlColHiddenButtons": {
+    "locked": [],
+    "unlocked": [],
+    "xlsxRef": []
+  },
+  "lastSeenVersion": "1.4.1"
+}

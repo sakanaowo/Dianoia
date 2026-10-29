@@ -4,8 +4,12 @@ Lightweight validator for διάνοια.
 
 Checks:
 - Expected top-level README.md files.
-- Potentially broken Obsidian wikilinks.
 - Durable notes under 04 - Notes missing YAML frontmatter.
+- Knowledge notes carrying a `status` field (only 06 - Projects may use it).
+- Embeds still using default `Pasted image ...` names.
+- Atomic notes with no inbound links.
+- Broken Obsidian wikilinks, summarized by default (stubs are allowed).
+  Run with --links to list every broken target.
 
 This script is intentionally conservative. Treat output as warnings, not absolute truth.
 """
@@ -13,6 +17,8 @@ This script is intentionally conservative. Treat output as warnings, not absolut
 from __future__ import annotations
 
 import re
+import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,19 +41,28 @@ EXPECTED_READMES = [
 IGNORE_DIRS = {
     ".git",
     ".obsidian",
+    ".agents",
     ".codex",
     ".codex-log",
+    ".workspace-plus-plus",
     "__pycache__",
     "98 - Attachments",
 }
 
+# Files whose wikilinks are examples or placeholders, not real references.
+LINK_CHECK_SKIP = {"README.md", "AGENTS.md"}
+LINK_CHECK_SKIP_DIRS = {"99 - Templates"}
+
 WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
+PASTED_IMAGE_RE = re.compile(r"!\[\[(Pasted image [^\]|]+)")
+STATUS_RE = re.compile(r"^status:", re.MULTILINE)
+PROJECT_TYPE_RE = re.compile(r"^type:\s*project\s*$", re.MULTILINE)
 
 
 def iter_markdown_files() -> list[Path]:
     files: list[Path] = []
     for path in ROOT.rglob("*.md"):
-        if any(part in IGNORE_DIRS for part in path.parts):
+        if any(part in IGNORE_DIRS for part in path.relative_to(ROOT).parts):
             continue
         files.append(path)
     return files
@@ -56,19 +71,56 @@ def iter_markdown_files() -> list[Path]:
 def normalize_link_target(raw: str) -> str:
     target = raw.split("|", 1)[0]
     target = target.split("#", 1)[0]
-    return target.strip()
+    # Inside tables the alias pipe is escaped as `\|`.
+    target = target.strip().removesuffix("\\")
+    if target.endswith(".md"):
+        target = target[:-3]
+    return target
 
 
-def build_note_index(files: list[Path]) -> set[str]:
-    stems: set[str] = set()
-    rel_without_suffix: set[str] = set()
+def frontmatter(text: str) -> str:
+    if not (text.startswith("---\n") or text.startswith("---\r\n")):
+        return ""
+    end_idx = text.find("\n---", 4)
+    return text[4:end_idx] if end_idx != -1 else ""
 
+
+def extract_aliases(text: str) -> list[str]:
+    aliases = []
+    match = re.search(r"aliases:\s*\n((?:\s*-\s*[^\n]+\n?)+)", frontmatter(text))
+    if match:
+        for line in match.group(1).splitlines():
+            line = line.strip()
+            if line.startswith("-"):
+                alias = line[1:].strip().strip("\"'")
+                if alias:
+                    aliases.append(alias)
+    return aliases
+
+
+def build_note_index(files: list[Path], texts: dict[Path, str]) -> dict[str, Path]:
+    """Map every name a note can be linked by (stem, path, alias) to the note."""
+    index: dict[str, Path] = {}
     for path in files:
-        rel = path.relative_to(ROOT).with_suffix("")
-        stems.add(path.stem)
-        rel_without_suffix.add(str(rel))
+        index.setdefault(path.stem, path)
+        index.setdefault(str(path.relative_to(ROOT).with_suffix("")), path)
+        for alias in extract_aliases(texts[path]):
+            index.setdefault(alias, path)
+    return index
 
-    return stems | rel_without_suffix
+
+def build_attachment_index() -> set[str]:
+    att_dir = ROOT / "98 - Attachments"
+    if not att_dir.exists():
+        return set()
+    return {p.name for p in att_dir.iterdir() if p.is_file()} | {
+        p.stem for p in att_dir.iterdir() if p.is_file()
+    }
+
+
+def skip_link_check(path: Path) -> bool:
+    rel = path.relative_to(ROOT)
+    return str(rel) in LINK_CHECK_SKIP or rel.parts[0] in LINK_CHECK_SKIP_DIRS
 
 
 def check_readmes() -> list[str]:
@@ -79,75 +131,110 @@ def check_readmes() -> list[str]:
     return warnings
 
 
-def check_wikilinks(files: list[Path], note_index: set[str]) -> list[str]:
+def check_note_frontmatter(files: list[Path], texts: dict[Path, str]) -> list[str]:
     warnings: list[str] = []
-
-    for path in files:
-        text = path.read_text(encoding="utf-8", errors="ignore")
-        for match in WIKILINK_RE.finditer(text):
-            raw = match.group(1)
-            target = normalize_link_target(raw)
-
-            if not target:
-                continue
-
-            if target in {"...", "TODO", "TBD"}:
-                continue
-
-            if target not in note_index:
-                rel = path.relative_to(ROOT)
-                warnings.append(f"Possible broken wikilink in {rel}: [[{raw}]]")
-
-    return warnings
-
-
-def has_frontmatter(text: str) -> bool:
-    return text.startswith("---\n") or text.startswith("---\r\n")
-
-
-def check_note_frontmatter(files: list[Path]) -> list[str]:
-    warnings: list[str] = []
-
     notes_root = ROOT / "04 - Notes"
-    if not notes_root.exists():
-        return warnings
-
     for path in files:
-        try:
-            path.relative_to(notes_root)
-        except ValueError:
+        if not path.is_relative_to(notes_root) or path.name == "README.md":
             continue
-
-        if path.name == "README.md":
-            continue
-
-        text = path.read_text(encoding="utf-8", errors="ignore")
-        if not has_frontmatter(text):
+        if not frontmatter(texts[path]):
             warnings.append(
                 f"Durable note may need frontmatter: {path.relative_to(ROOT)}"
             )
-
     return warnings
 
 
+def check_status_field(files: list[Path], texts: dict[Path, str]) -> list[str]:
+    warnings: list[str] = []
+    projects_root = ROOT / "06 - Projects"
+    for path in files:
+        fm = frontmatter(texts[path])
+        if path.is_relative_to(projects_root) or PROJECT_TYPE_RE.search(fm):
+            continue
+        if STATUS_RE.search(fm):
+            warnings.append(
+                f"Knowledge note should not have status: {path.relative_to(ROOT)}"
+            )
+    return warnings
+
+
+def check_pasted_images(files: list[Path], texts: dict[Path, str]) -> list[str]:
+    warnings: list[str] = []
+    for path in files:
+        count = len(PASTED_IMAGE_RE.findall(texts[path]))
+        if count:
+            warnings.append(
+                f"{count} image(s) need meaningful names: {path.relative_to(ROOT)}"
+            )
+    return warnings
+
+
+def collect_links(
+    files: list[Path],
+    texts: dict[Path, str],
+    note_index: dict[str, Path],
+    attachment_index: set[str],
+) -> tuple[Counter[Path], Counter[str]]:
+    """Return inbound link counts per note and broken link targets."""
+    inbound: Counter[Path] = Counter()
+    broken: Counter[str] = Counter()
+    for path in files:
+        for match in WIKILINK_RE.finditer(texts[path]):
+            target = normalize_link_target(match.group(1))
+            if not target or target in {"...", "TODO", "TBD"}:
+                continue
+            linked = note_index.get(target) or note_index.get(Path(target).name)
+            if linked is not None:
+                if linked != path:
+                    inbound[linked] += 1
+            elif target not in attachment_index and not skip_link_check(path):
+                broken[target] += 1
+    return inbound, broken
+
+
+def check_orphan_atomics(files: list[Path], inbound: Counter[Path]) -> list[str]:
+    atomic_root = ROOT / "04 - Notes" / "Atomic"
+    return [
+        f"Atomic note has no inbound links: {path.relative_to(ROOT)}"
+        for path in files
+        if path.is_relative_to(atomic_root) and inbound[path] == 0
+    ]
+
+
 def main() -> int:
+    show_links = "--links" in sys.argv[1:]
+
     files = iter_markdown_files()
-    note_index = build_note_index(files)
+    texts = {p: p.read_text(encoding="utf-8", errors="ignore") for p in files}
+    note_index = build_note_index(files, texts)
+    inbound, broken = collect_links(files, texts, note_index, build_attachment_index())
 
     warnings = []
     warnings.extend(check_readmes())
-    warnings.extend(check_wikilinks(files, note_index))
-    warnings.extend(check_note_frontmatter(files))
+    warnings.extend(check_note_frontmatter(files, texts))
+    warnings.extend(check_status_field(files, texts))
+    warnings.extend(check_pasted_images(files, texts))
+    warnings.extend(check_orphan_atomics(files, inbound))
 
-    if not warnings:
+    if warnings:
+        print("Vault check warnings:")
+        for warning in warnings:
+            print(f"- {warning}")
+    else:
         print("Vault check passed: no obvious warnings.")
-        return 0
 
-    print("Vault check warnings:")
-    for warning in warnings:
-        print(f"- {warning}")
+    if broken:
+        print(
+            f"\nUnresolved wikilinks: {len(broken)} targets, "
+            f"{sum(broken.values())} occurrences (stubs are allowed)."
+        )
+        if show_links:
+            for target, count in broken.most_common():
+                print(f"- [[{target}]] x{count}")
+        else:
+            print("Run with --links to list them.")
 
-    return 1
+    return 1 if warnings else 0
 
 
 if __name__ == "__main__":

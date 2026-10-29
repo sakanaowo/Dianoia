@@ -405,6 +405,7 @@ async def run_agent_loop(user_query: str, client: Any, max_turns: int = 5):
 * **Bài học liên đới:**
   * [[Day 02 - Tìm đúng bài toán cho AI]]: Phân rã bài toán và chọn lựa mức độ can thiệp của AI.
   * [[Day 03 - Thiết kế Workflow và Kiểm soát Hệ thống AI]]: 3 Pattern kiến trúc workflow và cơ chế kiểm soát con người.
+  * [[Workshop - Xây dựng AI MVP]]: Phương pháp luận AI MVP Canvas và Thang kiểm chứng 5 nấc (Validation Ladder).
 * **Khái niệm cốt lõi (`04 - Notes/Concepts/`):**
   * [[Prompt as Code]] — Kỷ luật kỹ thuật trong việc versioning và kiểm thử prompt bằng eval set.
   * [[System Prompt Contract]] — Bản hợp đồng pháp lý kỹ thuật định hình hành vi và ranh giới mô hình.

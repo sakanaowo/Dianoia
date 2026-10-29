@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: raw
 source:
   - https://www.youtube.com/watch?v=iPQhrnwhySs&t=2s
 language: English

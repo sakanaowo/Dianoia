@@ -1,0 +1,4 @@
+/* Increase inline and block MathJax size */
+mjx-math {
+  font-size: 120% !important; /* Adjust percentage as needed, e.g., 120% or 150% */
+}

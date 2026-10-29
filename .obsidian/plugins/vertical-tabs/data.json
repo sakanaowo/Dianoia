@@ -2,9 +2,6 @@
   "showActiveTabs": false,
   "autoUncollapseGroup": false,
   "hideSidebars": true,
-  "sidebarTabTypes": [
-    "markdown"
-  ],
   "sidebarExcludeSelf": true,
   "trimTabNames": false,
   "showMoreButtons": false,
@@ -35,7 +32,11 @@
   "scrollableTabsMinWidth": 100,
   "autoHideHorizontalTabs": false,
   "disableOnThisDevice": false,
+  "allowWorkspaceSplitOnPhone": false,
   "enableUpdateCheck": true,
   "newTabButtonPlacement": "group-toolbar",
-  "installationID": "3J8nGXdNKgolHiD_zZ8cG"
+  "tabClosingBehavior": "active-right",
+  "sidebarTabTypes": [
+    "markdown"
+  ]
 }

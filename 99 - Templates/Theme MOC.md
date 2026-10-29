@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 scope: theme
 created: "{{date}}"
 updated: "{{date}}"

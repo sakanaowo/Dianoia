@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: raw
 source:
   - https://www.youtube.com/watch?v=teGBZvJ5wdE
 language: Vietnamese (auto-generated)

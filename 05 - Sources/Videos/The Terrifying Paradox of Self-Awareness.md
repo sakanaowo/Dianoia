@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: processing
 source:
   - https://www.youtube.com/watch?v=3x6hiS0E_7w&t=1s
 creator: Aperture

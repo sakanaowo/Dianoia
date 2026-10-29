@@ -1,6 +1,5 @@
 ---
 type: atomic
-status: growing
 domains:
   - "[[Nuclear Fusion]]"
   - "[[Vacuum Science]]"

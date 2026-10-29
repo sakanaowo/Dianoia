@@ -1,0 +1,26 @@
+---
+type: daily
+created: "2026-10-03"
+---
+
+# 2026-10-03
+
+## ☀️ Neural network and training
+
+![[Pasted image 20261003093257.png]]
+
+| Kí hiệu:<br>                    |                                       |
+| ------------------------------- | ------------------------------------- |
+| $x,w,b$                         | đầu vào, trọng số w, hệ số tự do bias |
+| $\sum$                          |                                       |
+| $\sigma(.)$                     | Hàm kích hoạt                         |
+| $\frac{\partial J}{\partial W}$ | đạo hàm riêng                         |
+| $\nabla J$                      | gradient                              |
+| $\leftarrow$                    | gán                                   |
+| $\eta$                          | learning rate                         |
+
+Loss:
+$$J(\theta)=\frac{1}{N}\sum_{i=1}^{N}l(f(x_{i};\theta),t_{i}),\hat \theta = argmin\ J(\theta)$$
+
+---
+## ⛅ Deeplearning Architecture for Computer Vision

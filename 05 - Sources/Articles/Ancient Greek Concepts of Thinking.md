@@ -6,7 +6,6 @@ tags:
   - language
 topic: Ancient Greek philosophy
 source: https://www.scribd.com/document/868159016/The-mind-in-Greek-%CF%86%CF%81%CE%B7%CE%BD-%CE%BD%CE%BF%CF%85%CF%82-%CF%86%CF%81%CE%BF%CE%BD%CE%B5%CF%89-%CE%BD%CE%BF%CE%B5%CF%89
-status: processing
 aliases:
 ---
 ## Main idea
@@ -17,7 +16,7 @@ The important distinction is that these words do not all mean "thinking" in the 
 ## Key terms
 
 - [[φρονέω - phroneō]]: practical, action-guiding thinking.
-- [[φρόνησις - phronēsis]]: practical wisdom or prudence.
+- [[φρόνησις ]]- [[phronēsis]]: practical wisdom or prudence.
 - [[φρόνημα - phronēma]]: mindset, disposition, settled attitude.
 - [[νοέω - noeō]]: intellectual perception or comprehension.
 - [[νόησις - noēsis]]: act of understanding or intellection.

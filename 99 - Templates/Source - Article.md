@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: article
-status: raw
 source:
   - ""
 author: 

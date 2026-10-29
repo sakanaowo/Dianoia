@@ -1,6 +1,6 @@
 ---
 type: project
-status: processing
+status: active
 domains:
   - "[[Domain]]"
 created: "{{date}}"

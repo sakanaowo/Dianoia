@@ -1,6 +1,5 @@
 ---
 type: book
-status: raw
 author: 
 year: 
 publisher: 

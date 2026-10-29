@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 scope: domains
 created: 2026-08-07
 updated: 2026-08-26

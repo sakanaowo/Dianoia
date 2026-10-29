@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 scope: projects
 created: 2026-09-05
 updated: 2026-09-05
@@ -26,13 +25,21 @@ Bản đồ điều hướng toàn bộ các dự án nghiên cứu, kế hoạc
 
 ### Khoa học Máy tính & AI Thực chiến
 - [[VinUni - Chương trình Đào tạo AI Thực chiến]] — Chương trình đào tạo AI thực chiến (VinUni K4A), quản lý các buổi lab, pipeline GraphRAG và bài toán nghiên cứu đồ án.
+  - [[Track II - CV & Robotics]] — Track Computer Vision & Robotics (đã thi xong).
 
 ### Nghệ thuật & Kỹ năng
 - [[Study - Nhạc lý cơ bản và Đọc Sheet nhạc]] — Học nhạc lý căn bản từ giáo trình Ngô Ngọc Thắng, luyện đọc bản ký âm và ánh xạ lên Piano & Guitar.
 
 ---
 
-## 2. Nguyên tắc quản lý dự án học tập trong Vault
+## 2. Dự án Nghiên cứu & Kỹ thuật Ứng dụng (Applied AI & Engineering Projects)
+
+- [[06 - Projects/AutoCheckout/README|AutoCheckout-CL]] — Hệ thống nhận diện sản phẩm quầy thanh toán tự động thông minh bằng Học tăng cường không lưu dữ liệu cũ (*Replay-Free Continual Object Detection* trên tập dữ liệu RPC bám sát Paper PDP - CVPR 2026).
+- [[EDU-02 - Trợ lý Giảng dạy AI]] — Trợ lý AI sư phạm tích hợp GraphRAG, Multi-Agent workflow và đánh giá LLM-as-a-Judge.
+
+---
+
+## 3. Nguyên tắc quản lý dự án trong Vault
 - Mỗi lộ trình học tập độc lập nên có một file **Study Project Note** trong `06 - Projects/Study Plans/`.
 - Project Note là **trạm chỉ huy (Command Center)**: lưu trữ mục tiêu, roadmap, checklist tiến độ, nhật ký tuần và các câu hỏi mở.
 - Tri thức bền vững được kết xuất từ dự án phải được phân phối về đúng các tầng:

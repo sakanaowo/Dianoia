@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: processing
 source:
   - https://www.youtube.com/watch?v=5Iybj3vso1g
 creator: The Art of Solitude / Jungian Psychology Essay

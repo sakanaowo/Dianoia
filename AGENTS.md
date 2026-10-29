@@ -12,7 +12,7 @@ Do not treat this vault as a normal software repository only. Treat it as a Mark
 
 1. Preserve the user's voice, language, and existing note structure.
 2. Prefer Vietnamese when creating or editing notes, unless the surrounding note is already in English.
-3. Use Obsidian-style wikilinks: `[[Note title]]`.
+3. Use Obsidian-style wikilinks exclusively: `[[Note title]]` or `[[Note title|Display text]]`. Never use Markdown links `[text](...)` or `[text](file://...)` for internal notes or internal vault references.
 4. Use folders for note lifecycle and links for conceptual relationships.
 5. Prefer small, connected notes over long, isolated notes.
 6. Never mass-delete notes.
@@ -21,7 +21,10 @@ Do not treat this vault as a normal software repository only. Treat it as a Mark
 9. Do not invent sources, citations, book claims, or paper details.
 10. For controversial social, philosophical, political, or historical topics, preserve multiple viewpoints and surface assumptions.
 11. When exploring or creating notes for a topic within a domain/subdomain that lacks a study project note, proactively propose creating one. Each Study Note serves as the learning management hub for that domain/subdomain.
-12. Never automatically generate images. Check `98 - Attachments` first; if an illustration is needed, use a placeholder `![[filename.png]]` with a description for the user to add.
+12. Never automatically generate images. Check `98 - Attachments` first; nếu cần thiết sử dụng hình ảnh để minh họa mà không có sẵn: Nếu không phải các sơ đồ, có thể đặt placeholder `![[filename.png]]` mô tả về ảnh cần tìm để người dùng tự tìm kiếm và thay thế vào đó, kèm đặt tên rõ nghĩa cho ảnh.
+13. Minimize icons and emojis: Avoid decorative emojis or icons in headings, lists, tables, callouts, and notes. Keep notes and assistant responses clean, academic, and distraction-free.
+14. Ưu tiên hình ảnh cho sơ đồ/luồng thay vì Mermaid: Mermaid định dạng quá xấu và gây rối khi nhìn vào trong Obsidian. Nếu có hình ảnh chụp luồng/kiến trúc sẵn có, hãy giữ lại và sử dụng trực tiếp hình ảnh thay vì vẽ lại bằng Mermaid; các hình ảnh thừa thãi không mang thông tin luồng có thể xóa/bỏ qua.
+15. Tự động đặt tên có nghĩa cho ảnh: Không để ảnh ở dạng tên mặc định (như `Pasted image YYYYMMDDHHMMSS.png`). Khi tiếp nhận hoặc đưa ảnh vào vault, tự động đổi tên file trong `98 - Attachments` thành tên mô tả ngắn gọn, rõ nghĩa theo nội dung/chủ đề và cập nhật đồng bộ các wikilink `![[...]]` trong các note liên quan.
 
 ## Vault structure
 
@@ -119,7 +122,6 @@ Use YAML frontmatter for durable notes when useful:
 ```yaml
 ---
 type: atomic
-status: growing
 domains:
   - "[[Philosophy]]"
 themes:
@@ -145,13 +147,12 @@ output
 review
 ```
 
-Common `status` values:
+Do not add a `status` field to knowledge notes (daily, atomic, concept, source, MOC, review). Use `status` only for project notes in `06 - Projects`:
 
 ```text
-raw
-processing
-growing
-evergreen
+active
+paused
+completed
 archived
 ```
 
@@ -181,13 +182,14 @@ Concept notes may use short noun titles when they function as dictionaries, but 
 
 ## Link rules
 
-When creating a durable note:
+When creating or referencing durable notes:
 
-1. Add at least 2 relevant wikilinks when possible.
-2. Link upward to a domain or theme MOC.
-3. Link sideways to related or opposing ideas.
-4. Do not create fake links just to satisfy a count.
-5. If a link target does not exist yet but should exist, it is acceptable to create a wikilink stub.
+1. Always use Obsidian wikilinks: `[[Note title]]` or `[[Note title|Display text]]`. Never use standard Markdown link syntax `[text](...)` or `[text](file://...)` for internal notes.
+2. Add at least 2 relevant wikilinks when possible.
+3. Link upward to a domain or theme MOC.
+4. Link sideways to related or opposing ideas.
+5. Do not create fake links just to satisfy a count.
+6. If a link target does not exist yet but should exist, it is acceptable to create a wikilink stub.
 
 ## Source processing workflow
 
@@ -223,7 +225,19 @@ Each Study Project Note (`06 - Projects/Study Plans/Study - ...`) serves as the 
 
 1. Never use image generation tools (`generate_image`) to create artificial images.
 2. Always search `98 - Attachments` first for existing files.
-3. If visual illustration is needed and not available, use a clear placeholder `![[image_name.png]]` with a descriptive note for the user to add later.
+3. Nếu cần thiết sử dụng hình ảnh để minh họa mà không có sẵn: Nếu không phải các sơ đồ (đối với sơ đồ/luồng tuân theo quy tắc ở mục 4), có thể đặt placeholder `![[image_name.png]]` kèm mô tả chi tiết về ảnh cần tìm để người dùng tự tìm kiếm và thay thế vào đó, đồng thời đặt tên rõ nghĩa cho file ảnh.
+4. Ưu tiên hình ảnh cho sơ đồ/luồng thay vì Mermaid: Mermaid thường hiển thị xấu, định dạng thô và gây rối mắt trong Obsidian. Nếu đã có hình ảnh trực quan thể hiện rõ luồng quy trình hoặc kiến trúc, hãy giữ lại và nhúng trực tiếp hình ảnh, không vẽ lại bằng Mermaid. Các hình ảnh không liên quan hoặc không mang thông tin luồng có thể xóa/bỏ qua.
+5. Tự động đặt tên có nghĩa cho ảnh:
+   - Tránh để tên ảnh mặc định dạng chuỗi thời gian vô nghĩa (ví dụ: `Pasted image YYYYMMDDHHMMSS.png`).
+   - Tự động đổi tên file ảnh trong `98 - Attachments` thành tên ngắn gọn, rõ nghĩa phản ánh đúng nội dung, kiến trúc, sơ đồ hoặc chủ đề (ví dụ: `rag-modular-architecture.png`, `hybrid-search-dense-sparse.png`).
+   - Khi đổi tên file ảnh, bắt buộc phải cập nhật đồng bộ tất cả các liên kết `![[tên_cũ.png]]` trong toàn bộ các note liên quan thành `![[tên_mới.png]]` để đảm bảo tính toàn vẹn liên kết.
+
+## Formatting & icon rules
+
+1. Minimize emojis and icons: Do not use decorative icons or emojis in headings, lists, tables, callouts, or notes.
+2. Avoid icon prefixes (e.g. 📌, 🚀, 💡, 🎯, 🛠️, 📂, 🏠, 📚, etc.) in file titles, section headers, or list items.
+3. Use plain text markdown formatting (bold, italics, code blocks, lists) for hierarchy and readability.
+4. Keep the vault appearance clean, academic, and distraction-free.
 
 ## Safe editing rules
 
