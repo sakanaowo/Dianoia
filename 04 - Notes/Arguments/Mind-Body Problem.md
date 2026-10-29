@@ -1,6 +1,5 @@
 ---
 type: argument
-status: growing
 domains:
   - "[[Philosophy]]"
   - "[[Metaphysics]]"

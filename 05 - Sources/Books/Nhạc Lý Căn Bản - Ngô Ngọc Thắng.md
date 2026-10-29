@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: book
-status: processing
 title: Nhạc Lý Căn Bản - Thực Hành
 author:
   - Ngô Ngọc Thắng

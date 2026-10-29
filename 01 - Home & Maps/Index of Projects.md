@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 scope: projects
 created: 2026-09-05
 updated: 2026-09-05
@@ -26,6 +25,7 @@ Bản đồ điều hướng toàn bộ các dự án nghiên cứu, kế hoạc
 
 ### Khoa học Máy tính & AI Thực chiến
 - [[VinUni - Chương trình Đào tạo AI Thực chiến]] — Chương trình đào tạo AI thực chiến (VinUni K4A), quản lý các buổi lab, pipeline GraphRAG và bài toán nghiên cứu đồ án.
+  - [[Track II - CV & Robotics]] — Track Computer Vision & Robotics (đã thi xong).
 
 ### Nghệ thuật & Kỹ năng
 - [[Study - Nhạc lý cơ bản và Đọc Sheet nhạc]] — Học nhạc lý căn bản từ giáo trình Ngô Ngọc Thắng, luyện đọc bản ký âm và ánh xạ lên Piano & Guitar.

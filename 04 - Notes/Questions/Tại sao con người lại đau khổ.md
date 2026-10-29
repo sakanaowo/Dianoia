@@ -1,6 +1,5 @@
 ---
 type: question
-status: growing
 domains:
   - "[[Philosophy]]"
   - "[[Psychology]]"

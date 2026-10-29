@@ -1,6 +1,5 @@
 ---
 type: person
-status: growing
 domains:
   - "[[Domain]]"
 themes:

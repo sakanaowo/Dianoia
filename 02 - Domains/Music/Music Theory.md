@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 scope: domain
 domains:
   - "[[Music Theory]]"

@@ -1,6 +1,5 @@
 ---
 type: atomic
-status: growing
 domains:
   - "[[Domain]]"
 themes:

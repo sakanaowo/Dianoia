@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: article
-status: processing
 source:
   - https://en.wikipedia.org/wiki/Nuclear_fusion
 author: Wikipedia contributors

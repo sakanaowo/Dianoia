@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: article
-status: raw
 source:
   - https://diendankhaiphong.org/khai-sang-la-gi/
 author: Tôn Thất Thông

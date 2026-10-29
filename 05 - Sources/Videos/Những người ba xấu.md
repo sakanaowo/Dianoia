@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: raw
 source:
   - https://youtu.be/CvDA7emfBpg
 language: Vietnamese

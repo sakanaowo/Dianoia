@@ -19,6 +19,7 @@ Thư mục quản lý toàn bộ tiến trình học tập, dự án lab, tài l
   * [[Day 03 - Thiết kế Workflow và Kiểm soát Hệ thống AI]] — Khám phá HCD, 3 pattern workflow, mức tự chủ, precision/recall và production readiness.
   * [[Day 04 - Prompt Engineering và Tool Calling]] — Prompt as Code, System Prompt Contract, 4 nguyên tắc Context Engineering, chu trình Tool Calling 4 bước.
   * [[Workshop - Xây dựng AI MVP]] — Khung AI MVP Canvas 10 ô, The Validation Ladder 5 nấc, và Ma trận AI Leverage Map.
+  * [[Track II - CV & Robotics]] — Các buổi Computer Vision & Robotics (03/10 – 23/10), đã thi xong.
 ### Giai đoạn 5: Hệ Thống Đa Tác Tử, Quản Trị Pipeline & Quan Sát Dữ Liệu (tiếp)
 - [x] **Day 11 (26/09):** [[Day 11 - Guardrails, Safety & HITL]]
   - AI Safety Landscape: Hallucination, Prompt Injection, Jailbreak, Bias, Over-autonomy.

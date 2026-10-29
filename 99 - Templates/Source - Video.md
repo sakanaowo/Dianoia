@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: video
-status: raw
 source:
   - ""
 creator: 

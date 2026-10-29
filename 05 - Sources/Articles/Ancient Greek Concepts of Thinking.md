@@ -6,7 +6,6 @@ tags:
   - language
 topic: Ancient Greek philosophy
 source: https://www.scribd.com/document/868159016/The-mind-in-Greek-%CF%86%CF%81%CE%B7%CE%BD-%CE%BD%CE%BF%CF%85%CF%82-%CF%86%CF%81%CE%BF%CE%BD%CE%B5%CF%89-%CE%BD%CE%BF%CE%B5%CF%89
-status: processing
 aliases:
 ---
 ## Main idea

@@ -1,6 +1,5 @@
 ---
 type: paper
-status: raw
 authors: 
 year: 
 venue: 

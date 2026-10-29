@@ -1,6 +1,5 @@
 ---
 type: moc
-status: growing
 scope: people
 created: 2026-09-02
 updated: 2026-09-02

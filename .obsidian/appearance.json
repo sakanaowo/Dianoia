@@ -1,12 +1,12 @@
 {
-  "cssTheme": "Border",
-  "accentColor": "#5da3b1",
+  "cssTheme": "Baseline",
+  "accentColor": "#72b7c5",
   "nativeMenus": true,
   "showRibbon": false,
   "showViewHeader": true,
   "interfaceFontFamily": "SF Pro Display",
   "textFontFamily": "SF Pro Display",
-  "monospaceFontFamily": "SpaceMono Nerd Font Propo,SpaceMono Nerd Font Mono",
+  "monospaceFontFamily": "GoogleSansCode Nerd Font,GoogleSansCode Nerd Font Mono,GoogleSansCode Nerd Font Propo",
   "enabledCssSnippets": [
     "math-block"
   ],

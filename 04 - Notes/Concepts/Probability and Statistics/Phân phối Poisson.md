@@ -1,6 +1,5 @@
 ---
 type: concept
-status: growing
 created: 2026-06-26
 domains:
   - "[[Mathematics]]"

@@ -122,7 +122,6 @@ Use YAML frontmatter for durable notes when useful:
 ```yaml
 ---
 type: atomic
-status: growing
 domains:
   - "[[Philosophy]]"
 themes:
@@ -148,13 +147,12 @@ output
 review
 ```
 
-Common `status` values:
+Do not add a `status` field to knowledge notes (daily, atomic, concept, source, MOC, review). Use `status` only for project notes in `06 - Projects`:
 
 ```text
-raw
-processing
-growing
-evergreen
+active
+paused
+completed
 archived
 ```
 

@@ -1,6 +1,5 @@
 ---
 type: daily
-status: processing
 created: "2026-10-05"
 ---
 

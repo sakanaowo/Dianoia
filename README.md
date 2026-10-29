@@ -1,6 +1,5 @@
 ---
 type: output
-status: evergreen
 created: 2026-06-14
 updated: 2026-06-14
 related:
@@ -378,7 +377,6 @@ Cấu trúc atomic note:
 ```md
 ---
 type: atomic
-status: growing
 domains:
   - "[[Philosophy]]"
 themes:
@@ -441,7 +439,6 @@ Cấu trúc:
 ```md
 ---
 type: concept
-status: growing
 domains:
   - "[[Sociology]]"
 themes:
@@ -487,7 +484,6 @@ Cấu trúc:
 ```md
 ---
 type: argument
-status: growing
 domains:
   - "[[Philosophy]]"
   - "[[Sociology]]"
@@ -563,7 +559,6 @@ Cấu trúc:
 ```md
 ---
 type: question
-status: growing
 domains:
   - "[[Philosophy]]"
 themes:
@@ -615,7 +610,6 @@ Cấu trúc:
 ```md
 ---
 type: comparison
-status: growing
 domains:
   - "[[Philosophy]]"
 themes:
@@ -658,7 +652,6 @@ Cấu trúc source video:
 ---
 type: source
 subtype: video
-status: processing
 source: URL
 language: Vietnamese
 fetched: YYYY-MM-DD
@@ -728,7 +721,6 @@ Cấu trúc:
 ```md
 ---
 type: moc
-status: growing
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
@@ -768,83 +760,23 @@ updated: YYYY-MM-DD
 
 ---
 
-## 4. Status chuẩn
+## 4. Trạng thái note
 
-Dùng đúng 5 status chính:
+Note tri thức (Inbox, Domains, Themes, Notes, Sources, Review) không dùng trường `status`. Nhãn trạng thái cũ (`raw → processing → growing → evergreen`) gần như không bao giờ được cập nhật nên không mang thông tin.
+
+Trạng thái được đọc từ liên kết thay vì nhãn:
+
+- Source đã xử lý: có link sang ít nhất một note trong `04 - Notes`.
+- Note đã được dùng lại: có link từ MOC, từ note khác, hoặc từ một output trong `07 - Outputs`.
+- Note cần xử lý tiếp: nằm trong [[To Process]] hoặc [[To Connect]].
+
+Chỉ project trong `06 - Projects` dùng `status`, để biểu thị vòng đời dự án:
 
 ```text
-raw
-processing
-growing
-evergreen
+active
+paused
+completed
 archived
-```
-
-### raw
-
-Note mới gom về, chưa xử lý.
-
-Dùng cho:
-
-- Quick capture
-- Transcript mới tải
-- Highlight chưa đọc
-- Ý tưởng vụn
-
-### processing
-
-Note đang được xử lý.
-
-Dùng khi:
-
-- Đang summarize
-- Đang extract concept
-- Đang kiểm chứng claim
-- Đang tách atomic notes
-
-### growing
-
-Note đã có lõi tri thức rõ, nhưng còn phát triển.
-
-Đây là status phổ biến nhất cho:
-
-- atomic
-- concept
-- argument
-- comparison
-- question
-- MOC đang mở rộng
-
-### evergreen
-
-Note đã đủ chín để dùng lại lâu dài.
-
-Điều kiện:
-
-- Luận điểm rõ
-- Có ví dụ
-- Có link lên domain/theme
-- Có link sang note liên quan
-- Có phản biện hoặc giới hạn
-- Không còn là tóm tắt thô
-
-### archived
-
-Note không còn active, nhưng giữ để tham chiếu.
-
-Dùng cho:
-
-- Project cũ
-- Draft cũ
-- Source đã xử lý xong
-- Note bị thay thế bởi note tốt hơn
-
-Pipeline:
-
-```text
-raw → processing → growing → evergreen
-                     ↓
-                  archived
 ```
 
 ---
@@ -896,7 +828,6 @@ Gợi ý dùng:
 ```yaml
 ---
 type: atomic
-status: growing
 domains:
   - "[[Philosophy]]"
 themes:
@@ -914,7 +845,6 @@ updated: YYYY-MM-DD
 ---
 type: source
 subtype: video
-status: processing
 source: https://...
 language: Vietnamese
 fetched: YYYY-MM-DD
@@ -930,7 +860,7 @@ tags:
 ```yaml
 ---
 type: project
-status: processing
+status: active
 area: "[[AI Projects]]"
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -944,7 +874,6 @@ output:
 ```yaml
 ---
 type: output
-status: processing
 domains:
   - "[[Philosophy]]"
 themes:
@@ -1072,13 +1001,11 @@ Một MOC không được cập nhật là bản đồ chết.
 Set:
 
 ```yaml
-status: raw
 ```
 
 hoặc nếu đã bắt đầu xử lý:
 
 ```yaml
-status: processing
 ```
 
 ---
@@ -1170,21 +1097,9 @@ Thêm note vào domain/theme phù hợp:
 
 ---
 
-### Bước 7: Đổi status
+### Bước 7: Kiểm tra liên kết ngược
 
-Sau khi source đã được xử lý:
-
-```yaml
-status: archived
-```
-
-hoặc giữ:
-
-```yaml
-status: processing
-```
-
-nếu vẫn cần đọc lại.
+Sau khi source đã được xử lý, mỗi note vừa tách phải link ngược về source, và source phải link sang các note đó. Một source có link sang `04 - Notes` được coi là đã xử lý; không cần đổi nhãn.
 
 ---
 
@@ -1375,7 +1290,7 @@ Hỏi:
 Domain nào đang phát triển mạnh nhất?
 Theme nào đang lặp lại nhiều nhất?
 Có output nào có thể viết từ các note hiện có?
-Có note nào nên lên evergreen?
+Có note nào đã đủ chín để dùng trong một output?
 Có project nào nên archive?
 ```
 
@@ -1670,7 +1585,6 @@ Mọi claim mạnh đều cần giả định và phản biện.
 
 ```md
 - [ ] Note này thuộc type nào?
-- [ ] Status hiện tại là gì?
 - [ ] Nó thuộc domain nào?
 - [ ] Nó thuộc theme nào?
 - [ ] Có source không?

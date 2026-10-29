@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: article
-status: raw
 source:
   - https://iep.utm.edu/am-trans/
 author: Michael Brodrick

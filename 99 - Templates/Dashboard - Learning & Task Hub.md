@@ -1,6 +1,5 @@
 ---
 type: moc
-status: evergreen
 scope: dashboard
 aliases:
   - Dashboard Template

@@ -1,6 +1,5 @@
 ---
 type: concept
-status: growing
 depth: deep
 domains:
   - "[[Science]]"

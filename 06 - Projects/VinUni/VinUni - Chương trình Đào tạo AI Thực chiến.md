@@ -173,6 +173,12 @@ Trạm điều khiển trung tâm (*Command Center*) theo dõi và quản lý to
   - SLO-based Alerting & Dashboard Design.
   - Tools Landscape 2026: Langfuse, Phoenix, Datadog, Grafana.
 
+### Track II: Computer Vision & Robotics (đã thi xong)
+- [x] **03/10 – 23/10:** [[Track II - CV & Robotics]]
+  - Neural network và kiến trúc DL cho CV; 2D perception (detection, segmentation, keypoints).
+  - Sensor và chuỗi frame; bộ lọc Kalman; 3D từ point cloud; tracking.
+  - Data và annotation pipeline cho CV và Robotics.
+
 ---
 
 ## 3. Mạng lưới Tri thức & Note liên kết (Knowledge Network)

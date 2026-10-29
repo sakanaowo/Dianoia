@@ -1,7 +1,6 @@
 ---
 type: source
 subtype: article
-status: growing
 source:
 author:
 published:
